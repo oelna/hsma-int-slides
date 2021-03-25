@@ -1,0 +1,520 @@
+@import url("./prism-solarizeddark.css");
+
+@font-face {
+	font-family: 'Kievit';
+	src: url('../fonts/textfont-bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Kievit';
+	src: url('../fonts/textfont-medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Kievit';
+	src: url('../fonts/textfont-book.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Operator Mono';
+	src: url('../fonts/codefont-bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Operator Mono';
+	src: url('../fonts/codefont-bold-italic.woff2') format('woff2');
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Operator Mono';
+	src: url('../fonts/codefont-book.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Operator Mono';
+	src: url('../fonts/codefont-book-italic.woff2') format('woff2');
+	font-weight: 400;
+	font-style: italic;
+}
+
+/*
+// The solarized palette
+
+$base03 =  #002b36
+$base02 =  #073642
+$base01 =  #586e75
+$base00 =  #657b83
+$base0 =   #839496
+$base1 =   #93a1a1
+$base2 =   #eee8d5
+$base3 =   #fdf6e3
+
+$yellow =  #b58900 
+$orange =  #cb4b16 
+$red =     #dc322f 
+$magenta = #d33682 
+$violet =  #6c71c4 
+$blue =    #268bd2 
+$cyan =    #2aa198 
+$green =   #859900 
+
+if $solarized is dark
+	$fg =      $base0
+	$bg =      $base03
+	$hl =      $base02
+	$emph =    $base1
+	$comment = $base01
+else
+	$fg =      $base00
+	$bg =      $base3
+	$hl =      $base2
+	$emph =    $base01
+	$comment = $base1
+*/
+
+:root {
+	--font-mono: 'Operator Mono', Consolas, Monaco, 'Andale Mono', monospace;
+	--font-body: 'Kievit', 'Comic Sans MS', -system-ui, Helvetica, sans-serif;
+	--font-heading: var(--font-body);
+	--color-yellow: hsl(50, 100%, 50%);
+	--color-green: hsl(100, 60%, 50%);
+	--color-aqua: hsl(190, 100%, 40%);
+	--color1: var(--color-yellow);
+	--color2: var(--color-green);
+	--color3: var(--color-aqua);
+	--accent1: var(--color-aqua);
+	--accent2: var(--color-green);
+	--accent3: var(--color-yellow);
+	--accent4: hsl(336, 100%, 55%);
+	--light1: hsl(200, 40%, 80%);
+	--medium1: var(--color-yellow);
+	--dark1: hsl(200, 15%, 20%);
+	--dark2: hsl(335, 100%, 35%);
+
+	--base03: #002b36;
+	--base02: #073642;
+	--base01: #586e75;
+	--base00: #657b83;
+	--base0: #839496;
+	--base1: #93a1a1;
+	--base2: #eee8d5;
+	--base3: #fdf6e3;
+
+	--yellow: #b58900;
+	--orange: #cb4b16;
+	--red: #dc322f;
+	--magenta: #d33682;
+	--violet: #6c71c4;
+	--blue: #268bd2;
+	--cyan: #2aa198;
+	--green: #859900;
+}
+
+body {
+	font: 700 150%/1.2 var(--font-body);
+	font-family: var(--font-body);
+	background-color: var(--base02);
+	color: var(--base1);
+	font-synthesis: none;
+	font-variant-numeric: lining-nums;
+
+	font-feature-settings: 'tnum';
+	-webkit-font-feature-settings: 'tnum';
+	-moz-font-feature-settings: 'tnum';
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.2;
+	text-align: center;
+}
+
+a {
+	color: inherit;
+	text-decoration-color: hsla(0,0%,100%,.4);
+}
+
+a.plain {
+	color: currentColor;
+	text-decoration: none;
+}
+
+a.link {
+	color: var(--blue);
+	text-decoration: none;
+}
+
+a.link:hover {
+	color: var(--base3);
+}
+
+.glow {
+	background-color: rgba(255,255,255,0.05);
+	padding: 0.1em 0.2em;
+}
+
+.highlight {
+	color: var(--base2);
+}
+
+.lowlight {
+	color: var(--base01);
+}
+
+.disabled {
+	color: var(--base03);
+}
+
+.html {
+	color: var(--green);
+}
+
+.css {
+	color: var(--magenta);
+}
+
+.link, .element, .blue {
+	color: var(--blue);
+}
+
+.attribute, .teal {
+	color: var(--cyan);
+}
+
+.value, .orange {
+	color: var(--orange);
+}
+
+.left {
+	text-align: left !important;
+}
+
+.center {
+	text-align: center !important;
+	margin: 0;
+}
+
+.right {
+	text-align: right !important;
+}
+
+strong, b {
+	font-weight: bold; /* FF is weird */
+}
+
+.delayed.displayed {
+	opacity: 1;
+}
+
+:focus:not(:focus-visible) {
+	outline: none;
+}
+
+input:not([type=file]),
+button,
+select {
+	font: inherit;
+	color: inherit;
+}
+
+input:not([type]),
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"] {
+	padding: 0 .3em;
+}
+
+code, textarea, pre {
+	margin: 0;
+	font: 100%/1.5em var(--font-mono);
+	font-family: var(--font-mono);
+	tab-size: 4;
+	color: inherit;
+}
+
+code.large, pre.large, textarea.large { font-size: 1.75em; }
+code.medium, pre.medium, textarea.medium { font-size: 1.25em; }
+code.small, pre.small, textarea.small { font-size: 1em; }
+
+pre > code {
+	font-size: inherit;
+}
+
+code mark {
+	--color: hsla(190, 20%, 50%, .5);
+	background: var(--color);
+	box-shadow: 0 -.05em 0 .1em var(--color);
+	color: inherit;
+	border-radius: 1px;
+	text-shadow: .01em .05em .2em rgba(0,0,0,.6);
+	transition: .6s;
+}
+
+pre + pre {
+	margin-top: 1.5em;
+}
+
+.demo .editor-container {
+	font-size: 1.6rem;
+}
+
+.demo .demo-target {
+	font-family: 'Times New Roman', Times, serif;
+	font-weight: normal;
+	text-align: left;
+	color: #000;
+	font-size: 1.8rem;
+	display: block;
+	margin-top: -2em;
+}
+
+.demo .demo-target h1 {
+	text-align: left;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+}
+
+::selection {
+	background: rgba(0,0,0,0.25);
+	color: currentColor;
+	text-shadow: none;
+}
+
+.slide {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2.5rem;
+}
+
+@media (max-width: 1024px) {
+	.slide {
+		padding: 3vmin;
+	}
+}
+
+.light.slide {
+	background: var(--light1);
+	color: black;
+}
+
+.slide h1 {
+	text-align: center;
+	margin: 0;
+	font-size: 1.75em;
+}
+
+.slide h1 + h2,
+.slide h1 + p {
+	margin-top: 0;
+}
+
+.slide h1 + p,
+.slide h1 + table {
+	margin-top: 0.5em;
+}
+
+.slide h2 {
+	font-size: 1.2em;
+	margin: 0;
+}
+
+.slide .circle-header {
+	background: var(--base2);
+	width: 60vmin;
+	height: 60vmin;
+	border-radius: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.75em;
+}
+
+.slide .circle-header > h1,
+.slide .circle-header > h2 {
+	margin-top: 0.25em;
+}
+
+.slide ul li::marker {
+	content: '— ';
+}
+
+#indicator {
+	color: white;
+}
+
+/* Quotes */
+
+blockquote {
+	position: relative;
+	font-style: italic;
+	max-width: calc(80vw - 4.5em);
+}
+
+blockquote::before {
+	content: "❝";
+	position: absolute;
+	right: 100%;
+	top: -.3em;
+	margin-right: .2em;
+	font-size: 300%;
+	color: var(--accent1);
+	font-style: normal;
+}
+
+blockquote .cite {
+	text-align: right;
+	font-style: normal;
+	font-size: 60%;
+	font-weight: bold;
+	color: var(--accent1);
+}
+
+blockquote .cite::before {
+	content: "— "
+}
+
+blockquote .cite a:not(:hover) {
+	text-decoration: none;
+}
+
+/* Tables */
+
+.slide > table {
+	border-spacing: 0;
+	margin: 0 0 1em;
+}
+
+table caption {
+	font-weight: bold;
+	letter-spacing: -.05em;
+	color: var(--color-orange);
+}
+
+th,
+td {
+	vertical-align: top;
+	text-align: left;
+	padding: .5em .5em .5em;
+}
+
+th {
+	border: 0;
+}
+
+tbody th {
+	text-align: right;
+	padding-left: 0;
+}
+
+thead th {
+	vertical-align: top;
+	font-size: 75%;
+	background: var(--accent1);
+	padding: .3em .5em;
+}
+
+tbody tr > * {
+	border-top: 1px solid hsla(0, 0%, 100%, .15);
+}
+
+td:first-child {
+	
+}
+
+td:first-child,
+th:first-child {
+	text-align: left;
+}
+
+table.simple {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+table.nolines td,
+table.nolines th {
+	border: none;
+}
+
+table .number {
+	text-align: right;
+}
+
+/* Syntax highlighting */
+/*
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: hsla(220, 10%, 90%, .5);
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+	color: var(--accent2);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+	color: var(--accent1);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css > .token.string,
+.token.inserted,
+.token.function {
+	color: var(--accent4);
+}
+
+.token.attr-value,
+.token.keyword,
+.token.variable {
+	color: var(--accent3);
+}
+
+.token.atrule,
+.token.regex,
+.token.important {
+	color: orange;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+*/
