@@ -86,7 +86,7 @@ else
 
 :root {
 	--font-mono: 'Operator Mono', Consolas, Monaco, 'Andale Mono', monospace;
-	--font-body: 'Kievit', 'Comic Sans MS', -system-ui, Helvetica, sans-serif;
+	--font-body: 'Kievit', -system-ui, Helvetica, sans-serif;
 	--font-heading: var(--font-body);
 	--color-yellow: hsl(50, 100%, 50%);
 	--color-green: hsl(100, 60%, 50%);
@@ -138,6 +138,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
 	text-align: center;
+	width: 100%;
 }
 
 a {
@@ -158,6 +159,10 @@ a.link {
 a.link:hover {
 	color: var(--base3);
 }
+
+.hidden { display: none; }
+.invisible { opacity: 0; }
+.inactive {	opacity: 0.075; }
 
 .glow {
 	background-color: rgba(255,255,255,0.05);
@@ -327,7 +332,9 @@ img {
 }
 
 .slide h1 + p,
-.slide h1 + table {
+.slide h1 + table,
+.slide h2 + p,
+.slide h2 + table {
 	margin-top: 0.5em;
 }
 
@@ -335,7 +342,7 @@ img {
 	font-size: 1.2em;
 	margin: 0;
 }
-
+/*
 .slide .circle-header {
 	background: var(--base2);
 	width: 60vmin;
@@ -350,6 +357,59 @@ img {
 .slide .circle-header > h1,
 .slide .circle-header > h2 {
 	margin-top: 0.25em;
+}
+*/
+.slide .circle-intro {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.slide .circle-intro > * {
+	width: 40%;
+	position: relative;
+	font-size: 0.75rem;
+}
+
+.slide .circle-intro.circle-2 > * {
+	width: 35%;
+	position: relative;
+	font-size: 0.75rem;
+}
+
+.slide .circle-intro.circle-3 > * {
+	width: 30%;
+	position: relative;
+	font-size: 1rem;
+}
+
+.slide .circle-intro .circle {
+	width: 100%;
+	height: auto;
+}
+
+.slide .circle-intro .circle circle {
+	fill: var(--base2);
+}
+/*
+.slide .circle-intro .circle.inactive circle {
+	opacity: 0.075;
+}
+*/
+
+.slide .circle-intro .circle text {
+	fill: var(--base01);
+	text-anchor: middle;
+	dominant-baseline: middle;
+}
+
+.slide .circle-intro.circle-3 .circle text {
+	fill: var(--base02);
+}
+
+.slide ul.simple {
+	list-style: none;
+	padding: 0;
 }
 
 .slide ul li::marker {
