@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<title>INT Stunde 2</title>
+
+	<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+	<link rel="alternate icon" href="../assets/favicon.png" />
+
+	<link href="../inspire.css" rel="stylesheet" />
+	<link href="../assets/css/hsma.css" rel="stylesheet" />
+
+	<script src="../assets/js/bliss.shy.min.js" defer></script>
+	<script src="../inspire.js" defer></script>
+</head>
+<body class="stunde2 language-markup" data-prism-plugins="normalize-whitespace">
+
+<header class="slide" id="intro">
+	<h1>INT</h1>
+	<h2>Internet-Technik</h2>
+	<h2 class="highlight">Elemente</h2>
+</header>
+<section class="slide">
+	<h1>Das anchor-Element <code>&lt;a&gt;</code> für eine Verknüpfung<br /><br /></h1>
+	<pre class="language-markup large">
+		<code>
+			&lt;a href="kontakt.html"&gt;etwas Text&lt;/a&gt;
+		</code>
+	</pre>
+	<h2 style="width: 100%; display: flex; justify-content: space-around;">
+		<span class="element delayed">Tag</span> 
+		<span class="attribute delayed">href<br />"Hypertext<br />reference"</span> 
+		<span class="value delayed">URL<br />Link-Zielort</span> 
+		<span class="delayed">Angezeigter Link-Text</span>
+	</h2>
+</section>
+<section class="slide">
+	<div style="margin-bottom: 2.5em;">
+		<h1>Interner Link</h1>
+		<pre class="language-markup large">
+			<code>
+				&lt;a href="kontakt.html"&gt;etwas Text&lt;/a&gt;
+			</code>
+		</pre>
+		<h2 class="delayed highlight">relative URL</h2>
+	</div>
+	<div class="delayed">
+		<h1>Externer Link</h1>
+		<pre class="language-markup large">
+			<code>
+				&lt;a href="https://www.google.com/"&gt;etwas Text&lt;/a&gt;
+			</code>
+		</pre>
+		<h2 class="delayed highlight">absolute URL</h2>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="highlight">URL</h1>
+	<h2>Uniform Resource Locator</h2>
+</section>
+<section class="slide">
+	<h1>3 Themen</h1>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Doctype</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Encoding</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Textstruktur</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Doctype</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Encoding</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Textstruktur</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Der <span class="highlight">Doctype</span> wird zu Beginn eines HTML-Elements angegeben.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Er definiert die mögliche Struktur eines Dokuments, sowie erlaubte <span class="element">Elemente/Tags.</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Der Doctype für HTML5 ist <span class="highlight">&lt;!DOCTYPE html&gt;</span></h1>
+</section>
+<section class="slide demo" data-prism-plugins="line-numbers">
+	<textarea class="language-html small">
+		<!DOCTYPE html>
+		<html>
+			<head>
+				<title>Seitentitel</title>
+			</head>
+			<body>
+				<p>Korrekt aufgebautes HTML</p>
+			</body>
+		</html>
+	</textarea>
+</section>
+<section class="slide">
+	<h2>Einige Unterschiede von HTML5 zu 4:</h2>
+	<table class="simple">
+		<tr>
+			<td>Neue Elemente</td>
+			<td class="element">&lt;section&gt; &lt;article&gt; &lt;header&gt; &lt;footer&gt; &lt;mark&gt; &lt;nav&gt; &lt;figure&gt;</td>
+		</tr>
+		<tr>
+			<td>Entfernte Elemente</td>
+			<td class="element">&lt;basefont&gt; &lt;big&gt; &lt;center&gt; &lt;font&gt; &lt;strike&gt; &lt;tt&gt;</td>
+		</tr>
+		<tr>
+			<td>Neue Attribute</td>
+			<td class="attribute">required autofocus placeholder async reversed</td>
+		</tr>
+		<tr>
+			<td>Entfernte Attribute</td>
+			<td class="attribute">target usemap align bgcolor noshade border</td>
+		</tr>
+	</table>
+</section>
+<section class="slide">
+	<div class="left">
+		<h1 class="left">Referenz</h1>
+		<ul class="simple">
+			<li><a class="link" href="https://developer.mozilla.org/de/docs/Glossary/Doctype">https://developer.mozilla.org/de/docs/Glossary/Doctype</a></li>
+			<li><a class="link" href="https://en.wikipedia.org/wiki/Document_type_declaration">https://en.wikipedia.org/wiki/Document_type_declaration</a></li>
+			<li><a class="link" href="https://www.w3.org/TR/html5-diff/#language">https://www.w3.org/TR/html5-diff/#language</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Doctype</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Encoding</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Textstruktur</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Wie kann ich sicherstellen, dass Umlaute und Sonderzeichen korrekt dargestellt werden?</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Im <span class="element">&lt;head&gt;</span> notiert man</h1>
+	<pre class="language-markup large">
+		<code>
+			&lt;meta charset="utf-8" /&gt;
+		</code>
+	</pre>
+	<h2 class="delayed" style="width: 100%; display: flex; justify-content: space-around;">
+		<span class="element">Element/Tag</span> 
+		<span class="attribute">Attribut-Name</span> 
+		<span class="value">Attribut-Wert/Value</span> 
+	</h2>
+</section>
+<section class="slide demo" data-prism-plugins="line-numbers">
+	<textarea class="language-html small">
+		<!DOCTYPE html>
+		<html>
+			<head>
+				<meta charset="utf-8" />
+				<title>Seitentitel</title>
+			</head>
+			<body>
+				<p>Voilà</p>
+			</body>
+		</html>
+	</textarea>
+</section>
+<section class="slide">
+	<div class="left">
+		<h1 class="left">Referenz</h1>
+		<ul class="simple">
+			<li><a class="link" href="https://developer.mozilla.org/en-US/docs/Glossary/character_encoding">https://developer.mozilla.org/en-US/docs/Glossary/character_encoding</a></li>
+			<li><a class="link" href="http://www.joelonsoftware.com/articles/Unicode.html">http://www.joelonsoftware.com/articles/Unicode.html</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Doctype</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Encoding</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Textstruktur</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Zur Strukturierung von Texten gibt es eine Reihe von <span class="element">Tags.</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left highlight invisible">Grundlegende Elemente</h1>
+	<h1 class="left element">&lt;h1&gt; &lt;h2&gt; &lt;h3&gt; &lt;h4&gt; &lt;h5&gt; &lt;h6&gt;<br />&lt;p&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt;<br />&lt;div&gt;</h1>
+	<h1 class="left element">&lt;em&gt; &lt;strong&gt; &lt;a&gt; &lt;abbr&gt; &lt;time&gt;<br />&lt;span&gt;</h1>
+</section>
+<section class="slide">
+	<h1 class="left highlight">Block-Elemente</h1>
+	<h1 class="left element">&lt;h1&gt; &lt;h2&gt; &lt;h3&gt; &lt;h4&gt; &lt;h5&gt; &lt;h6&gt;<br />&lt;p&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt;<br />&lt;div&gt;</h1>
+	<h1 class="left element inactive">&lt;em&gt; &lt;strong&gt; &lt;a&gt; &lt;abbr&gt; &lt;time&gt;<br />&lt;span&gt;</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Block-Elemente erzeugen einen eigenen Absatz im Textfluss.</h1>
+</section>
+<section class="slide">
+	<h1 class="left highlight">Inline-Elemente</h1>
+	<h1 class="left element inactive">&lt;h1&gt; &lt;h2&gt; &lt;h3&gt; &lt;h4&gt; &lt;h5&gt; &lt;h6&gt;<br />&lt;p&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt;<br />&lt;div&gt;</h1>
+	<h1 class="left element">&lt;em&gt; &lt;strong&gt; &lt;a&gt; &lt;abbr&gt; &lt;time&gt;<br />&lt;span&gt;</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Inline-Elemente erzeugen <span class="highlight">keinen</span> Absatz im Textfluss. Sie stehen nur innerhalb von Block-Elementen.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Sie werden verwendet, um Inhalte innerhalb von Block-Elementen zu strukturieren.</h1>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;h1&gt; &lt;h2&gt; &lt;h3&gt; &lt;h4&gt; &lt;h5&gt; &lt;h6&gt;</h1>
+	<h1 class="left">Überschriften verschiedener Ebenen</h1>
+	<pre class="language-markup large">
+		<code>
+			&lt;h1&gt;Nachrichten&lt;/h1&gt;
+			&lt;h2&gt;Obamas Vize muss punkten&lt;/h2&gt;
+			&lt;h2&gt;Japan ertrinkt in Schulden&lt;/h2&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;p&gt;</h1>
+	<h1 class="left">Textabsätze, Abschnitte</h1>
+	<pre class="language-markup large">
+		<code>
+			&lt;p&gt;In seiner Heimat sind die Meinungen
+			geteilt. Georg Blume beschreibt, wie
+			es Mo Yan gelang, sich inmitten der 
+			kommunistischen Öffentlichkeit den 
+			Nobelpreis zu erschreiben&lt;/p&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;ul&gt; <span class="inactive">&lt;ol&gt;</span> &lt;li&gt;</h1>
+	<h1 class="left">Listen und Listeneinträge</h1>
+	<pre class="language-markup large">
+		<code>
+			&lt;ul&gt;
+				&lt;li&gt;Amerika verliert den Glauben&lt;/li&gt;
+				&lt;li&gt;Der Nazi in Hörsaal 10&lt;/li&gt;
+				&lt;li&gt;Freiwillig ist niemand Prostituierte&lt;/li&gt;
+			&lt;/ul&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left element"><span class="inactive">&lt;ul&gt;</span> &lt;ol&gt; &lt;li&gt;</h1>
+	<h1 class="left">Listen und Listeneinträge</h1>
+	<pre class="language-markup large">
+		<code>
+			&lt;ol&gt;
+				&lt;li&gt;The Fellowship of the Ring&lt;/li&gt;
+				&lt;li&gt;The Two Towers&lt;/li&gt;
+				&lt;li&gt;The Return of the King&lt;/li&gt;
+			&lt;/ol&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<div style="display: flex; justify-content: space-between; width: 100%;">
+		<div style="padding: 1em;">
+			<h1 class="left element">&lt;ul&gt;</h1>
+
+			<ul style="list-style-type: square;">
+				<li>Amerika verliert Glauben</li>
+				<li>Nazi in Hörsaal 10</li>
+				<li>Freiwillig Prostituierte</li>
+			</ul>
+		</div>
+		<div style="padding: 1em;">
+			<h1 class="left element">&lt;ol&gt;</h1>
+
+			<ol>
+				<li>Fellowship</li>
+				<li>Two Towers</li>
+				<li>Return o. t. King</li>
+			</ol>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Innerhalb von <span class="element">&lt;li&gt;</span>-Elementen kann <span class="highlight">weiterer HTML-Code</span> stehen, zB. Links (Navigation), oder Bilder und Text (Instagram)</h1>
+</section>
+<section class="slide demo" data-prism-plugins="line-numbers">
+	<textarea class="language-html small">
+		<ul>
+			<li><a class="link" href="./">Portfolio</a></li>
+			<li><a class="link" href="./">Über uns</a></li>
+			<li><a class="link" href="./">Kontakt</a></li>
+		</ul>
+	</textarea>
+</section>
+<section class="slide demo" data-prism-plugins="line-numbers">
+	<textarea class="language-html small">
+		<ul>
+			<li>
+				<img src="list-image-meme.jpg" width="80%" />
+				<p>Ulkiger Beitrag</p>
+			</li>
+			<li>
+				<img src="list-image-meme.jpg" width="80%" />
+				<p>Ulkiger Beitrag</p>
+			</li>
+			<li>
+				<img src="list-image-meme.jpg" width="80%" />
+				<p>Ulkiger Beitrag</p>
+			</li>
+		</ul>
+	</textarea>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;div&gt;</h1>
+	<h1 class="left">Ein generischer Container, der für die Gruppierung von Elementen genutzt werden kann.</h1>
+	<pre class="language-markup large">
+		<code>
+			&#x3C;div&#x3E;
+				&#x3C;h1&#x3E;Über das DIV-Element&#x3C;/h1&#x3E;
+				&#x3C;p&#x3E;Jede Art von Inhalt ist erlaubt.&#x3C;/p&#x3E;
+				&#x3C;p&#x3E;Text, Bilder, Listen, Tabellen, etc.&#x3C;/p&#x3E;
+			&#x3C;/div&#x3E;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left highlight">Inline-Elemente</h1>
+	<h1 class="left element inactive">&lt;h1&gt; &lt;h2&gt; &lt;h3&gt; &lt;h4&gt; &lt;h5&gt; &lt;h6&gt;<br />&lt;p&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt;<br />&lt;div&gt;</h1>
+	<h1 class="left element">&lt;em&gt; &lt;strong&gt; &lt;a&gt; &lt;abbr&gt; &lt;time&gt;<br />&lt;span&gt;</h1>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;em&gt; &lt;strong&gt;</h1>
+	<h1 class="left">Betonung und Semantik</h1>
+	<pre class="language-markup large">
+		<code>
+			&lt;p&gt;In seiner Heimat sind die Meinungen
+			geteilt. Georg Blume beschreibt, wie
+			es Mo Yan gelang, sich &lt;strong&gt;inmitten
+			der kommunistischen Öffentlichkeit&lt;/strong&gt;
+			den &lt;em&gt;Nobelpreis&lt;/em&gt; zu erschreiben&lt;/p&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide demo" data-prism-plugins="line-numbers">
+	<textarea class="language-html small">
+		<p>In seiner Heimat sind die Meinungen geteilt.
+			Georg Blume schreibt, wie es Mo Yan gelang,
+			sich <strong>inmitten der kommunistischen 
+			Öffentlichkeit</strong> den <em>Nobelpreis</em> 
+			zu erschreiben</p>
+	</textarea>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;a&gt;</h1>
+	<h1 class="left">Verknüpfungen, Links, Navigation</h1>
+	<pre class="language-markup large">
+		<code>
+			&#x3C;p&#x3E;Kn&#xF6;terich w&#xE4;chst im
+			Freien. Die Schlingpflanze wird auch
+			&#x3C;a href=&#x22;http://en.wikipedia.org/wiki/
+			Persicaria&#x22;&#x3E;Architektentrost&#x3C;/a&#x3E; genannt&#x3C;/p&#x3E;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;abbr&gt;</h1>
+	<h1 class="left">Abkürzungen</h1>
+	<pre class="language-markup" style="margin-left: 0; margin-right: auto;">
+		<code>
+			&#x3C;p&#x3E;R&#xFC;ckschlag, das ist ein Begriff, den die
+			&#x3C;abbr title=&#x22;Central Intelligence Agency&#x22;&#x3E;CIA&#x3C;/abbr&#x3E;
+			f&#xFC;r die unbeabsichtigten Folgen amerikanischer
+			Politik am 12. Oktober gepr&#xE4;gt hat.&#x3C;/p&#x3E;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;time&gt;</h1>
+	<h1 class="left">Zeitangaben</h1>
+	<pre class="language-markup" style="margin-left: 0; margin-right: auto;">
+		<code>
+			&#x3C;p&#x3E;R&#xFC;ckschlag, das ist ein Begriff, den die
+			CIA f&#xFC;r die unbeabsichtigten Folgen amerikanischer
+			Politik am &#x3C;time datetime=&#x22;2012-10-12&#x22;&#x3E;12.
+			Oktober&#x3C;/time&#x3E; gepr&#xE4;gt hat.&#x3C;/p&#x3E;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;span&gt;</h1>
+	<h1 class="left">Wie das &lt;div&gt; ein generischer Container, allerdings für die Gruppierung von Inline-Elementen.</h1>
+	<pre class="language-markup" style="margin-left: 0; margin-right: auto;">
+		<code>
+			&#x3C;p&#x3E;&#x3C;span lang=&#x22;de&#x22;&#x3E;Und dann sagte Stackoverflow
+			zu Goldl&#xF6;ckchen:&#x3C;/span&#x3E;
+			&#x3C;span lang=&#x22;en&#x22;&#x3E;"Your html file will
+			be saved as a new document."&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<div class="left">
+		<h1 class="left">Referenz</h1>
+		<ul class="simple">
+			<li><a class="link" href="http://wiki.selfhtml.org/wiki/HTML#Elemente">http://wiki.selfhtml.org/wiki/HTML#Elemente</a></li>
+			<li><a class="link" href="https://developer.mozilla.org/de/docs/Web/HTML/Element">https://developer.mozilla.org/de/docs/Web/HTML/Element</a></li>
+			<li><a class="link" href="https://developer.mozilla.org/de/docs/Web/HTML/Block-level_elemente">https://developer.mozilla.org/de/docs/Web/HTML/Block-level_elemente</a></li>
+			<li><a class="link" href="https://developer.mozilla.org/de/docs/Web/HTML/Inline_elemente">https://developer.mozilla.org/de/docs/Web/HTML/Inline_elemente</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<p class="center"><img loading="lazy" src="../stunde1_basics/github-aufgaben.png" width="40%" alt="Github Repo" /></p>
+	<h1>Beginne mit <span class="highlight">Aufgabe 2.</span></h1>
+	<h2><a href="https://arnorichter.de/hsma/int/aufgaben" class="link">https://arnorichter.de/hsma/int/aufgaben</a></h2>
+</section>
+<footer class="slide" title="The End">
+	<div class="circle-intro">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Fin.</text>
+			</svg>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>
