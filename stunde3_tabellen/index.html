@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<title>INT Stunde 3</title>
+
+	<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+	<link rel="alternate icon" href="../assets/favicon.png" />
+
+	<link href="../inspire.css" rel="stylesheet" />
+	<link href="../assets/css/hsma.css" rel="stylesheet" />
+
+	<style>
+		/* styles for table demos */
+		svg.table-demo {
+			margin-top: 0.25em;
+		}
+
+		svg.table-demo rect {
+			fill: transparent;
+			stroke: var(--base00);
+			stroke-width: 5px;
+		}
+
+		svg.table-demo .light {
+			stroke: var(--base0);
+		}
+
+		svg.table-demo .fill {
+			fill: var(--base02);
+		}
+	</style>
+
+	<script src="../assets/js/bliss.shy.min.js" defer></script>
+	<script src="../inspire.js" defer></script>
+</head>
+<body class="stunde2 language-markup" data-prism-plugins="normalize-whitespace">
+
+<header class="slide" id="intro">
+	<h1>INT</h1>
+	<h2>Internet-Technik</h2>
+</header>
+<section class="slide">
+	<h1>2 Themen</h1>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Tabellen</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Bilder</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Tabellen</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Bilder</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="highlight">Tabellen</span> werden eingesetzt, um Inhalte darzustellen, die in einem Zusammenhang stehen.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Wie andere Konstrukte in <span class="html">HTML</span> auch, zB. Listen, werden Tabellen mit Hilfe mehrerer <span class="element">Tags</span> umgesetzt.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Häufig benutzte Elemente dafür sind <span class="element">&lt;table&gt;</span> <span class="element">&lt;tr&gt;</span> <span class="element">&lt;th&gt;</span> und <span class="element">&lt;td&gt;</span>.</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="html">HTML</span> beschreibt Tabellen in einer bestimmten Reihenfolge.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Zuerst definiert man die gesamte Tabelle mit <span class="element">&lt;table&gt;</span>.</h1>
+	<div class="grid">
+		<div class="row row-6">
+			<pre class="language-markup mini">
+			<code>
+				&lt;table&gt;
+				&lt;/table&gt;
+			</code>
+		</pre>
+		</div>
+		<div class="row row-6">
+			<svg class="table-demo" viewbox="0 0 320 240">
+				<rect x="5" y="5" width="310" height="190" class="frame light" />
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Jedes <span class="element">&lt;tr&gt;</span> entspricht einer Zeile.</h1>
+	<div class="grid">
+		<div class="row row-6">
+			<pre class="language-markup mini">
+			<code>
+				&lt;table&gt;
+				  &lt;tr&gt;
+				  &lt;/tr&gt;
+				  &lt;tr&gt;
+				  &lt;/tr&gt;
+				&lt;/table&gt;
+			</code>
+		</pre>
+		</div>
+		<div class="row row-6">
+			<svg class="table-demo" viewbox="0 0 320 240">
+				<rect x="5" y="5" width="310" height="190" class="frame" />
+				<rect x="15" y="15" width="290" height="80" class="row light" />
+				<rect x="15" y="105" width="290" height="80" class="row light" />
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="element">&lt;th&gt;</span> und <span class="element">&lt;td&gt;</span> sind einzelne Zellen.</h1>
+	<div class="grid">
+		<div class="row row-6">
+			<pre class="language-markup mini">
+			<code>
+				&lt;table&gt;
+				  &lt;tr&gt;
+				    &lt;th&gt;Kopf 1&lt;/th&gt;
+				    &lt;th&gt;Kopf 2&lt;/th&gt;
+				  &lt;/tr&gt;
+				  &lt;tr&gt;
+				    &lt;td&gt;Daten 1&lt;/td&gt;
+				    &lt;td&gt;Daten 2&lt;/td&gt;
+				  &lt;/tr&gt;
+				&lt;/table&gt;
+			</code>
+		</pre>
+		</div>
+		<div class="row row-6">
+			<svg class="table-demo" viewbox="0 0 320 240">
+				<rect x="5" y="5" width="310" height="190" class="frame" />
+				<rect x="15" y="15" width="290" height="80" class="row" />
+				<rect x="15" y="105" width="290" height="80" class="row" />
+				<rect x="25" y="25" width="130" height="60" class="cell light" />
+				<rect x="165" y="25" width="130" height="60" class="cell light" />
+				<rect x="25" y="115" width="130" height="60" class="cell light" />
+				<rect x="165" y="115" width="130" height="60" class="cell light" />
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="element">&lt;th&gt;</span> wird für die Beschriftung von Spalten verwendet.<span class="delayed"><br /><span class="element">&lt;td&gt;</span> für die eigentlichen Tabelleninhalte.</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Das Attribut <span class="attribute">colspan</span> verbindet eine Anzahl Zellen <span class="value">X</span> horizontal.</h1>
+</section>
+<section class="slide">
+	<style data-slide></style>
+	<div class="grid">
+		<div class="row row-6">
+			<pre class="language-markup mini">
+			<code>
+				&lt;table&gt;
+				  &lt;tr&gt;
+				    &lt;th colspan="2"&gt;Kopf 1&lt;/th&gt;
+
+				  &lt;/tr&gt;
+				  &lt;tr&gt;
+				    &lt;td&gt;Daten 1&lt;/td&gt;
+				    &lt;td&gt;Daten 2&lt;/td&gt;
+				  &lt;/tr&gt;
+				&lt;/table&gt;
+			</code>
+		</pre>
+		</div>
+		<div class="row row-6">
+			<svg class="table-demo" viewbox="0 0 320 240">
+				<rect x="5" y="5" width="310" height="190" class="frame" />
+				<rect x="15" y="15" width="290" height="80" class="row" />
+				<rect x="15" y="105" width="290" height="80" class="row" />
+				<rect x="25" y="25" width="270" height="60" class="cell light" />
+				<rect x="25" y="115" width="130" height="60" class="cell light" />
+				<rect x="165" y="115" width="130" height="60" class="cell light" />
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Das Attribut <span class="attribute">rowspan</span> verbindet eine Anzahl Zellen <span class="value">X</span> vertikal.</h1>
+</section>
+<section class="slide">
+	<style data-slide></style>
+	<div class="grid">
+		<div class="row row-6">
+			<pre class="language-markup mini">
+			<code>
+				&lt;table&gt;
+				  &lt;tr&gt;
+				    &lt;th rowspan="2"&gt;Kopf 1&lt;/th&gt;
+				    &lt;th&gt;Kopf 2&lt;/th&gt;
+				  &lt;/tr&gt;
+				  &lt;tr&gt;
+
+				    &lt;td&gt;Daten 2&lt;/td&gt;
+				  &lt;/tr&gt;
+				&lt;/table&gt;
+			</code>
+		</pre>
+		</div>
+		<div class="row row-6">
+			<svg class="table-demo" viewbox="0 0 320 240">
+				<rect x="5" y="5" width="310" height="190" class="frame" />
+				<rect x="15" y="15" width="290" height="80" class="row" />
+				<rect x="15" y="105" width="290" height="80" class="row" />
+				<rect x="25" y="25" width="130" height="150" class="cell light fill" />
+				<rect x="165" y="25" width="130" height="60" class="cell light" />
+				<rect x="165" y="115" width="130" height="60" class="cell light" />
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide demo" data-prism-plugins="line-numbers">
+	<textarea class="language-html">
+		<table border="1">
+			<tr>
+				<th>Kopf 1</th>
+				<th>Kopf 2</th>
+			</tr>
+			<tr>
+				<td>Daten 1</td>
+				<td>Daten 2</td>
+			</tr>
+		</table>
+	</textarea>
+</section>
+<section class="slide">
+	<h1 class="left">Die Struktur der Tabelle ist festgelegt.</h1>
+	<h1 class="left delayed">Innerhalb von <span class="element">&lt;th&gt;</span> und <span class="element">&lt;td&gt;</span> darf aber wieder jegliches <span class="html">HTML</span> stehen.</h1>
+</section>
+<section class="slide">
+	<div class="left">
+		<h1 class="left">Referenz</h1>
+		<ul class="simple">
+			<li><a class="link" href="https://wiki.selfhtml.org/wiki/Table">https://wiki.selfhtml.org/wiki/Table</a></li>
+			<li><a class="link" href="https://developer.mozilla.org/de/docs/Web/HTML/Element/table">https://developer.mozilla.org/de/docs/Web/HTML/Element/table</a></li>
+			<li><a class="link" href="https://developer.mozilla.org/de/docs/Learn/HTML/Tables/Grund_tabelle_HTML">https://developer.mozilla.org/de/docs/Learn/HTML/Tables/Grund_tabelle_HTML</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Tabellen</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Bilder</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="highlight">Bilder</span> kommen auf nahezu jeder Internetseite zum Einsatz und sind Designern oft besonders wichtig.</h1>
+</section>
+<section class="slide" id="images-demo">
+	<style data-slide>
+		.images-demo {
+			display: flex;
+		}
+		.images-demo > div {
+			margin: 0 0.075em;
+		}
+	</style>
+	<script>
+		// generate a random disloyal meme image for this slide
+		document.addEventListener('slidechange', (evt) => {
+			if (Inspire.currentSlide.id === 'images-demo') {
+				const img = document.querySelector('#disloyal-meme');
+				const val = (Math.random() < 0.5) ? 'girlfriend': 'boyfriend';
+				img.setAttribute('src', './meme-disloyal-'+val+'.jpg');
+			}
+		});
+	</script>
+	<div class="images-demo">
+		<div>
+			<img src="./meme-xfiles.jpg" width="600" height="600" alt="" />
+		</div>
+		<div>
+			<a href="https://emojipedia.org/people-with-bunny-ears/"><img src="./meme-emoji.jpg" width="600" height="600" alt="" /></a>
+		</div>
+		<div>
+			<a href="https://knowyourmeme.com/memes/distracted-boyfriend"><img src="./meme-disloyal-girlfriend.jpg" width="900" height="600" alt="" id="disloyal-meme" /></a>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">In <span class="html">HTML</span> werden sie als Image-Tag eingebunden.</h1>
+	<h2><pre class="language-markup medium" style="text-align: center;"><code>&lt;img&gt;</code></pre></h2>
+</section>
+<section class="slide">
+	<h1 class="left">Der Image-Tag ist ein <span class="highlight">Inline-Element</span> und ein <span class="highlight">leeres Element.</span></h1>
+	<h2><pre class="language-markup medium" style="text-align: center;"><code>&lt;img /&gt;</code></pre></h2>
+</section>
+<section class="slide">
+	<h1 class="left">Die Bilddatei, die man anzeigen möchte, kommt in das <span class="attribute">src</span>-Attribut.</h1>
+	<h2><pre class="language-markup medium" style="text-align: center;"><code>&lt;img src="grafik_01.jpg" /&gt;</code></pre></h2>
+</section>
+<section class="slide">
+	<h1 class="left">Das <span class="attribute">alt</span>-Attribut beinhaltet einen beschreibenden Text.</h1>
+	<h2><pre class="language-markup mini" style="text-align: center;"><code>&lt;img src="grafik_01.jpg" alt="Diagramm" /&gt;</code></pre></h2>
+</section>
+<section class="slide">
+	<h1 class="left">Bilddimensionen können in <span class="attribute">width</span> und <span class="attribute">height</span> festgelegt werden.</h1>
+	<h2>
+		<pre class="language-markup mini" style="text-align: center;">
+			<code>
+			&lt;img src="grafik_01.jpg" alt="Diagramm"
+			width="640" height="480" /&gt;
+			</code>
+		</pre>
+	</h2>
+</section>
+<section class="slide">
+	<h1 class="left">Warum ist das <span class="attribute">alt</span>-Attribut wichtig?</h1>
+	<h1 class="left delayed">Warum ist <span class="highlight">Barrierefreiheit</span> im Webdesign wichtig?</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Nicht alle Einschränkungen sind <span class="highlight">permanent.</span> <span class="left delayed">Jeder kann auch <span class="highlight">zeitweilig</span> betroffen sein.</span></h1>
+</section>
+<section class="slide">
+	<div>
+		<img src="./accessibility-microsoft.svg" alt="Barrierefreiheit-Diagramm" width="1100" height="1000" style="max-height: 85vmin; width: auto;" />
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Versuche, bei der Planung und Umsetzung von Websites <span class="highlight">Einschränkungen</span> deiner Nutzer zu berücksichtigen.</h1>
+</section>
+<section class="slide">
+	<div>
+		<p><img src="./accessibility-colorblind.jpg" width="910" height="360" alt="" /></p>
+		<h2>Einfache Idee für farbige Labels</h2>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<p><img src="./accessibility-trello.gif" width="316" height="392" alt="" style="display: block; margin: 0 auto;" /></p>
+		<h2>So löst es zB. Trello</h2>
+	</div>
+</section>
+<section class="slide">
+	<h1>Dateiformate für Bilder im Web</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Bilder können in den Formaten <span class="css">JPG</span>, <span class="css" title="LOL, JIF?!">GIF</span> und <span class="css">PNG</span> vorliegen.</h1>
+	<h1 class="left delayed">In modernen Browsern auch in <span class="css">WEBP</span>, <span class="css">JP2</span>, <span class="css">JXR</span> und <span class="css">AVIF</span>.</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="css">JPG</span> eignet sich besonders für komplexe und detailreiche Bilder, wie zum Beispiel <span class="highlight">Fotos.</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="css">PNG</span> ist ideal, wenn <span class="highlight">einfache Grafiken</span> oder simple Verläufe gezeigt werden. Ausserdem speichert es verlustfrei (lossless).</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="css">GIF</span> wird eigentlich nur noch für <span class="highlight">animierte Grafiken</span> benutzt, aber auch hier zunehmend von Video&shy;formaten verdrängt.</h1>
+</section>
+<section class="slide">
+	<style data-slide>
+		.images-demo {
+			display: flex;
+		}
+		.images-demo > div {
+			margin: 0 0.075em;
+		}
+	</style>
+	<div class="images-demo">
+		<div>
+			<img src="./images-compare-png.png" width="400" height="400" alt="" />
+			<h2>PNG-24</h2>
+		</div>
+		<div>
+			<img src="./images-compare-jpg.jpg" width="400" height="400" alt="" />
+			<h2>JPG</h2>
+		</div>
+		<div>
+			<img src="./images-compare-gif.gif" width="400" height="400" alt="" />
+			<h2>GIF, PNG-8</h2>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<p><img src="./images-jpeg-artifacts.jpg" width="680" height="420" alt="" /></p>
+		<h2>Typische Probleme mit JPG</h2>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<p><img src="./images-jpeg-banding.jpg" width="680" height="" alt="" /></p>
+		<h2>JPG-Banding</h2>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<p><img src="./images-jpeg-book.jpg" width="" height="450" alt="" style="display: block; margin: 0 auto;" /></p>
+		<h2>Zu starke Kompression</h2>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Eine gute Möglichkeit für <span class="highlight">Logos</span> und <span class="highlight">Icons</span> ist ausserdem <span class="css">SVG</span>. Damit lassen sich Vektorgrafiken 1:1 im Browser darstellen.</h1>
+</section>
+<section class="slide">
+	<div class="left">
+		<h1 class="left">Referenz</h1>
+		<ul class="simple">
+			<li><a class="link" href="https://developer.mozilla.org/de/docs/Web/HTML/Element/img">https://developer.mozilla.org/de/docs/Web/HTML/Element/img</a></li>
+			<li><a class="link" href="https://wiki.selfhtml.org/wiki/HTML/Multimedia_und_Grafiken/Grafiken">https://wiki.selfhtml.org/wiki/HTML/Multimedia_und_Grafiken/Grafiken</a></li>
+			<li><a class="link" href="http://meyerweb.com/eric/thoughts/2016/11/08/results-of-the-gif-survey/">http://meyerweb.com/eric/thoughts/2016/11/08/results-of-the-gif-survey</a></li>
+			<li><a class="link" href="https://blog.asana.com/2017/01/new-accessibility-feature-colorblind-friendly/">https://blog.asana.com/2017/01/new-accessibility-feature-colorblind-friendly</a></li>
+			<li><a class="link" href="https://wearecolorblind.com/examples/trello-colorblind-friendly-mode/">https://wearecolorblind.com/examples/trello-colorblind-friendly-mode</a></li>
+			<li><a class="link" href="https://www.microsoft.com/en-us/design/inclusive">https://www.microsoft.com/en-us/design/inclusive</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<p class="center"><img loading="lazy" src="../stunde1_basics/github-aufgaben.png" width="40%" alt="Github Repo" /></p>
+	<h1>Beginne mit <span class="highlight">Aufgabe 3.</span></h1>
+	<h2><a href="https://arnorichter.de/hsma/int/aufgaben" class="link">https://arnorichter.de/hsma/int/aufgaben</a></h2>
+</section>
+<section class="slide">
+	<style data-slide>
+		.images-demo {
+			display: flex;
+		}
+		.images-demo > div {
+			margin: 0 0.075em;
+		}
+	</style>
+	<div class="images-demo">
+		<div>
+			<a href="https://xkcd.com/481/"><img src="./meme-xkcd.jpg" width="" height="400" alt="" /></a>
+		</div>
+		<div>
+			<a href="https://knowyourmeme.com/memes/happy-cat"><img src="./meme-cheezburger.jpg" width="" height="400" alt="" /></a>
+		</div>
+		<div>
+			<a href="https://knowyourmeme.com/memes/subcultures/the-office"><img src="./meme-michael-scott.jpg" width="" height="400" alt="" /></a>
+		</div>
+		<div>
+			<a href="https://knowyourmeme.com/memes/events/scarlett-johansson-leaked-nudes"><img src="./meme-scarlett.jpg" width="" height="400" alt="" /></a>
+		</div>
+	</div>
+</section>
+<footer class="slide" title="The End">
+	<div class="circle-intro">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Fin.</text>
+			</svg>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>
