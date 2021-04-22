@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<title>INT Stunde 4</title>
+
+	<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+	<link rel="alternate icon" href="../assets/favicon.png" />
+
+	<link href="../inspire.css" rel="stylesheet" />
+	<link href="../assets/css/hsma.css" rel="stylesheet" />
+
+	<style>
+		/* additional styles for this lesson */
+		
+	</style>
+
+	<script src="../assets/js/bliss.shy.min.js" defer></script>
+	<script src="../inspire.js" defer></script>
+</head>
+<body class="stunde4 language-markup" data-prism-plugins="normalize-whitespace"><!-- data-resolution="1024 768" -->
+
+<header class="slide" id="intro">
+	<h1>INT</h1>
+	<h2>Internet-Technik</h2>
+	<h2 class="highlight">CSS</h2>
+</header>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">CSS</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Mit <span class="html">HTML</span> beschreibt man die Struktur und Bedeutung der Teile eines Dokuments.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Mit <span class="css">CSS</span> lässt sich die Darstellung dieser Teile festlegen.</h1>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Verwendung</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">CSS lässt sich auf verschiedene Weise in HTML einbinden.</h1>
+</section>
+<section class="slide">
+	<h1 class="left highlight">Möglichkeit 1</h1>
+	<h1 class="left">Als externe Datei, getrennt von den Inhalten im HTML.</h1>
+</section>
+<section class="slide">
+	<h1>Im <code>&lt;head&gt;</code> notiert man<br /><br /></h1>
+	<pre class="language-markup large">
+		<code>
+			&lt;link rel="stylesheet" href="mydesign.css" /&gt;
+		</code>
+	</pre>
+	<h2 style="width: 100%; display: flex; justify-content: flex-end;">
+		<span class="delayed" style="margin-right: 6.5vw;"><span class="attribute">rel-Attribut</span> immer gleich</span>
+		<span class="delayed" style="margin-right: 9.5vw;"><span class="attribute">href</span> ist die <span class="value">URL</span> deiner CSS-Datei</span>
+	</h2>
+</section>
+<section class="slide">
+	<h1 class="left">Merke: jede <span class="html">HTML</span>-Datei kann mehrere <span class="css">CSS</span>-Dateien einbinden.</h1>
+	<pre class="language-markup small left">
+		<code>
+			&#x3C;head&#x3E;
+			  &#x3C;title&#x3E;Seitentitel&#x3C;/title&#x3E;
+
+			  &#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;layout.css&#x22; /&#x3E;
+			  &#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;type.css&#x22; /&#x3E;
+			  &#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;colors.css&#x22; /&#x3E;
+			&#x3C;/head&#x3E;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left highlight">Möglichkeit 2</h1>
+	<h1 class="left">Gesammelt im <code>&lt;head&gt;</code> der HTML-Datei.</h1>
+</section>
+<section class="slide">
+	<pre class="language-markup small left" style="width:100%;">
+		<code>
+			&#x3C;html&#x3E;
+				&#x3C;head&#x3E;
+					&#x3C;title&#x3E;Seitentitel&#x3C;/title&#x3E;
+					&#x3C;style&#x3E;
+						CSS-Regeln
+					&#x3C;/style&#x3E;
+				&#x3C;/head&#x3E;
+				&#x3C;body&#x3E; … &#x3C;/body&#x3E;
+			&#x3C;/html&#x3E;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left highlight">Möglichkeit 3</h1>
+	<h1 class="left">Direkt innerhalb des HTML-Dokuments, bei den betreffenden Elementen.</h1>
+</section>
+<section class="slide">
+	<h1>Im <span class="element">Tag</span> notiert man das <span class="attribute">style</span>-Attribut<br /><br /></h1>
+	<pre class="language-markup large">
+		<code>
+			&#x3C;p style=&#x22;CSS-Regeln&#x22;&#x3E;…&#x3C;/p&#x3E;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<table class="simple">
+		<tr>
+			<td><span class="highlight">Möglichkeit 1</span></td>
+			<td><span class="highlight" style="opacity:0.15">&mdash;</span>&emsp;&emsp; immer super</td>
+		</tr>
+		<tr class="delayed">
+			<td><span class="highlight">Möglichkeit 2</span></td>
+			<td><span class="highlight" style="opacity:0.15">&mdash;</span>&emsp;&emsp; fast nie gut</td>
+		</tr>
+		<tr class="delayed">
+			<td><span class="highlight">Möglichkeit 3</span></td>
+			<td><span class="highlight" style="opacity:0.15">&mdash;</span>&emsp;&emsp; immer schlecht</td>
+		</tr>
+	</table>
+</section>
+<section class="slide">
+	<h1 class="left">In der Regel ist eine Vermischung von <span class="html">Struktur</span> und <span class="css">Gestaltung</span> nicht sinnvoll.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Sie erhöht den späteren <span class="highlight">Verwaltungsaufwand,</span> erschwert den <span class="highlight">Überblick</span> und hat nur wenige <span class="highlight">Vorteile.</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Daher sollte man versuchen, <span class="html">HTML</span> und <span class="css">CSS</span> getrennt zu halten.</h1>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Syntax</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="css">CSS</span> verwendet Regeln um festzulegen, welche Stile auf welches <span class="element">Element</span> angewandt werden.</h1>
+</section>
+<section class="slide">
+	<pre class="language-css large">
+		<code>
+			p {
+				color: red;
+			}
+		</code>
+	</pre>
+	<h2 style="width: 100%; display: flex; justify-content: center;">
+		<span class="delayed css" style="margin: 0 2vw;">Selektor</span>
+		<span class="delayed attribute" style="margin: 0 2vw;">Eigenschaft<br />Property</span>
+		<span class="delayed" style="margin: 0 2vw;">Wert<br />Value</span>
+	</h2>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-6">
+			<h1 class="left">Der einfachste Selektor ist der Element<span class="css">name</span>, zB. <span class="element">p</span>, <span class="element">h1</span>, <span class="element">li</span> oder <span class="element">td</span></h1>
+		</div>
+		<div class="row row-6">
+			<pre class="language-css large">
+				<code>
+					p {
+						color: red;
+					}
+				</code>
+			</pre>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Der Selektor definiert eine Menge von Elementen, auf die der jeweilige Stil angewandt werden soll.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">zB. wählt der Selektor <span class="css">p</span> alle HTML-Elemente <span class="element">&lt;p&gt;</span> zur Formatierung aus.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Der Selektor <span class="css">li</span> alle <span class="element">&lt;li&gt;</span> Elemente.</h1>
+	<h1 class="left delayed">Der Selektor <span class="css">img</span> alle <span class="element">&lt;img&gt;</span> Tags.<br /><span class="lowlight delayed">usw.</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Der <span class="css">Selektor</span> nennt die Bedingungen, die ein <span class="element">Element</span> erfüllen muss<span class="delayed">, damit der nachfolgende Satz von <span class="attribute">Eigenschaften</span> darauf angewandt wird.</span></h1>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-6">
+			<h1 class="left">Jede Regel kann mehrere <span class="attribute">Eigenschaften</span> enthalten.</h1>
+		</div>
+		<div class="row row-6">
+			<pre class="language-css medium">
+				<code>
+					p {
+						color: red;
+						font-size: 20px;
+						font-style: italic;
+					}
+				</code>
+			</pre>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-6">
+			<h1 class="left">Jede <span class="css">CSS</span>-Datei kann mehrere <span class="css">Regeln</span> enthalten.</h1>
+		</div>
+		<div class="row row-6">
+			<pre class="language-css small">
+				<code>
+					p {
+						color: red;
+						font-size: 12px;
+						font-style: italic;
+					}
+
+					h1 {
+						color: blue;
+						font-size: 20px;
+					}
+				</code>
+			</pre>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Häufig verwendete Eigen&shy;schaften sind zB. <span class="attribute">color</span>, um die <span class="highlight">Schriftfarbe</span> zu ändern.</h1>
+	<h1 class="left delayed">Werte sind zB. <span class="value">red</span>, <span class="value">green</span>, <span class="value">black</span> oder <span class="value">rgb(0, 128, 66)</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Es gibt auch eine hexadezimale Notation für Farben, zB.</h1>
+	<table class="simple delayed">
+		<tr>
+			<td>grün</td>
+			<td class="value">#4CD964</td>
+		</tr>
+		<tr>
+			<td>orange</td>
+			<td class="value">#FF9500</td>
+		</tr>
+		<tr>
+			<td>rot</td>
+			<td class="value">#FF2D55</td>
+		</tr>
+		<tr>
+			<td>blau</td>
+			<td class="value">#007AFF</td>
+		</tr>
+	</table>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="attribute">font-size</span>, um die <span class="highlight">Schriftgröße</span> anzupassen.</h1>
+	<h1 class="left delayed">Werte sind zB. <span class="value">10px</span>, <span class="value">120%</span>, <span class="value">1.25em</span> oder <span class="value">0.5vw</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="attribute">font-family</span>, um die <span class="highlight">Schriftart</span> festzulegen, zB. auf <span class="value">Helvetica</span>, <span class="value">Arial</span>, <span class="value">Lucida</span> oder einfach <span class="value">sans-serif</span>.</h1>
+	<h1 class="left delayed">Alternativ auch <span class="value">Bodoni</span>, <span class="value">Times New Roman</span>, <span class="value">Times</span>, <span class="value">serif</span>.</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="attribute">margin</span>, um <span class="highlight">Abstände</span> festzulegen, zB.</h1>
+	<pre class="language-css medium">
+		<code>
+			margin-left: 100px;
+			margin-bottom: 30px;
+			margin-top: 5px;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<div class="left">
+		<h1 class="left">Referenz</h1>
+		<ul class="simple">
+			<li><a class="link" href="https://developer.mozilla.org/de/docs/Web/CSS">https://developer.mozilla.org/de/docs/Web/CSS</a></li>
+			<li><a class="link" href="https://developer.mozilla.org/de/docs/Web/Guide/CSS/Getting_started">https://developer.mozilla.org/de/docs/Web/Guide/CSS/Getting_started</a></li>
+
+			<li class="section"><a class="link" href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">http://en.wikipedia.org/wiki/Cascading_Style_Sheets</a></li>
+
+			<li class="section"><a class="link" href="http://www.cssbasics.com/introduction-to-css/">http://www.cssbasics.com/introduction-to-css/</a></li>
+
+			<li class="section"><a class="link" href="https://wiki.selfhtml.org/wiki/CSS">https://wiki.selfhtml.org/wiki/CSS</a></li>
+			<li><a class="link" href="https://wiki.selfhtml.org/wiki/CSS/Einstieg_in_CSS">https://wiki.selfhtml.org/wiki/CSS/Einstieg_in_CSS</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<p class="center"><img loading="lazy" src="../stunde1_basics/github-aufgaben.png" width="40%" alt="Github Repo" /></p>
+	<h1>Beginne mit <span class="highlight">Aufgabe 4.</span></h1>
+	<h2><a href="https://arnorichter.de/hsma/int/aufgaben" class="link">https://arnorichter.de/hsma/int/aufgaben</a></h2>
+</section>
+<footer class="slide" title="The End">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Fin.</text>
+			</svg>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>

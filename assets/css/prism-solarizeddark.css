@@ -40,9 +40,9 @@ pre[class*="language-"] {
 
 	line-height: 1.5;
 
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
+	-moz-tab-size: 2;
+	-o-tab-size: 2;
+	tab-size: 2;
 
 	-webkit-hyphens: none;
 	-moz-hyphens: none;
@@ -100,7 +100,8 @@ pre[class*="language-"] {
 	opacity: .7;
 }
 
-.token.property,
+
+.token.selector,
 .token.boolean,
 .token.number,
 .token.constant,
@@ -110,7 +111,6 @@ pre[class*="language-"] {
 }
 
 .token.attr-value,
-.token.selector,
 .token.string,
 .token.char,
 .token.builtin,
@@ -119,7 +119,8 @@ pre[class*="language-"] {
 	color: #cb4b16; /* cyan #2aa198 */
 }
 
-.token.entity {
+.token.entity,
+.token.property {
 	color: #2aa198; /* cyan */
 }
 

@@ -245,14 +245,20 @@ code, textarea, pre {
 	margin: 0;
 	font: 100%/1.5em var(--font-mono);
 	font-family: var(--font-mono);
-	tab-size: 4;
+	tab-size: 2;
 	color: inherit;
 }
 
-code.large, pre.large, textarea.large { font-size: 1.75em; }
-code.medium, pre.medium, textarea.medium { font-size: 1.25em; }
-code.small, pre.small, textarea.small { font-size: 1em; }
-code.mini, pre.mini, textarea.mini { font-size: 0.75em; }
+pre { padding: 0.2rem 0.5rem !important; }
+
+:matches(code, pre, textarea).large { font-size: 1.75em; }
+:matches(code, pre, textarea).medium { font-size: 1.25em; }
+:matches(code, pre, textarea).small { font-size: 1em; }
+:matches(code, pre, textarea).mini { font-size: 0.75em; }
+
+:matches(code, pre, textarea).center { margin-left: auto; margin-right: auto; }
+:matches(code, pre, textarea).left { margin-left: 0; margin-right: auto; }
+:matches(code, pre, textarea).right { margin-left: auto; margin-right: 0; }
 
 pre > code {
 	font-size: inherit;
@@ -461,6 +467,10 @@ img {
 
 .slide ul li::marker {
 	content: '— ';
+}
+
+.slide ul li.section {
+	margin-top: 1em;
 }
 
 #indicator {
