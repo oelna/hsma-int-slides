@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<title>INT Stunde 5</title>
+
+	<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+	<link rel="alternate icon" href="../assets/favicon.png" />
+
+	<link href="../inspire.css" rel="stylesheet" />
+	<link href="../assets/css/hsma.css" rel="stylesheet" />
+
+	<style>
+		/* additional styles for this lesson */
+		
+	</style>
+
+	<script src="../assets/js/bliss.shy.min.js" defer></script>
+	<script src="../inspire.js" defer></script>
+</head>
+<body class="stunde5 language-markup" data-prism-plugins="normalize-whitespace"><!-- data-resolution="1024 768" -->
+
+<header class="slide" id="intro">
+	<h1>INT</h1>
+	<h2>Internet-Technik</h2>
+	<h2 class="highlight">Mehr CSS</h2>
+</header>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">CSS</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1>3 Themen</h1>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="0" y="32%">
+					<tspan x="50%" dy="1.0em">Selektoren</tspan>
+					<tspan x="50%" dy="1.0em">Reloaded</tspan>
+				</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Einheiten</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Farben</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="0" y="32%">
+					<tspan x="50%" dy="1.0em">Selektoren</tspan>
+					<tspan x="50%" dy="1.0em">Reloaded</tspan>
+				</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Einheiten</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Farben</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Der <span class="css">Selektor</span>  nennt die Bedingungen, die ein <span class="element">Element</span>  erfüllen muss, damit der nachfolgende Satz von <span class="attribute">Eigenschaften</span> darauf angewandt wird.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Wie in der letzten Stunde besprochen ist der einfachste Selektor der <span class="element">Element<span style="text-decoration: underline;">name</span>.</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">In CSS formatiert der Selektor <span class="css">p</span> alle <span class="element">&lt;p&gt;</span> Elemente in HTML.</h1>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-7">
+			<h2 class="lowlight">HTML</h2>
+			<pre class="language-markup small">
+				<code>
+					&#x3C;p&#x3E;Ein kurzer Satz.&#x3C;/p&#x3E;
+
+					&#x3C;ul&#x3E;
+						&#x3C;li&#x3E;&#x3C;p&#x3E;Satz 1&#x3C;/p&#x3E;&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;&#x3C;p&#x3E;Satz 2&#x3C;/p&#x3E;&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;&#x3C;p&#x3E;Satz 3&#x3C;/p&#x3E;&#x3C;/li&#x3E;
+					&#x3C;/ul&#x3E;
+				</code>
+			</pre>
+		</div>
+		<div class="row row-5">
+			<h2 class="lowlight">CSS</h2>
+			<pre class="language-css small">
+				<code>
+					p {
+						color: red;
+					}
+				</code>
+			</pre>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Manchmal möchte man aber nicht alle, sondern ein <span class="highlight">bestimmtes</span> Element formatieren.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Dafür kann man die Position der Elemente im HTML als Bedingung nutzen. Zum Beispiel <span class="highlight">alle</span> <span class="element">&lt;p&gt;</span>, die <span class="highlight">innerhalb</span> einer Liste <span class="element">&lt;ul&gt;</span> vorkommen:</h1>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-7">
+			<h2 class="lowlight">HTML</h2>
+			<pre class="language-markup small">
+				<code>
+					&#x3C;p&#x3E;Ein kurzer Satz.&#x3C;/p&#x3E;
+
+					&#x3C;ul&#x3E;
+						&#x3C;li&#x3E;&#x3C;p&#x3E;Satz 1&#x3C;/p&#x3E;&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;&#x3C;p&#x3E;Satz 2&#x3C;/p&#x3E;&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;&#x3C;p&#x3E;Satz 3&#x3C;/p&#x3E;&#x3C;/li&#x3E;
+					&#x3C;/ul&#x3E;
+				</code>
+			</pre>
+		</div>
+		<div class="row row-5">
+			<h2 class="lowlight">CSS</h2>
+			<pre class="language-css small">
+				<code>
+					ul p {
+						color: red;
+					}
+				</code>
+			</pre>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Ist das trotzdem nicht spezifisch genug, kann man im <span class="html">HTML</span> einzelne Elemente <span class="highlight">besonders kennzeichnen</span>, damit man sie formatieren kann.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Das geht zum Beispiel mit <span class="highlight">Klassen.</span> Eine Klasse wird in HTML über das <span class="highlight">class</span>-<span class="attribute">Attribut</span> definiert.</h1>
+	<pre class="language-markup medium left">
+		<code>
+			&lt;p class="aktiv"&gt;Satz 2&lt;/p&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left">Den Namen, also den Wert, der Klasse kann man dabei frei wählen.</h1>
+	<pre class="language-markup medium left">
+		<code>
+			&lt;p class="hanswurst"&gt;Satz 2&lt;/p&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left">In CSS wird ein <span class="highlight">class-Selektor</span> mit einem <span class="highlight">Punkt</span> am Anfang notiert:</h1>
+	<pre class="language-css medium left">
+		<code>
+			.aktiv { … }
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-8">
+			<h2 class="lowlight">HTML</h2>
+			<pre class="language-markup small">
+				<code>
+					&#x3C;p&#x3E;Ein kurzer Satz.&#x3C;/p&#x3E;
+
+					&#x3C;ul&#x3E;
+						&#x3C;li&#x3E;&#x3C;p&#x3E;Satz 1&#x3C;/p&#x3E;&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;&#x3C;p class="aktiv"&#x3E;Satz 2&#x3C;/p&#x3E;&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;&#x3C;p&#x3E;Satz 3&#x3C;/p&#x3E;&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;&#x3C;p class="aktiv"&#x3E;Satz 4&#x3C;/p&#x3E;&#x3C;/li&#x3E;
+					&#x3C;/ul&#x3E;
+				</code>
+			</pre>
+		</div>
+		<div class="row row-4">
+			<h2 class="lowlight">CSS</h2>
+			<pre class="language-css small">
+				<code>
+					.aktiv {
+						color: blue;
+					}
+				</code>
+			</pre>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Häufig werden Klassen zusammen mit generischen Elementen wie <span class="element">&lt;div&gt;</span> und <span class="element">&lt;span&gt;</span> verwendet.</h1>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-8">
+			<h2 class="lowlight">HTML</h2>
+			<pre class="language-markup small">
+				<code>
+					&#x3C;div class="header"&#x3E;
+						&#x3C;p&#x3E;Ein kurzes Intro.&#x3C;/p&#x3E;
+						&#x3C;p&#x3E;Ein anderes Statement&#x3C;/p&#x3E;
+					&#x3C;/div&#x3E;
+
+					&#x3C;div class="footer"&#x3E;
+						&#x3C;p&#x3E;Ein abschliessender Satz.&#x3C;/p&#x3E;
+					&#x3C;/div&#x3E;
+				</code>
+			</pre>
+		</div>
+		<div class="row row-4">
+			<h2 class="lowlight">CSS</h2>
+			<pre class="language-css small">
+				<code>
+					.header p {
+						color: blue;
+					}
+
+					.footer p {
+						color: gray;
+					}
+				</code>
+			</pre>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Alternativ zum <span class="highlight">class</span>-<span class="attribute">Attribut</span> gibt es auch das <span class="highlight">id</span>-<span class="attribute">Attribut.</span></h1>
+	<pre class="language-markup medium left">
+		<code>
+			&lt;div id="inhalt"&gt;&lt;p&gt;abc&lt;/p&gt;&lt;/div&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left">Es funktioniert genau wie <span class="attribute">class</span>, wird aber in CSS mit einem <span class="highlight">Hash</span> notiert:</h1>
+	<pre class="language-css medium left">
+		<code>
+			#inhalt { … }
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-7">
+			<h2 class="lowlight">HTML</h2>
+			<pre class="language-markup small">
+				<code>
+					&#x3C;div id="header"&#x3E;
+						&#x3C;p&#x3E;Ein kurzes Intro.&#x3C;/p&#x3E;
+					&#x3C;/div&#x3E;
+
+					&#x3C;div class="inhalt"&#x3E;
+						&#x3C;p&#x3E;Erster Satz.&#x3C;/p&#x3E;
+						&#x3C;p&#x3E;Zweiter Satz.&#x3C;/p&#x3E;
+					&#x3C;/div&#x3E;
+				</code>
+			</pre>
+		</div>
+		<div class="row row-5">
+			<h2 class="lowlight">CSS</h2>
+			<pre class="language-css small">
+				<code>
+					#header {
+						font-size: 20px;
+					}
+				</code>
+			</pre>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Der <span class="highlight">große Haken am <span class="attribute">id</span>-Attribut</span> ist, dass man nicht mehreren Elementen die gleiche id zuweisen darf.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Jede <span class="attribute">id</span> muss im Dokument <span class="highlight">einzigartig</span> sein.<br />Darum macht der Einsatz meistens keinen Sinn und man <span class="highlight">verwendet besser</span> <span class="attribute">class</span> stattdessen.</h1>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-6">
+			<h2 class="lowlight">HTML</h2>
+			<pre class="language-markup mini">
+				<code>
+					&#x3C;div id="header"&#x3E;
+						&#x3C;p&#x3E;Kurzes Intro.&#x3C;/p&#x3E;
+					&#x3C;/div&#x3E;
+				</code>
+			</pre>
+		</div>
+		<div class="row row-1">
+			<h2 class="highlight" style="margin-top: 2.35em;">A</h2>
+		</div>
+		<div class="row row-5">
+			<h2 class="lowlight">CSS</h2>
+			<pre class="language-css mini">
+				<code>
+					#header {
+						font-size: 20px;
+					}
+				</code>
+			</pre>
+		</div>
+
+		<div class="row row-6">
+			<pre class="language-markup mini">
+				<code>
+					&#x3C;div class="header"&#x3E;
+						&#x3C;p&#x3E;Kurzes Intro.&#x3C;/p&#x3E;
+					&#x3C;/div&#x3E;
+				</code>
+			</pre>
+		</div>
+		<div class="row row-1">
+			<h2 class="highlight" style="margin-top: 1.15em;">B</h2>
+		</div>
+		<div class="row row-5">
+			<pre class="language-css mini">
+				<code>
+					.header {
+						font-size: 20px;
+					}
+				</code>
+			</pre>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="attribute">id</span> wird oft im Zusammenhang mit <span class="highlight">Javascript</span> verwendet und hat dort seine Berechtigung. Für reine <span class="html">HTML</span>/<span class="css">CSS</span>-Seiten ist sie <span class="highlight">unnötig</span>  oder gar überflüssig.</h1>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="0" y="32%">
+					<tspan x="50%" dy="1.0em">Selektoren</tspan>
+					<tspan x="50%" dy="1.0em">Reloaded</tspan>
+				</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Einheiten</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Farben</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">In <span class="css">CSS</span> können verschiedene Einheiten verwendet werden, um Größenangaben zu machen.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Größenangaben sind für viele Eigenschaften nötig, zB. <span class="attribute">width</span>, <span class="attribute">font-size</span> oder <span class="attribute">margin.</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Die Angabe erfolgt in CSS immer mit <span class="highlight">Wert</span> und <span class="highlight">Einheit.</span></h1>
+	<pre class="language-css medium left delayed">
+		<code>
+			font-size: 16px;
+		</code>
+	</pre>
+	<h2><span class="delayed" style="padding-right: 1em;"><span class="highlight">16</span> ist der Wert</span> <span class="delayed"><span class="highlight">px</span> ist die Einheit</span></h2>
+</section>
+<section class="slide">
+	<h1 class="left">Zwischen Wert und Einheit steht <span class="highlight">nie</span> ein Leerzeichen.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Die Werte können zB. in den Einheiten <span class="value">px</span>, <span class="value">em</span>/<span class="value">rem</span>, <span class="value">%</span>, <span class="value">vw</span>/<span class="value">vh</span>, <span class="value">ch</span> oder mittels <span class="value">calc()</span> angegeben werden.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Bei Pixelgrößen entspricht <span class="value">1px</span> einem <span class="highlight">Bildpunkt</span> auf dem Geräte&shy;display.</h1>
+	<h1 class="left lowlight delayed">Bei Retina-Displays ent&shy;sprech&shy;end 4 oder 9 Bildpunkten.</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="value">em</span> ist eine flexible Größe, die der für das Element eingestellten <span class="highlight">Schriftgröße</span> entspricht.</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="value">1rem</span> entspricht der Schriftgröße, die für das <span class="element">&lt;html&gt;</span> Element definiert wurde.</h1>
+	<h1 class="left lowlight delayed">Standardmäßig sind das 16px.</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="value">1ch</span> entspricht der Breite eines Zeichens der eingestellten Schrift.</h1>
+	<h1 class="left lowlight delayed">Genauer gesagt, der Null: 0</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="value">1vw</span> und <span class="value">1vh</span> entsprechen je <span class="highlight">1%</span> der Breite bzw. Höhe des Browser&shy;fensters.</h1>
+	<h1 class="left lowlight delayed">Bei Handys und iPads ist das in der Regel die Display-Breite/Höhe.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Angaben in <span class="value">%</span> definieren einen prozentualen Anteil des <span class="highlight">verfügbaren Platzes.</span> Bei Schriftgrößen einen Anteil der Ausgangsschriftgröße.</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="value">calc()</span> ist ein <span class="highlight">Funktion,</span> mit der sich Werte aus anderen CSS-Größen <span class="highlight">berechnen</span> lassen.</h1>
+</section>
+<section class="slide">
+	<h1 class="left lowlight">Beispiele</h1>
+	<pre class="language-css medium left">
+		<code>
+			width: calc(100% / 3);
+			font-size: calc(16px + 0.5vw);
+			margin-left: calc(10% - (2% + 1em));
+		</code>
+	</pre>
+	<h2 class="left highlight delayed">Achte auf die Leerzeichen vor und nach den Rechenzeichen!</h2>
+</section>
+<section class="slide">
+	<h1 class="left">Die im Browser als Standard voreingestellte Schriftgröße ist <span class="value">16px</span>.</h1>
+</section>
+<section class="slide">
+	<div class="left">
+		<h1 class="left">Referenz</h1>
+		<ul class="simple">
+			<li><a class="link" href="https://wiki.selfhtml.org/wiki/CSS/Wertetypen/Zahlen,_Maße_und_Maßeinheiten">https://wiki.selfhtml.org/wiki/CSS/Wertetypen/Zahlen,_Maße_und_Maßeinheiten</a></li>
+			<li><a class="link" href="https://developer.mozilla.org/de/docs/Learn/CSS/Building_blocks/Werten_Einheiten">https://developer.mozilla.org/de/docs/Learn/CSS/Building_blocks/Werten_Einheiten</a></li>
+
+			<li class="section"><a class="link" href="https://css-tricks.com/fun-viewport-units/">https://css-tricks.com/fun-viewport-units/</a></li>
+			<li><a class="link" href="https://www.24a11y.com/2019/pixels-vs-relative-units-in-css-why-its-still-a-big-deal/">https://www.24a11y.com/2019/pixels-vs-relative-units-in-css-why-its-still-a-big-deal/</a></li>
+
+			<li class="section"><a class="link" href="http://kyleschaeffer.com/best-practices/css-font-size-em-vs-px-vs-pt-vs/">http://kyleschaeffer.com/best-practices/css-font-size-em-vs-px-vs-pt-vs/</a></li>
+			<li><a class="link" href="http://www.alistapart.com/articles/howtosizetextincss/">http://www.alistapart.com/articles/howtosizetextincss/</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="0" y="32%">
+					<tspan x="50%" dy="1.0em">Selektoren</tspan>
+					<tspan x="50%" dy="1.0em">Reloaded</tspan>
+				</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Einheiten</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Farben</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Farbangaben können in <span class="css">CSS</span> auf verschiedene Weise notiert werden.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Als hexadezimale Angabe, zB.<br /><span class="value">#d33682</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Als <span class="highlight">hex</span>adezimale Angabe, zB.<br /><span class="value">#d33682</span></h1>
+	<h2 class="left"><span class="delayed" style="padding-left: 1em; padding-right: 0.5em;"><span class="highlight">d3</span> Rot</span> <span class="delayed" style="padding-right: 0.5em;"><span class="highlight">36</span> Grün</span> <span class="delayed"><span class="highlight">82</span> Blau</span></h2>
+</section>
+<section class="slide">
+	<h1 class="left">Das <span class="highlight">Hexadezimalsystem</span> basiert auf <span class="highlight">16</span> Ziffern, statt 10.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">0, 1, 2, 3, 4, 5, 6, 7, 8, 9, <span class="highlight delayed">A, B, C, D, E, F</span></h1>
+</section>
+<section class="slide">
+	<h2 class="lowlight">Einige Beispiele:</h2>
+	<table class="lines">
+		<tr>
+			<th style="width: 50%;"><span class="highlight">Dezimal</span></th>
+			<th style="width: 50%;"><span class="highlight">Hexadezimal</span></th>
+		</tr>
+		<tr>
+			<td>0</td>
+			<td><span class="delayed">0</span></td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><span class="delayed">A</span></td>
+		</tr>
+		<tr>
+			<td>15</td>
+			<td><span class="delayed">F</span></td>
+		</tr>
+		<tr>
+			<td>16</td>
+			<td><span class="delayed">10</span></td>
+		</tr>
+	</table>
+</section>
+<section class="slide">
+	<h1 class="left">Wenn eine <span class="highlight">einstellige</span> Zahl <span class="highlight">16</span> Werte abbilden kann, <span class="delayed">kann eine <span class="highlight">zweistellige</span> Zahl 16×16 Werte abbilden, also <span class="highlight">256!</span></span></h1>
+</section>
+<section class="slide">
+	<h1 class="highlight">Wait a minute …</h1>
+</section>
+<section class="slide">
+	<h1 class="left">In <span class="highlight">Photoshop</span> werden die Werte für RGB doch auch von <span class="highlight">0</span> bis <span class="highlight">255</span> notiert!</h1>
+</section>
+<section class="slide">
+	<svg width="640" height="480" viewbox="0 0 1292 982" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<image width="1292" height="982" xlink:href="./photoshop-color-picker.png"
+        />
+        <rect x="810" y="610" width="100" height="155" stroke="var(--base2)" stroke-width="0.5rem" fill="transparent" />
+        <text x="780" y="910" style="font-size: 4rem" fill="var(--base2)">0-255!</text>
+	</svg>
+</section>
+<section class="slide">
+	<h1 class="left">So lassen sich also <span class="highlight">alle Farben</span> im <span class="highlight">24-Bit</span> Farbraum in einer <span class="highlight">sechs&shy;stelligen Zahl</span> notieren!</h1>
+</section>
+<section class="slide">
+	<div><img src="./meme-kreygasm.png" width="368" alt="384" /></div>
+</section>
+<section class="slide">
+	<table class="nolines">
+		<tr class="value" style="font-size: 3em;">
+			<td style="padding: 0;">#</td>
+			<td style="padding: 0;">d3</td>
+			<td style="padding: 0;">36</td>
+			<td style="padding: 0;">82</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="text-align: center;"><span class="highlight delayed">Rot</span></td>
+			<td style="text-align: center;"><span class="highlight delayed">Grün</span></td>
+			<td style="text-align: center;"><span class="highlight delayed">Blau</span></td>
+		</tr>
+	</table>
+</section>
+<section class="slide">
+	<h1 class="left">Als <span class="highlight">RGB</span>-Werte, mit oder ohne Transparenz/Alpha, zB.</h1>
+	<h1 class="left value">rgb(211, 54, 130)<br />rgba(211, 54, 130, 1.0)</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Als <span class="highlight">HSL</span>-Werte, mit oder ohne Transparenz/Alpha, zB.</h1>
+	<h1 class="left value">hsl(331, 74%, 81%)<br />hsla(331, 74%, 81%, 1.0)</h1>
+	<h2 class="left highlight"><span class="delayed" style="padding-left: 3em;">Hue</span><span class="delayed" style="">, Saturation</span><span class="delayed">, Lightness</span><span class="delayed">, Alpha</span></h2>
+</section>
+<section class="slide">
+	<style data-slide>
+		.color { width: 100%; min-width: 20rem; height: 3rem; }
+		.hue   { background: linear-gradient(90deg, #f00, #f0f, #00f, #0ff, #0f0, #ff0, #f00); }
+		.sat   { background: linear-gradient(90deg, #999, #f00); }
+		.light { background: linear-gradient(90deg, #000, #f00, #fff); }
+	</style>
+	<table class="nolines">
+		<tr>
+			<td><div class="color hue"></div></td>
+			<td><span class="highlight">Hue</span>/Farbton</td>
+			<td><span class="lowlight">0-360</span></td>
+		</tr>
+		<tr>
+			<td><div class="color sat"></div></td>
+			<td><span class="highlight">Saturation</span>/Sättigung</td>
+			<td><span class="lowlight">0-100%</span></td>
+		</tr>
+		<tr>
+			<td><div class="color light"></div></td>
+			<td><span class="highlight">Lightness</span>/Helligkeit</td>
+			<td><span class="lowlight">0-100%</span></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><span class="highlight">Alpha</span>/Transparenz</td>
+			<td><span class="lowlight">0.0 - 1.0</span></td>
+		</tr>
+	</table>
+</section>
+<section class="slide">
+	<style data-slide>
+		.color { width: 100%; min-width: 20rem; height: 3rem; }
+		.hue   { background: linear-gradient(90deg, #f00, #f0f, #00f, #0ff, #0f0, #ff0, #f00); }
+		.sat   { background: linear-gradient(90deg, #999, #f00); }
+		.light { background: linear-gradient(90deg, #000, #f00, #fff); }
+		.cone {
+			background: conic-gradient(#f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+
+	<svg width="640" height="640" viewbox="0 0 640 640">
+		<text x="30" y="150" fill="var(--base2)">300</text>
+		<text x="315" y="50" fill="var(--base2)">0</text>
+		<text x="555" y="150" fill="var(--base2)">60</text>
+
+		<text x="30" y="520" fill="var(--base2)">240</text>
+		<text x="285" y="630" fill="var(--base2)">180</text>
+		<text x="555" y="520" fill="var(--base2)">120</text>
+
+		<clipPath id="clip">
+			<circle cx="320" cy="320" r="240" />
+		</clipPath>
+		<foreignObject x="80" y="80" width="480" height="480" clip-path="url(#clip)">
+			<div class="cone"></div>
+		</foreignObjct>
+	</svg>
+</section>
+<section class="slide">
+	<h1 class="left">Werte für <span class="highlight">HSL</span> entsprechen <span class="highlight" style="text-decoration: underline;">nicht</span> 1:1 dem <span class="highlight">HSB</span>-Wert aus Photoshop!</h1>
+</section>
+<section class="slide">
+	<svg width="640" height="480" viewbox="0 0 1292 982" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<image width="1292" height="982" xlink:href="./photoshop-color-picker.png"
+        />
+        <rect x="810" y="460" width="140" height="155" stroke="var(--base2)" stroke-width="0.5rem" fill="transparent" />
+	</svg>
+	<h2><span class="highlight">HSL</span> &NotEqual; <span class="highlight">HSB</span></h2>
+</section>
+<section class="slide">
+	<div class="left">
+		<h1 class="left">Referenz</h1>
+		<ul class="simple">
+			<li><a class="link" href="https://developer.mozilla.org/en-US/docs/CSS/color">https://developer.mozilla.org/en-US/docs/CSS/color</a></li>
+			<li><a class="link" href="https://wiki.selfhtml.org/wiki/CSS/Wertetypen/Farbangaben">https://wiki.selfhtml.org/wiki/CSS/Wertetypen/Farbangaben</a></li>
+
+			<li class="section"><a class="link" href="http://www.css3.info/preview/hsl/">http://www.css3.info/preview/hsl/</a></li>
+			<li><a class="link" href="http://css-tricks.com/yay-for-hsla/">http://css-tricks.com/yay-for-hsla/</a></li>
+			<li><a class="link" href="http://en.wikipedia.org/wiki/HSL_and_HSV">http://en.wikipedia.org/wiki/HSL_and_HSV</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-5">
+			<img loading="lazy" src="../stunde1_basics/github-aufgaben.png" width="100%" alt="Github Repo" />
+		</div>
+		<div class="row row-7">
+			<h2 class="left">Experimentiere für dein Design von <a href="https://arnorichter.de/hsma/int/aufgaben" class="link">Aufgabe 4</a> mit den gezeigten Einheiten und Farben.</h2>
+		</div>
+	</div>
+</section>
+<footer class="slide" title="The End">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Fin.</text>
+			</svg>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>
