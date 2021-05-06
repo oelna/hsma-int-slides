@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<title>INT Stunde 6</title>
+
+	<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+	<link rel="alternate icon" href="../assets/favicon.png" />
+
+	<link href="../inspire.css" rel="stylesheet" />
+	<link href="../assets/css/hsma.css" rel="stylesheet" />
+
+	<style>
+		/* additional styles for this lesson */
+		
+	</style>
+
+	<script src="../assets/js/bliss.shy.min.js" defer></script>
+	<script src="../inspire.js" defer></script>
+</head>
+<body class="stunde6 language-markup" data-prism-plugins="normalize-whitespace"><!-- data-resolution="1024 768" -->
+
+<div id="home-button"><a href="../index.html"></a></div>
+
+<header class="slide" id="intro">
+	<h1>INT</h1>
+	<h2>Internet-Technik</h2>
+	<h2 class="highlight">CSS</h2>
+</header>
+<section class="slide">
+	<h1>2 Themen</h1>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-2">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Box-Model</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Webfonts</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-2">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Box-Model</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Webfonts</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Im Webdesign ist jedes <span class="element">Element</span> auf der Seite ein rechteckiger Kasten, eine <span class="highlight">Box.</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Diese Kästen können mit <span class="css">CSS</span> gestaltet werden, zB. mit <span class="highlight">Breiten-</span> und <span class="highlight">Höhenangaben,</span> <span class="highlight">Rahmen</span> und <span class="highlight">Abständen.</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Die Gesamtgröße der Box ergibt sich aus mehreren Faktoren.</h1>
+</section>
+<section class="slide">
+	<h1>Box-Model</h1>
+	<div class="grid">
+		<div class="row row-4">
+			<h2 class="highlight" style="margin-top: 1.15em;">A</h2>
+		</div>
+		<div class="row row-6">
+			<pre class="language-css mini">
+				<code>
+					p {
+						box-sizing: content-box;
+					}
+				</code>
+			</pre>
+		</div>
+
+		<div class="row row-4 invisible">
+			<h2 class="highlight" style="margin-top: 1.15em;">B</h2>
+		</div>
+		<div class="row row-6 invisible">
+			<pre class="language-css mini">
+				<code>
+					p {
+						box-sizing: border-box;
+					}
+				</code>
+			</pre>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Bei <code class="language-css small">box-sizing: content-box;</code> bezieht sich die width-Angabe nur auf den <span class="highlight">Inhalt</span> des Elements.</h1>
+	<h1 class="left delayed"><span class="attribute">padding</span> und <span class="attribute">border</span> vergrößern die Box zusätzlich nach aussen!</h1>
+</section>
+<section class="slide">
+	<style data-slide>
+		.box {
+			box-sizing: content-box;
+			width: 300px;
+			height: 200px;
+			padding: 0;
+			border: 0;
+			background-color: var(--base1);
+			margin-top: 1rem;
+		}
+
+		.box-content {
+			width: 100%;
+			height: 100%;
+			background-color: var(--base01);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	</style>
+	<h1><span class="element">Element</span> mit <span class="attribute">width</span> <span class="value">300px</span></h1>
+	<h3 class="lowlight">Gesamtbreite: 300px</h3>
+	<div class="box"><h2 class="box-content">width</h2></div>
+</section>
+<section class="slide">
+	<style data-slide>
+		.box {
+			box-sizing: content-box;
+			width: 300px;
+			height: 200px;
+			padding: 50px;
+			border: 0;
+			background-color: var(--base1);
+			margin-top: 0;
+		}
+
+		.box-content {
+			width: 100%;
+			height: 100%;
+			background-color: var(--base01);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	</style>
+	<h1>Plus <span class="attribute">padding</span> von <span class="value">50px</span><br />auf jeder Seite</h1>
+	<h3 class="lowlight">Gesamtbreite: 50 + 300 + 50 = 400px</h3>
+	<div class="box"><h2 class="box-content">width</h2></div>
+</section>
+<section class="slide">
+	<style data-slide>
+		.box {
+			box-sizing: content-box;
+			width: 300px;
+			height: 200px;
+			padding: 50px;
+			border: 6px solid var(--orange);
+			background-color: var(--base1);
+			margin-top: 0;
+		}
+
+		.box-content {
+			width: 100%;
+			height: 100%;
+			background-color: var(--base01);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	</style>
+	<h1>Plus <span class="attribute">border</span> von <span class="value">6px</span><br />auf jeder Seite</h1>
+	<h3 class="lowlight">Gesamtbreite: 6 + 50 + 300 + 50 + 6 = 412px</h3>
+	<div class="box"><h2 class="box-content">width</h2></div>
+</section>
+<section class="slide">
+	<h1 class="left">Das Element ist am Ende <span class="highlight">412 Pixel</span> breit, obwohl in CSS <span class="attribute">width</span> mit <span class="value">300px</span> definiert wurde!</h1>
+	<h1 class="left delayed"><span class="attribute">padding</span> und <span class="attribute">border</span> vergrößern die Box zusätzlich nach aussen!</h1>
+</section>
+<section class="slide">
+	<h1 style="color: var(--base01)"><span class="attribute">width</span> + <span class="attribute">padding</span> + <span class="attribute">border</span><br />= <span class="highlight">Gesamtbreite</span></h1>
+</section>
+<section class="slide">
+	<h1>Box-Model</h1>
+	<div class="grid">
+		<div class="row row-4" style="opacity: 0.3">
+			<h2 class="" style="margin-top: 1.15em;">A</h2>
+		</div>
+		<div class="row row-6" style="opacity: 0.3">
+			<pre class="language-css mini">
+				<code>
+					p {
+						box-sizing: content-box;
+					}
+				</code>
+			</pre>
+		</div>
+
+		<div class="row row-4">
+			<h2 class="highlight" style="margin-top: 1.15em;">B</h2>
+		</div>
+		<div class="row row-6">
+			<pre class="language-css mini">
+				<code>
+					p {
+						box-sizing: border-box;
+					}
+				</code>
+			</pre>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Ein einfacher verständliches Modell, bei dem <span class="attribute">width</span> der Gesamtbreite <span class="highlight">einschließlich</span> padding und border entspricht, ist <code class="language-css small">box-sizing: border-box;</code></h1>
+</section>
+<section class="slide">
+	<style data-slide>
+		.box {
+			box-sizing: border-box;
+			width: 300px;
+			height: 200px;
+			padding: 0;
+			border: 0;
+			background-color: var(--base1);
+			margin-top: 0;
+		}
+
+		.box-content {
+			width: 100%;
+			height: 100%;
+			background-color: var(--base01);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	</style>
+	<h1><span class="element">Element</span> mit <span class="attribute">width</span> <span class="value">300px</span></h1>
+	<h3 class="lowlight">Gesamtbreite: 300px</h3>
+	<div class="box"><h2 class="box-content">width</h2></div>
+</section>
+<section class="slide">
+	<style data-slide>
+		.box {
+			box-sizing: border-box;
+			width: 300px;
+			height: 200px;
+			padding: 50px;
+			border: 0;
+			background-color: var(--base1);
+			margin-top: 0;
+		}
+
+		.box-content {
+			width: 100%;
+			height: 100%;
+			background-color: var(--base01);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	</style>
+	<h1>Plus <span class="attribute">padding</span> von <span class="value">50px</span><br />auf jeder Seite</h1>
+	<h3 class="lowlight">Gesamtbreite: 300px</h3>
+	<div class="box"><h2 class="box-content">width</h2></div>
+</section>
+<section class="slide">
+	<style data-slide>
+		.box {
+			box-sizing: border-box;
+			width: 300px;
+			height: 200px;
+			padding: 50px;
+			border: 6px solid var(--orange);
+			background-color: var(--base1);
+			margin-top: 0;
+		}
+
+		.box-content {
+			width: 100%;
+			height: 100%;
+			background-color: var(--base01);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	</style>
+	<h1>Plus <span class="attribute">border</span> von <span class="value">6px</span><br />auf jeder Seite</h1>
+	<h3 class="lowlight">Gesamtbreite: 300px</h3>
+	<div class="box"><h2 class="box-content">width</h2></div>
+</section>
+<section class="slide">
+	<h1 class="left">Die Breiten von <span class="attribute">padding</span> und <span class="attribute">border</span> werden auf der <span class="highlight">Innenseite</span> des Elements abgezogen.</h1>
+	<h1 class="left delayed">Die Gesamtbreite bleibt unverändert!</h1>
+</section>
+<section class="slide">
+	<h1 style="color: var(--base01)"><span class="attribute">width</span> = <span class="highlight">Gesamtbreite</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Dieses Box-Model gilt in Fachkreisen weithin als überlegen und <span class="highlight">einfacher verständlich</span> als das Standard-Model.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Manche sind der Ansicht, es hätte sowieso der Standard werden sollen.</h1>
+	<h1 class="left delayed">Das kann man wenn man möchte aber auch <span class="highlight">selbst einstellen.</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Man kann das Verhalten von <code class="language-css small">box-sizing: border-box;</code> für <span class="highlight">alle Elemente</span> verbindlich machen, wenn man die Eigenschaft dem <span class="css">*</span> Selektor hinzufügt.</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="css">*</span> ist ein Selektor, der alle Elemente umfasst. Das ist manchmal einfacher, als sie einzeln aufzulisten.</h1>
+</section>
+<section class="slide">
+	<pre class="language-css medium">
+		<code>
+			* {
+				box-sizing: border-box;
+			}
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left">Man sollte <span class="css">*</span> sehr vorsichtig einsetzen. Die meisten Eigenschaften sollten <span class="highlight">nie</span> für alle Elemente <span class="highlight">auf einmal</span> gesetzt werden!</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Man kann sich über die <span class="highlight">Entwickler&shy;tools</span> ("Developer Tools") ein Bild vom auf einer Seite verwendeten <span class="css">CSS</span> machen.</h1>
+</section>
+<section class="slide">
+	<p><img src="./devtools-boxmodel.png" width="1200" height="520" alt="Chrome Developer Tools" /></p>
+	<h2 class="lowlight" style="display: flex; font-size: 36px; width: 95%; justify-content: space-between;"><span class="delayed"><span style="color: #eec59a">margin</span> Aussenabstand</span><span class="delayed"><span style="color: #c5ddb9">padding</span> Innenabstand</span><span class="delayed"><span style="color: #96badb">content</span> Inhalt</span></h2>
+</section>
+<section class="slide">
+	<h1 class="left">Sie heißen in jedem Browser etwas anders, lassen sich aber in der Regel über das Kontextmenü erreichen; zB. über <span class="highlight">Prüfen</span>, <span class="highlight">Untersuchen</span>, oder <span class="highlight">Inspect Element</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Wenn einen die <span class="highlight">default-margins, -paddings</span> und sonstige Stile von Elementen stören, kann man sie mit einem <span class="css">CSS-Reset</span> deaktivieren.</h1>
+</section>
+<section class="slide">
+	<pre class="language-css medium">
+		<code>
+			* {
+				margin: 0;
+				padding: 0;
+				font-size: 100%;
+				font-weight: normal;
+				box-sizing: border-box;
+			}
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left">Damit lässt sich auf einfache Weise die Gestaltung für <span class="highlight">alle Elemente</span> auf einmal <span class="highlight">normalisieren.</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Es gibt auch viel umfassendere Reset-Scripts von Profis wie zB. <span class="highlight">Eric Meyer.</span></h1>
+</section>
+<section class="slide">
+	<div class="left">
+		<h1 class="left">Referenz</h1>
+		<ul class="simple">
+			<li><a class="link" href="https://developer.mozilla.org/de/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model">developer.mozilla.org/de/docs/&hellip;CSS_box_model</a></li>
+			<li><a class="link" href="http://css-tricks.com/the-css-box-model/">http://css-tricks.com/the-css-box-model/</a></li>
+
+			<li class="section"><a class="link" href="https://developer.mozilla.org/de/docs/Web/CSS/box-sizing">https://developer.mozilla.org/de/docs/Web/CSS/box-sizing</a></li>
+			<li><a class="link" href="http://paulirish.com/2012/box-sizing-border-box-ftw/">http://paulirish.com/2012/box-sizing-border-box-ftw/</a></li>
+			<li><a class="link" href="http://css-tricks.com/box-sizing/">http://css-tricks.com/box-sizing/</a></li>
+
+			<li class="section"><a class="link" href="http://meyerweb.com/eric/tools/css/reset/">http://meyerweb.com/eric/tools/css/reset/</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-2">
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Box-Model</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Webfonts</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Bis vor einigen Jahren waren Webdesigner in der Gestaltung von Seiten auf die Verwendung <span class="highlight">einiger weniger Schriftarten</span> beschränkt.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Damit eine gewählte Schrift angezeigt werden kann, muss sie auf dem anzeigenden Gerät auch installiert sein.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Es gibt nur <span class="highlight">wenige Schriften,</span> die so weit verbreitet sind, dass man sie ohne Risiko auf Websites einsetzen kann.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Das sind die so genannten <a class="link" href="https://en.wikipedia.org/wiki/Core_fonts_for_the_Web">web safe fonts.</a> Dazu zählen zB. Arial, Verdana, Tahoma, Times New Roman und Georgia.</h1>
+</section>
+<section class="slide">
+	<h1 class="left highlight">Weit verbreitete Schriftarten</h1>
+	<div class="grid">
+		<ul class="row row-6 simple">
+			<li>Arial</li>
+			<li>Verdana</li>
+			<li>Tahoma</li>
+			<li>Courier New</li>
+			<li>Impact</li>
+			<li>Trebuchet MS</li>
+			<li>Comic Sans MS</li>
+		</ul>
+		<ul class="row row-6 simple">
+			<li>Times New Roman</li>
+			<li>Georgia</li>
+			<li>Palatino</li>
+			<li>Garamond</li>
+			<li>Bookman</li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Bekannte Klassiker wie <span class="highlight">Helvetica</span> oder <span class="highlight">Futura</span> zählen nicht dazu!</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Wollte man extravagantere Schriften einsetzen, gab es zwei Möglichkeiten:</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Möglichkeit 1:<br /><span class="highlight">Komplexe Font-Stacks</span></h1>
+	<pre class="language-css mini">
+		<code>
+			html {
+				font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			}
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left">Man gibt mehrere Schriftarten an, beginnend mit dem <span class="highlight">idealen Font,</span> gefolgt von möglichst <span class="highlight">ähnlichen Alternativen.</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Man sollte man mit web-sicheren Schriften und einer generischen Klassifikation abschliessen.</h1>
+</section>
+<section class="slide">
+	<style data-slide>
+		table {
+			background: rgba(255,255,255,0.05);
+		}
+
+		td {
+			padding: 0.2em;
+			text-align: center;
+		}
+	</style>
+	<table class="nolines small">
+		<tr>
+			<td colspan="5"><span class="css">html</span> {</td>
+		</tr>
+		<tr>
+			<td style="padding-left: 2em;"><span class="attribute">font-family</span>: </td>
+			<td><span class="value">'Helvetica Neue'</span>,</td>
+			<td><span class="value">Helvetica</span>,</td>
+			<td><span class="value">Arial</span>,</td>
+			<td><span class="value">sans-serif</span>;</td>
+		</tr>
+		<tr>
+			<td>}</td>
+			<td><span class="highlight">|</span></td>
+			<td><span class="highlight">|</span></td>
+			<td><span class="highlight">|</span></td>
+			<td><span class="highlight">|</span></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><span class="highlight">Ideal</span></td>
+			<td><span class="highlight">Alternative</span></td>
+			<td class="lowlight"><span class="highlight">Common</span><br />Arial<br />Verdana<br />Tahoma<br />Impact</td>
+			<td class="lowlight"><span class="highlight">Generic</span><br />sans-serif<br />serif<br />monospace<br />fantasy</td>
+		</tr>
+	</table>
+</section>
+<section class="slide">
+	<h1 class="left">Wichtig ist, dass man Schriften wählt, die <span class="highlight">ähnlich weit laufen,</span> dass die Textlänge nicht zu stark variiert.</h1>
+</section>
+<section class="slide">
+	<h1 class="left highlight">Nachteile</h1>
+	<ul class="left">
+		<li class="delayed">Schwierig, einander ähnliche Schriften zu finden</li>
+		<li class="delayed">Wenig Kontrolle über Anzeige</li>
+		<li class="delayed">Uneinheitliches Erscheinungsbild</li>
+	</ul>
+</section>
+<section class="slide">
+	<h1 class="left">Möglichkeit 2: <span class="highlight">Bilder</span></h1>
+	<pre class="language-markup small left">
+		<code>
+			&#x3C;h1&#x3E;&#x3C;img src=&#x22;headline.jpg&#x22; alt=&#x22;&#x22; /&#x3E;&#x3C;/h1&#x3E;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left">Man setzt den gewünschten Text in Photoshop, speichert als <span class="highlight">transparentes PNG</span> und platziert in <span class="html">HTML</span> als <span class="element">&lt;img&gt;</span> Element.</h1>
+</section>
+<section class="slide">
+	<h1 class="left highlight">Nachteile</h1>
+	<ul class="left">
+		<li class="delayed">Änderungen sind mühsam</li>
+		<li class="delayed">Text kann nicht indiziert werden</li>
+		<li class="delayed">Lange Ladezeiten</li>
+		<li class="delayed">Keine HiDPI/Retina-Optimierung</li>
+	</ul>
+</section>
+<section class="slide">
+	<h1><span class="attribute">Don’t do this!</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="highlight">Webfonts</span> sind die Lösung für die gezeigten Probleme und erlauben die Verwendung praktisch <span class="highlight">beliebiger Schriftarten!</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Dafür platziert man die gewünschte Schriftart im Projekt&shy;ordner und definiert sie in <span class="css">CSS.</span></h1>
+</section>
+<section class="slide">
+	<pre class="language-css mini">
+		<code>
+			@font-face {
+				font-family: 'Wunschfontname';
+				src: url('fontdatei.woff') format('woff');
+				font-weight: normal;
+				font-style: normal;
+			}
+		</code>
+	</pre>
+	<table class="small nolines">
+		<tr class="delayed">
+			<td class="value">Wunschfontname</td>
+			<td class="highlight">Name, unter dem die Schrift <br />in CSS erreichbar sein soll</td>
+		</tr>
+		<tr class="delayed">
+			<td class="value">fontdatei.woff</td>
+			<td class="highlight">URL der Schrift-Datei<br />in deinem Projektordner</td>
+		</tr>
+	</table>
+</section>
+<section class="slide">
+	<h1><span class="highlight">.woff</span> <span class="attribute">= Web Open Font Format</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="highlight">WOFF</span> ist ein Schriftformat für Browser und kann aus normalen <span class="highlight">.ttf</span> und <span class="highlight">.otf</span> generiert werden, zB:</h1>
+	<h2 class="left"><br /><a href="https://www.fontsquirrel.com/tools/webfont-generator" class="link">fontsquirrel.com/tools/webfont-generator</a></h2>
+</section>
+<section class="slide">
+	<h1 class="left">Achte dabei immer darauf, dass die <span class="highlight">Lizenz</span> die Verwendung auf deiner Seite auch zulässt! Die meisten Schriften sind <span class="highlight">kostenpflichtig!</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Im Anschluss lassen sich so eingebettete Fonts in <span class="css">CSS</span> über die normale <span class="attribute">font-family</span> Syntax verwenden.</h1>
+</section>
+<section class="slide">
+	<pre class="language-css mini">
+		<code>
+			@font-face {
+				font-family: 'Wunschfontname';
+				src: url('fontdatei.woff') format('woff');
+				font-weight: normal;
+				font-style: normal;
+			}
+
+			h1 {
+				font-family: 'Wunschfontname', Arial, sans-serif;
+				font-size: 2.2em;
+			}
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left">Die <span class="css">@font-face</span> Syntax kann recht <span class="highlight">umfangreich und komplex</span> werden, wenn man viele Schriften oder Schnitte einsetzt.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Es gibt mehrere namhafte Font-Hoster, die Schriften zur Verfügung stellen, zB.<br /><span class="highlight">Google Fonts</span> oder <span class="highlight">Adobe Fonts.</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Dann muss man in der Regel nur eine <span class="highlight">externe CSS-Datei</span> einbinden und kann die Schriften verwenden. <span class="delayed">Das Hosting der Dateien übernimmt der Anbieter.</span></h1>
+</section>
+<section class="slide">
+	<p style="margin: 0"><img src="./adobe-cc.svg" width="250" height="185" alt="" /></p>
+	<h1 class="left">Jeder <span class="highlight">Creative Cloud</span> Account hat automatisch und ohne Aufpreis Zu&shy;griff auf die <span class="highlight">Adobe Fonts</span> Library!</h1>
+	<h2 class="left"><a href="https://helpx.adobe.com/de/fonts/user-guide.html/de/fonts/using/add-fonts-website.ug.html" class="link">helpx.adobe.com <span style="vertical-align: middle;">&rarr;</span> add fonts to website</a></h2>
+</section>
+<section class="slide">
+	<h1 class="left">Das entspricht einem Gegenwert von ca. <span class="highlight">$60</span> im Jahr!</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="highlight">Google Fonts</span> sind komplett kostenlos, aber die Qualität der Schriften variiert stark; es gibt viele Plagiate.</h1>
+	<h2 class="left"><a href="https://developers.google.com/fonts/docs/getting_started" class="link">developers.google.com/fonts/docs/getting_started</a></h2>
+</section>
+<section class="slide">
+	<h1 class="left">Ein paar gute Fonts sind zB. <a href="https://fonts.google.com/specimen/Source+Sans+Pro" class="link">Source Sans</a>, <a href="https://fonts.google.com/specimen/Noto+Sans" class="link">Noto Sans</a>, <a href="https://fonts.google.com/specimen/PT+Sans" class="link">PT Sans</a>, <a href="https://fonts.google.com/specimen/Open+Sans" class="link">Open Sans</a>, <a href="https://fonts.google.com/specimen/Lato" class="link">Lato</a>, <a href="https://fonts.google.com/specimen/Fira+Sans" class="link">Fira Sans</a>, <a href="https://fonts.google.com/specimen/Montserrat" class="link">Montserrat</a>, <a href="https://fonts.google.com/specimen/Inconsolata" class="link">Inconsolata</a>, <a href="https://fonts.google.com/specimen/Vollkorn" class="link">Vollkorn</a> und <a href="https://fonts.google.com/specimen/Source+Serif+Pro" class="link">Source Serif</a>.</h1>
+</section>
+<section class="slide">
+	<img src="./google-fonts-1.png" width="75%" height="" alt="Google Fonts UI" />
+</section>
+<section class="slide">
+	<img src="./google-fonts-2.png" width="75%" height="" alt="Google Fonts UI" />
+</section>
+<section class="slide">
+	<h2 class="left">"To embed a font, copy the code<br />into the <span class="element">&lt;head&gt;</span> of your html"</h2>
+	<pre class="language-markup mini left">
+		<code>
+			&#x3C;link rel=&#x22;preconnect&#x22; 
+			href=&#x22;https://fonts.gstatic.com&#x22;&#x3E;
+
+			&#x3C;link rel=&#x22;stylesheet&#x22; 
+			href=&#x22;https://fonts.googleapis.com/css2
+			?family=Open+Sans:ital,wght@0,300;1,300&#x26;display=swap&#x22;&#x3E;
+		</code>
+	</pre>
+</section>
+<section class="slide demo" data-prism-plugins="line-numbers">
+	<textarea class="language-html small">
+		<html>
+			<head>
+				<title>Das ist der Seitentitel</title>
+
+				<link rel="preconnect" href="https://fonts.gstatic.com"> 
+				<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+
+				<style>
+					.demo .demo-target {
+						font-family: 'Open Sans', sans-serif;
+					}
+				</style>
+			</head>
+			<body>
+				<h1>Das ist der Body der Seite</h1>
+				<p>Alles, was innerhalb der Body-Tags einer Seite steht,
+				wird im Browserfenster angezeigt.</p>
+			</body>
+		</html>
+	</textarea>
+</section>
+<section class="slide">
+	<h1 class="left">Wenn die Schrift mehr Gewichte als nur <span class="value">regular</span> und <span class="value">bold</span> hat, kann man diese mit einer Notation ähnlich dem <span class="highlight">Linotype numbering system</span> verwenden.</h1>
+</section>
+<section class="slide">
+	<style data-slide>
+		td.line { border-left: 0.1em solid var(--magenta) !important; }
+		td:nth-child(2) { padding-right: 5em; }
+	</style>
+	<table class="simple nolines">
+		<tr>
+			<td class="highlight">100</td>
+			<td>Thin (Hairline)</td>
+			<td class="css line">leichter</td>
+		</tr>
+		<tr>
+			<td class="highlight">200</td>
+			<td>Extra Light (Ultra Light)</td>
+			<td class="css line"></td>
+		</tr>
+		<tr>
+			<td class="highlight">300</td>
+			<td>Light</td>
+			<td class="css line"></td>
+		</tr>
+		<tr>
+			<td class="highlight">400</td>
+			<td class="value">Normal</td>
+			<td class="css line"></td>
+		</tr>
+		<tr>
+			<td class="highlight">500</td>
+			<td>Medium</td>
+			<td class="css line"></td>
+		</tr>
+		<tr>
+			<td class="highlight">600</td>
+			<td>Semi Bold (Demi Bold)</td>
+			<td class="css line"></td>
+		</tr>
+		<tr>
+			<td class="highlight">700</td>
+			<td class="value">Bold</td>
+			<td class="css line"></td>
+		</tr>
+		<tr>
+			<td class="highlight">800</td>
+			<td>Extra Bold (Ultra Bold)</td>
+			<td class="css line"></td>
+		</tr>
+		<tr>
+			<td class="highlight">900</td>
+			<td>Black (Heavy)</td>
+			<td class="css line">schwerer</td>
+		</tr>
+	</table>
+</section>
+<section class="slide">
+	<pre class="language-css mini">
+		<code>
+			html {
+				font-family: 'Open Sans', Arial, sans-serif;
+				font-weight: 700;
+			}
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<div class="left">
+		<h1 class="left">Referenz</h1>
+		<ul class="simple">
+			<li><a class="link" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts">https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts</a></li>
+			<li><a class="link" href="http://wiki.selfhtml.org/wiki/Webfonts">http://wiki.selfhtml.org/wiki/Webfonts</a></li>
+			<li><a class="link" href="http://artequalswork.com/posts/better-css-font-stacks/">http://artequalswork.com/posts/better-css-font-stacks/</a></li>
+			<li><a class="link" href="http://www.cssfontstack.com/">http://www.cssfontstack.com/</a></li>
+			<li><a class="link" href="https://www.smashingmagazine.com/2009/09/complete-guide-to-css-font-stacks/">https://www.smashingmagazine.com/2009/09/complete-guide-to-css-font-stacks/</a></li>
+			<li><a class="link" href="http://stackoverflow.com/q/36105194/3625228">Are eot, ttf, and svg still necessary in the font-face declaration?</a></li>
+
+			<li class="section"><a class="link" href="https://fonts.google.com/">https://fonts.google.com/</a></li>
+			<li><a class="link" href="https://fonts.adobe.com/">https://fonts.adobe.com/</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-5">
+			<img loading="lazy" src="../stunde1_basics/github-aufgaben.png" width="100%" alt="Github Repo" />
+		</div>
+		<div class="row row-7">
+			<h1 class="left">Beginne mit <span class="highlight">Aufgabe 1.</span></h1>
+			<h2 class="left" style="margin-top: 1em"><a href="https://arnorichter.de/hsma/int/aufgaben" class="link">https://arnorichter.de/<br />hsma/int/aufgaben</a></h2>
+		</div>
+	</div>
+</section>
+<footer class="slide" title="The End">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Fin.</text>
+			</svg>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>

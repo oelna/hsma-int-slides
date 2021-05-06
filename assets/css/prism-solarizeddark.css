@@ -102,6 +102,7 @@ pre[class*="language-"] {
 
 
 .token.selector,
+.token.atrule,
 .token.boolean,
 .token.number,
 .token.constant,
@@ -124,7 +125,6 @@ pre[class*="language-"] {
 	color: #2aa198; /* cyan */
 }
 
-.token.atrule,
 .token.keyword {
 	color: #859900; /* yellow */
 }

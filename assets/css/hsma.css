@@ -135,6 +135,33 @@ body {
 	-moz-font-feature-settings: 'tnum';
 }
 
+#home-button {
+	width: 1.5rem;
+	height: 1.5rem;
+	background: var(--base03);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9000;
+}
+
+#home-button a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#home-button a::before {
+	display: block;
+	content: "";
+	width: 1em;
+	height: 1em;
+	transition: background 0.25s ease;
+}
+
+#home-button a:hover::before {
+	background: var(--base2);
+}
+
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
 	text-align: center;
@@ -146,7 +173,8 @@ a {
 	text-decoration-color: hsla(0,0%,100%,.4);
 }
 
-a.plain {
+a.plain,
+a.simple {
 	color: currentColor;
 	text-decoration: none;
 }
@@ -154,6 +182,7 @@ a.plain {
 a.link {
 	color: var(--blue);
 	text-decoration: none;
+	cursor: pointer;
 }
 
 a.link:hover {
@@ -456,6 +485,7 @@ img {
 	dominant-baseline: middle;
 }
 
+.slide .circle-intro.circle-2 .circle text,
 .slide .circle-intro.circle-3 .circle text {
 	fill: var(--base02);
 }
@@ -463,6 +493,16 @@ img {
 .slide ul.simple {
 	list-style: none;
 	padding: 0;
+}
+
+.slide ul.left {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.slide ul.right {
+	margin-left: auto;
+	margin-right: 0;
 }
 
 .slide ul li::marker {
@@ -564,6 +604,10 @@ th:first-child {
 table.simple {
 	font-size: 1.2em;
 	font-weight: bold;
+}
+
+table.small {
+	font-size: 0.8em;
 }
 
 table.nolines td,
