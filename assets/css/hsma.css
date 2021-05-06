@@ -162,6 +162,37 @@ body {
 	background: var(--base2);
 }
 
+.nav-button {
+	width: 5vw;
+	height: 80vh;
+	background: transparent;
+	position: absolute;
+	top: 10vh;
+	z-index: 9001;
+	border-radius: 0.5em;
+	transition: background 0.25s ease;
+	cursor: pointer;
+}
+
+.nav-button:hover {
+	/*
+	background: var(--base03);
+	background: rgba(0,0,0,0.2);
+	*/
+}
+
+.nav-button#next-button {
+	right: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.nav-button#previous-button {
+	left: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
 	text-align: center;
