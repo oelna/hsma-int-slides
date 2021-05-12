@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<title>INT Stunde 7</title>
+
+	<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+	<link rel="alternate icon" href="../assets/favicon.png" />
+
+	<link href="../inspire.css" rel="stylesheet" />
+	<link href="../assets/css/hsma.css" rel="stylesheet" />
+
+	<style>
+		/* additional styles for this lesson */
+		.flexbox-preview {
+			font-size: 1em;
+			background: #ccc;
+			width: 100%;
+			display: flex;
+			padding: 0.25rem 0.25rem 0 0.25rem;
+			margin: 0.25em 0;
+		}
+
+		.flexbox-preview > * {
+			background: #007aff;
+			color: #111;
+			list-style: none;
+			margin: 0;
+			margin-bottom: 0.35rem;
+			outline: 1px solid rgba(0,0,0,0.35);
+			padding: 0.35em;
+			font-family: 'Operator Mono', monospace;
+			font-weight: 700;
+		}
+	</style>
+
+	<script src="../assets/js/bliss.shy.min.js" defer></script>
+	<script src="../inspire.js" defer></script>
+	<script src="../assets/js/hsma.js" defer></script>
+</head>
+<body class="stunde7 language-markup" data-prism-plugins="normalize-whitespace"><!-- data-resolution="1024 768" -->
+
+<div id="home-button"><a href="../index.html"></a></div>
+<div id="previous-button" class="nav-button"></div>
+<div id="next-button" class="nav-button"></div>
+
+<header class="slide" id="intro">
+	<h1>INT</h1>
+	<h2>Internet-Technik</h2>
+	<h2 class="highlight">CSS</h2>
+</header>
+<section class="slide">
+	<div class="circle-intro">
+		<div>
+			<svg class="circle dark" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Flexbox</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="highlight">Flexbox</span> ist eine sehr moderne und einfache Möglichkeit, responsive und flexible Layouts zu erstellen.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Dabei kann nicht nur die Größen- darstellung, sondern auch die Reihenfolge der Elemente unabhängig vom <span class="html">HTML</span>-Code durch <span class="css">CSS</span> festgelegt werden.</h1>
+</section>
+<section class="slide">
+	<img src="./flexbox-graphic.svg" width="960" height="" alt="Verschiedene Anwendungen von Flexbox für Layout" />
+</section>
+<section class="slide">
+	<h1 class="left">Das Ungewöhnlichste an Flexbox ist der Verzicht auf Breiten bzw. Mindestbreiten.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Das Flexbox-Modell unterscheidet zwischen dem Elternelement <span class="highlight">Flex-Container</span> und den darin enthaltenen <span class="highlight">Flex-Items.</span></h1>
+</section>
+<section class="slide">
+	<style data-slide>
+		
+	</style>
+	<div class="grid">
+		<div class="row row-4">
+			<h2>HTML</h2>
+			<pre class="language-markup micro">
+				<code>
+					&#x3C;ul class=&#x22;container&#x22;&#x3E;
+						&#x3C;li&#x3E;A&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;B&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;C&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;D&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;E&#x3C;/li&#x3E;
+					&#x3C;/ul&#x3E;
+				</code>
+			</pre>
+		</div>
+		<div class="row row-4">
+			<h2>CSS</h2>
+			<pre class="language-css micro">
+				<code>
+					.container {
+						display: flex;
+					}
+				</code>
+			</pre>
+		</div>
+		<div class="row row-4">
+			<h2>Browser</h2>
+			<ul class="flexbox-preview">
+				<li>A</li>
+				<li>B</li>
+				<li>C</li>
+				<li>D</li>
+				<li>E</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<style data-slide>
+		.flexbox-preview {
+			flex-direction: row;
+		}
+	</style>
+	<div class="grid">
+		<div class="row row-4">
+			<h2>HTML</h2>
+			<pre class="language-markup micro">
+				<code>
+					&#x3C;ul class=&#x22;container&#x22;&#x3E;
+						&#x3C;li&#x3E;A&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;B&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;C&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;D&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;E&#x3C;/li&#x3E;
+					&#x3C;/ul&#x3E;
+				</code>
+			</pre>
+		</div>
+		<div class="row row-4">
+			<h2>CSS</h2>
+			<pre class="language-css micro">
+				<code>
+					.container {
+						display: flex;
+						flex-direction: row;
+					}
+				</code>
+			</pre>
+		</div>
+		<div class="row row-4">
+			<h2>Browser</h2>
+			<ul class="flexbox-preview">
+				<li>A</li>
+				<li>B</li>
+				<li>C</li>
+				<li>D</li>
+				<li>E</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<style data-slide>
+		.flexbox-preview {
+			flex-direction: column;
+		}
+	</style>
+	<div class="grid">
+		<div class="row row-4">
+			<h2>HTML</h2>
+			<pre class="language-markup micro">
+				<code>
+					&#x3C;ul class=&#x22;container&#x22;&#x3E;
+						&#x3C;li&#x3E;A&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;B&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;C&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;D&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;E&#x3C;/li&#x3E;
+					&#x3C;/ul&#x3E;
+				</code>
+			</pre>
+		</div>
+		<div class="row row-4">
+			<h2>CSS</h2>
+			<pre class="language-css micro">
+				<code>
+					.container {
+						display: flex;
+						flex-direction: column;
+					}
+				</code>
+			</pre>
+		</div>
+		<div class="row row-4">
+			<h2>Browser</h2>
+			<ul class="flexbox-preview">
+				<li>A</li>
+				<li>B</li>
+				<li>C</li>
+				<li>D</li>
+				<li>E</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Standardmäßig werden die <span class="highlight">Flex-Items</span> in einer Zeile dargestellt und wenn nötig schmaler gemacht.</h1>
+</section>
+<section class="slide">
+	<style data-slide>
+		.w100 { width: 100%; }
+		.w75 { width: 75%; }
+		.w50 { width: 50%; }
+		.flexbox-preview > * {
+			flex: 1;
+			font-size: 0.75em;
+			min-height: 3.5em;
+		}
+	</style>
+	<div class="grid">
+		<div class="row row-full">
+			<ul class="flexbox-preview w100">
+				<li>Item A</li>
+				<li>Item B</li>
+				<li>Item C</li>
+				<li>Item D</li>
+				<li>Item E</li>
+			</ul>
+		</div>
+		<div class="row row-full">
+			<ul class="flexbox-preview w75">
+				<li>Item A</li>
+				<li>Item B</li>
+				<li>Item C</li>
+				<li>Item D</li>
+				<li>Item E</li>
+			</ul>
+		</div>
+		<div class="row row-full">
+			<ul class="flexbox-preview w50">
+				<li>Item A</li>
+				<li>Item B</li>
+				<li>Item C</li>
+				<li>Item D</li>
+				<li>Item E</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Mit <code class="language-css small">flex-wrap: wrap;</code> lässt sich das Umbruch-Verhalten der <span class="highlight">Flex-Items</span> festlegen.</h1>
+</section>
+<section class="slide">
+	<style data-slide>
+		.flexbox-preview {
+			flex-direction: row;
+			flex-wrap: wrap;
+			font-size: 0.6em;
+		}
+	</style>
+	<div class="grid">
+		<div class="row row-4">
+			<h2>HTML</h2>
+			<pre class="language-markup micro">
+				<code>
+					&#x3C;ul class=&#x22;container&#x22;&#x3E;
+						&#x3C;li&#x3E;Item A&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;Item B&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;Item C&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;Item D&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;Item E&#x3C;/li&#x3E;
+					&#x3C;/ul&#x3E;
+				</code>
+			</pre>
+		</div>
+		<div class="row row-4">
+			<h2>CSS</h2>
+			<pre class="language-css micro">
+				<code>
+					.container {
+						display: flex;
+						flex-direction: row;
+						flex-wrap: wrap;
+					}
+				</code>
+			</pre>
+		</div>
+		<div class="row row-4">
+			<h2>Browser</h2>
+			<ul class="flexbox-preview">
+				<li>Item A</li>
+				<li>Item B</li>
+				<li>Item C</li>
+				<li>Item D</li>
+				<li>Item E</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Mit <span class="attribute">justify-content</span> kann man den übrigen Platz zwischen den <span class="highlight">Flex-Items</span> verteilen, zB. <span class="value">space-between</span> oder <span class="value">space-around</span>.</h1>
+</section>
+<section class="slide">
+	<style data-slide>
+		.flexbox-preview {
+			flex-direction: row;
+			flex-wrap: wrap;
+			font-size: 0.6em;
+			justify-content: space-between;
+		}
+	</style>
+	<div class="grid">
+		<div class="row row-4">
+			<h2>HTML</h2>
+			<pre class="language-markup micro">
+				<code>
+					&#x3C;ul class=&#x22;container&#x22;&#x3E;
+						&#x3C;li&#x3E;Item A&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;Item B&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;Item C&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;Item D&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;Item E&#x3C;/li&#x3E;
+					&#x3C;/ul&#x3E;
+				</code>
+			</pre>
+		</div>
+		<div class="row row-4">
+			<h2>CSS</h2>
+			<pre class="language-css micro">
+				<code>
+					.container {
+						display: flex;
+						flex-direction: row;
+						flex-wrap: wrap;
+						justify-content: space-between;
+					}
+				</code>
+			</pre>
+		</div>
+		<div class="row row-4">
+			<h2>Browser</h2>
+			<ul class="flexbox-preview">
+				<li>Item A</li>
+				<li>Item B</li>
+				<li>Item C</li>
+				<li>Item D</li>
+				<li>Item E</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<style data-slide>
+		.flexbox-preview {
+			flex-direction: row;
+			flex-wrap: wrap;
+			font-size: 0.6em;
+			justify-content: space-around;
+		}
+	</style>
+	<div class="grid">
+		<div class="row row-4">
+			<h2>HTML</h2>
+			<pre class="language-markup micro">
+				<code>
+					&#x3C;ul class=&#x22;container&#x22;&#x3E;
+						&#x3C;li&#x3E;Item A&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;Item B&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;Item C&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;Item D&#x3C;/li&#x3E;
+						&#x3C;li&#x3E;Item E&#x3C;/li&#x3E;
+					&#x3C;/ul&#x3E;
+				</code>
+			</pre>
+		</div>
+		<div class="row row-4">
+			<h2>CSS</h2>
+			<pre class="language-css micro">
+				<code>
+					.container {
+						display: flex;
+						flex-direction: row;
+						flex-wrap: wrap;
+						justify-content: space-around;
+					}
+				</code>
+			</pre>
+		</div>
+		<div class="row row-4">
+			<h2>Browser</h2>
+			<ul class="flexbox-preview">
+				<li>Item A</li>
+				<li>Item B</li>
+				<li>Item C</li>
+				<li>Item D</li>
+				<li>Item E</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Benötigt man genauere Kontrolle über die <span class="highlight">Flex-Items,</span> kann man diese auch mit individuellen Eigenschaften versehen.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Mit <span class="attribute">flex-grow</span> kann man festlegen, ob und wie stark ein Element in der Breite wachsen darf.</h1>
+	<h1 class="left delayed">Mögliche Werte sind ganze Zahlen wie <span class="value">0</span>, <span class="value">1</span>, <span class="value">2</span>, etc.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Tip: Gibt man allen Flex-Items den selben <span class="attribute">flex-grow</span> Wert, zB. <span class="value">1</span>, werden alle gleich breit dargestellt.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Im Gegenzug kann man mit <span class="attribute">flex-shrink</span> angeben, ob ein Element auch schrumpfen darf.</h1>
+	<pre class="language-css mini left" style="margin-top: 1em;">
+		<code>
+			flex-shrink: 1; /* Element darf schrumpfen */
+
+			flex-shrink: 0; /* Element darf NICHT schrumpfen */
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="attribute">flex-basis</span> legt alternativ zu <span class="attribute">width</span> die Ausgangsgröße von <span class="highlight">Flex-Items</span> fest.</h1>
+	<pre class="language-css mini left" style="margin-top: 1em;">
+		<code>
+			flex-basis: auto; /* automatische Breite */
+			
+			width: 350px; /* manuell festgelegte Breite */
+			flex-basis: 350px;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left">Es gibt noch viele andere Eigenschaften, mit denen sich das Erscheinungsbild von flexbox beeinflussen lässt, siehe <a href="#references" class="link">Referenzen.</a></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Experimentiere mit <span class="attribute">flexbox</span> im <a href="https://coding.imweb.io/demo/flex/" class="link">Flexbox Playground.</a></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Versuche dich an <a href="https://flexboxfroggy.com/#de" class="link">Flexbox Froggy.</a></h1>
+</section>
+<section class="slide" data-title="references">
+	<div class="left">
+		<h1 class="left">Referenz</h1>
+		<ul class="simple">
+			<li><a class="link" href="https://developer.mozilla.org/de/docs/Web/CSS/CSS_Flexible_Box_Layout/ Grundlegende_Konzepte_der_Flexbox">MDN:  Grundlegende Konzepte der Flexbox</a></li>
+			<li><a class="link" href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/Flexbox">SelfHTML Wiki: CSS/Flexbox</a></li>
+			<li><a class="link" href="https://wiki.selfhtml.org/wiki/CSS/Tutorials/Flexbox/Warum_Flexbox%3F">SelfHTML Wiki: Warum Flexbox?</a></li>
+
+			<li class="section"><a class="link" href="https://coding.imweb.io/demo/flex/">https://coding.imweb.io/demo/flex/</a></li>
+			<li><a class="link" href="https://flexbox.tech">https://flexbox.tech</a></li>
+			<li><a class="link" href="https://codepen.io/enxaneta/full/adLPwv">https://codepen.io/enxaneta/full/adLPwv</a></li>
+			<li><a class="link" href="https://flexboxfroggy.com/#de">https://flexboxfroggy.com/</a></li>
+
+			<li class="section"><a class="link" href="https://webdesignerwall.com/tutorials/master-css-flexbox-5-simple-steps">Web Designer Wall: Master flexbox in 5 simple steps</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-5">
+			<img loading="lazy" src="../stunde1_basics/github-aufgaben.png" width="100%" alt="Github Repo" />
+		</div>
+		<div class="row row-7">
+			<h1 class="left">Beginne mit <span class="highlight">Aufgabe 7.</span></h1>
+			<h2 class="left" style="margin-top: 1em"><a href="https://arnorichter.de/hsma/int/aufgaben" class="link">https://arnorichter.de/<br />hsma/int/aufgaben</a></h2>
+		</div>
+	</div>
+</section>
+<footer class="slide" title="The End">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Fin.</text>
+			</svg>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>
