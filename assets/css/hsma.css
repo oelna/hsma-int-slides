@@ -315,6 +315,7 @@ pre { padding: 0.2rem 0.5rem !important; }
 :matches(code, pre, textarea).medium { font-size: 1.25em; }
 :matches(code, pre, textarea).small { font-size: 1em; }
 :matches(code, pre, textarea).mini { font-size: 0.75em; }
+:matches(code, pre, textarea).micro { font-size: 0.5em; }
 
 :matches(code, pre, textarea).center { margin-left: auto; margin-right: auto; }
 :matches(code, pre, textarea).left { margin-left: 0; margin-right: auto; }
@@ -516,6 +517,7 @@ img {
 	dominant-baseline: middle;
 }
 
+.slide .circle-intro .circle.dark text,
 .slide .circle-intro.circle-2 .circle text,
 .slide .circle-intro.circle-3 .circle text {
 	fill: var(--base02);

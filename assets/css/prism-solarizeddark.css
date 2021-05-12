@@ -81,11 +81,14 @@ pre[class*="language-"] {
 }
 
 .token.attr-name,
-.token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
 	color: #93a1a1; /* base1 */
+}
+
+.token.comment {
+	color: #586e75; /* base01 */
 }
 
 .token.attr-name {
@@ -111,6 +114,8 @@ pre[class*="language-"] {
 	color: #d33682; /* magenta */
 }
 
+:matches(code, pre).language-css, /* exception to color CSS values! */
+:matches(code, pre).lang-css,
 .token.attr-value,
 .token.string,
 .token.char,
