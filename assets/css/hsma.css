@@ -220,6 +220,16 @@ a.link:hover {
 	color: var(--base3);
 }
 
+.visually-hidden {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
 .hidden { display: none; }
 .invisible { opacity: 0; }
 .inactive {	opacity: 0.075; }

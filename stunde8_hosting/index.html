@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<title>INT Stunde 8</title>
+
+	<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+	<link rel="alternate icon" href="../assets/favicon.png" />
+
+	<link href="../inspire.css" rel="stylesheet" />
+	<link href="../assets/css/hsma.css" rel="stylesheet" />
+
+	<style>
+		/* additional styles for this lesson */
+		
+	</style>
+
+	<script src="../assets/js/bliss.shy.min.js" defer></script>
+	<script src="../inspire.js" defer></script>
+	<script src="../assets/js/hsma.js" defer></script>
+</head>
+<body class="stunde7 language-markup" data-prism-plugins="normalize-whitespace"><!-- data-resolution="1024 768" -->
+
+<!-- SVG iconset -->
+<svg width="0" height="0" class="visually-hidden">
+	<symbol id="svg-rightarrow" class="svg-icon" viewBox="0 0 40 40">
+		<g stroke="none" stroke-width="0" fill="none">
+			<polygon class="arrow" fill="currentColor" points="22.7994228 0 17.7777778 4.27128427 28.975469 16.046176 0 16.046176 0 22.1645022 28.975469 22.1645022 17.7777778 33.9393939 22.7994228 38.2106782 40 19.1053391"></polygon>
+		</g>
+	</symbol>
+
+	<symbol id="svg-leftarrow" class="svg-icon" viewBox="0 0 40 40">
+		<use xlink:href="#svg-rightarrow" transform="rotate(180 20 19.5)" />
+	</symbol>
+
+	<symbol id="svg-uparrow" class="svg-icon" viewBox="0 0 40 40">
+		<use xlink:href="#svg-rightarrow" transform="rotate(270 20 19.5)" />
+	</symbol>
+
+	<symbol id="svg-downarrow" class="svg-icon" viewBox="0 0 40 40">
+		<use xlink:href="#svg-rightarrow" transform="rotate(90 20 19.5)" />
+	</symbol>
+</svg>
+
+<div id="home-button"><a href="../index.html"></a></div>
+<div id="previous-button" class="nav-button"></div>
+<div id="next-button" class="nav-button"></div>
+
+<header class="slide" id="intro">
+	<h1>INT</h1>
+	<h2>Internet-Technik</h2>
+	<h2 class="highlight">Hosting</h2>
+</header>
+<section class="slide">
+	<h1 class="left">Wie funktioniert eigentlich das Web?</h1>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle dark" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">IP</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle dark" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">DNS</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle dark" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Hosting</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">IP</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">DNS</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Hosting</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Jeder mit dem Internet verbundene Computer bekommt eine eindeutige Adresse, vergleichbar einer Postanschrift.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Diese Adresse heisst <span class="highlight">IP-Adresse</span> (Internet-Protocol) und sah die letzten 30 Jahre so aus: <span class="highlight">217.146.185.163</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left highlight" style="line-height: 2;">217.146.185.163</h1>
+	<h1 class="left">Vier Blöcke mit Werten von 0 bis 255. Damit lassen sich etwa 4.3 Milliarden Adressen abbilden.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Das sind für heutige Verhältnisse zu wenige, nachdem alle Rechner, Smartphones, Fernseher, sogar Glühbirnen die Adressen verwenden.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Daher wird zur Zeit vom alten System <span class="highlight">IPv4</span> auf den Nachfolger <span class="highlight">IPv6</span> umgestellt.</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="highlight">IPv6</span> hat einen wesentlich größeren Adressraum und verwendet 8 Gruppen von vierstelligen Hexadezimal&shy;werten.</h1>
+</section>
+<section class="slide">
+	<h1 class="left highlight" style="font-size: min(4.5vw, 1.75em); margin-bottom: 0.5em;">2001:0DB8:0000:0000:0000:FF00:0042:8329</h1>
+	<h1 class="left">8 Gruppen von vierstelligen Hexadezimalwerten. Damit lassen sich etwa 3.4 × 10<sup>38</sup> Adressen abbilden.</h1>
+</section>
+<section class="slide">
+	<h1 class="left" style="margin-bottom: 0.5em;">Alternativ kann man führende Nullen auch weglassen:</h1>
+	<h1 class="left highlight">2001:DB8::FF00:42:8329</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Noch sind nicht alle Webseiten über IPv6 erreichbar. Die folgenden Folien verwenden beispielhaft weiterhin IPv4-Adressen.</h1>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">IP</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">DNS</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Hosting</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Da man sich schlecht die IP-Adressen aller interessanten Seiten merken kann, gibt es das <span class="highlight">Domain Name System</span> (DNS).</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Es gibt einige <span class="highlight">Root name server</span> auf der Welt, welche Listen von Adressräumen und kleineren DNS-Servern führen und miteinander abgleichen.</h1>
+</section>
+<section class="slide">
+	<img src="./root-server-worldmap.svg" width="960" height="" alt="Standorte der 13 originalen Root Name Server des DNS" style="width: 100%; height: auto;" />
+</section>
+<section class="slide">
+	<h1 class="left">Ursprünglich gab es 13 Root Name Server, die aber in der Zwischenzeit mittels Anycast Routing auf mehr als 600 ergänzt wurden.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Weitere kleine <span class="highlight">Nameserver</span> sind über alle Kontinente verteilt und verwalten "Adressbücher" von <span class="highlight">Domainnamen zu IP-Adressen</span> und machen diese zugänglich.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Dort ist hinterlegt, welche Domains zu welchen IPs verweisen, zB.</h1>
+	<h1 class="left" style="margin-top: 0.5em;">
+		<span class="highlight">google.com</span>
+
+		<svg width="60" height="60" viewBox="0 0 40 40" class="svg-rightarrow svg-icon" style="vertical-align: middle; margin: 0 0.25em;">
+			<g stroke="none" stroke-width="0" fill="none">
+				<polygon fill="currentColor" points="22.7994228 0 17.7777778 4.27128427 28.975469 16.046176 0 16.046176 0 22.1645022 28.975469 22.1645022 17.7777778 33.9393939 22.7994228 38.2106782 40 19.1053391"></polygon>
+			</g>
+		</svg>
+
+		<span class="highlight">172.217.16.197</span>
+	</h1>
+</section>
+<section class="slide">
+	<img src="./dns-diagram.svg" width="960" height="" alt="Top Level Domains, Domains, Subdomains" style="width: 100%; height: auto;" />
+</section>
+<section class="slide">
+	<h1 class="left">Die IP einer Seite lässt sich auf verschiedene Arten einsehen, zB. über das Terminal, mit dem Befehl <code>dig</code></h1>
+</section>
+<section class="slide">
+	<img src="./terminal-icon.png" width="200" height="200" alt="macOS Terminal icon artwork" />
+	<h1>Terminal.app</h1>
+</section>
+<section class="slide">
+	<pre class="language-shell small" style="width: 70%; background: black;">
+	<code style="color: #0f0;">
+		admin$ &#9608;
+	</code>
+</pre>
+</section>
+<section class="slide">
+	<pre class="language-shell small" style="width: 70%; background: black;">
+	<code style="color: #0f0;">
+		admin$ dig mail.google.com +short
+
+		googlemail.l.google.com.
+		172.217.16.197
+
+		admin$ &#9608;
+	</code>
+</pre>
+</section>
+<section class="slide">
+	<h1 class="left">Der vereinfachte Ablauf beim Aufruf einer Website im Browser ist:</h1>
+</section>
+<section class="slide">
+	<img src="./browser-flow.png" width="960" height="" alt="Browser flow domain resolution comic by vlad.studio" style="width: 70%; height: auto;" />
+	<h2><a href="https://vlad.studio/wallpaper/?how_internet_works" class="link">vlad.studio/wallpaper/?how_internet_works</a></h2>
+</section>
+<section class="slide">
+	<h1><a href="https://howdns.works/" class="link">https://howdns.works/</a></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Es gibt im Internet mehrere Verständigungsprotokolle, nach denen sich die angeschlossenen Rechner austauschen können.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Zum Beispiel das <span class="highlight">Hypertext Transfer Protocol.</span> Darin sind Regeln formuliert, nach denen Hypertexte übermittelt werden.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">In diesem Kurs habt ihr euch lange mit der Erstellung von Hypertexten beschäftigt.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Eine populäre Sprache, mit der Hypertexte erstellt werden, heisst <span class="highlight">Hypertext Markup Language.</span></h1>
+</section>
+<section class="slide">
+	<h1>index<span class="element">.html</span></h1>
+</section>
+<section class="slide">
+	<h1 style="font-size: 20vw;">😮</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Das Programm, welches über das <span class="highlight">Hypertext Transfer Protocol</span> kommuniziert, ist der Browser.</h1>
+</section>
+<section class="slide">
+	<img src="./browser-safari.png" width="960" height="" alt="Browser Safari on macOS 11 Big Sur" style="width: 70%; height: auto;" />
+</section>
+<section class="slide">
+	<h1><span class="highlight">http</span>://github.com/</h1>
+</section>
+<section class="slide">
+	<h1 style="font-size: 20vw;">😮</h1>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">IP</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">DNS</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Hosting</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Hat man eine Website mit <span class="html">HTML</span> und <span class="css">CSS</span> gestaltet, ist diese zunächst nur auf dem eigenen Rechner verfügbar.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Um über das Internet für jeden erreichbar zu sein, muss man die Dateien auf einen <span class="highlight">öffentlich zugänglichen Webspace</span> laden.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">In der Regel mietet man sich dafür einfach welchen, zB. bei einem <span class="highlight">Shared Hoster.</span> Das kostet gar nicht so viel;</h1>
+	<h1 class="left delayed">Etwa <span class="highlight">1-10 Euro</span> pro Monat.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Der Anmeldungsprozess kann sich unterscheiden, aber läuft häufig ähnlich ab.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Nach der Registrierung bekommt üblicherweise eine Email mit Zugangsdaten zu einer Verwaltungsoberfläche, oft <span class="highlight">Benutzername</span> und <span class="highlight">Passwort.</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Am Beispiel von <span class="highlight">Uberspace</span>, die den ersten Monat <span class="highlight">kostenlos</span> anbieten, kann man den Ablauf ausprobieren. Die Zugangsdaten erhält man dort wie folgt:</h1>
+</section>
+<section class="slide">
+	<h1><a href="https://dashboard.uberspace.de/register" class="link">https://uberspace.de/register</a></h1>
+	
+</section>
+<section class="slide">
+	<style data-slide>
+		.image-annotation {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+		}
+		.image-annotation .arrow {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 8vw;
+			color: var(--magenta);
+		}
+		.image-annotation .arrow-1 {
+			top: 56vh;
+			left: 12vw;
+		}
+	</style>
+
+	<figure style="text-align: center;">
+		<img src="./uberspace-register.jpg?v=1" width="60%" height="" alt="Uberspace registration process" />
+		<figcaption>Benutzername (und Passwort!) merken</figcaption>
+	</figure>
+
+	<!-- this is all incomplete! -->
+	<!--<div class="image-annotation">
+		<svg class="icon arrow arrow-1"><use xlink:href="#svg-rightarrow"></use></svg>
+	</div>-->
+</section>
+<section class="slide">
+	<figure style="text-align: center;">
+		<img src="./uberspace-access-1.jpg" width="60%" height="" alt="Uberspace login data" />
+		<figcaption>SSH/SFTP Passwort setzen und merken</figcaption>
+	</figure>
+</section>
+<section class="slide">
+	<figure style="text-align: center;">
+		<img src="./uberspace-access-2.jpg" width="60%" height="" alt="Uberspace login data" />
+		<figcaption>Hostname oder IP merken</figcaption>
+	</figure>
+</section>
+<section class="slide">
+	<h1 class="left">Gemerkt:</h1>
+	<ul class="left">
+		<li>Benutzername</li>
+		<li class="delayed">Anmeldepasswort</li>
+		<li class="section delayed">Hostname</li>
+		<li class="delayed">SSH-Passwort</li>
+	</ul>
+</section>
+<section class="slide">
+	<h1 class="left">Mit diesen Daten kann man sich zum Webspace verbinden und Dateien transferieren.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Der Dateitransfer ist über das <span class="highlight">File Transfer Protocol</span> geregelt. Auch dafür gibt es spezielle Programme: <span class="highlight">FTP Clients.</span></h1>
+	<h1 class="left" style="opacity: 0.2">Heute verwendet man genau wie HTTPS eher die verschlüsselte Verbindung SFTP</h1>
+</section>
+<section class="slide">
+	<style data-slide>
+		td { padding: 0.25em; }
+		td:nth-child(3) {
+			color: var(--base2);
+		}
+		.badge {
+			padding-left: 0;
+			padding-right: 0;
+			width: 3ch;
+			padding-top: 0.1em;
+		}
+		.os {
+			font-size: 0.5em;
+			background: var(--blue);
+			color: var(--base2);
+			border-radius: 0.75em;
+			padding: 0.2em 0.5em;
+			margin-right: 0.5em;
+		}
+		.os.mac {
+			background: var(--magenta);
+		}
+		.price {
+			color: var(--base01);
+		}
+		.url {
+			font-size: 0.55em;
+			padding-top: 1.15em;
+		}
+	</style>
+	<table>
+		<tr>
+			<td class="badge"></td>
+			<td class="badge"><span class="os mac">Mac</span></td>
+			<td>Transmit</td>
+			<td class="price">$45</td>
+			<td class="url"><a class="link" href="https://panic.com/transmit/">panic.com/transmit</a></td>
+		</tr>
+		<tr>
+			<td class="badge"></td>
+			<td class="badge"><span class="os mac">Mac</span></td>
+			<td>Forklift</td>
+			<td class="price">$30</td>
+			<td class="url"><a class="link" href="https://binarynights.com/">binarynights.com</a></td>
+		</tr>
+		<tr>
+			<td class="badge"><span class="os win">Win</span></td>
+			<td class="badge"></td>
+			<td>WinSCP</td>
+			<td class="price">free</td>
+			<td class="url"><a class="link" href="https://winscp.net/eng/docs/lang:de">winscp.net</a></td>
+		</tr>
+		<tr>
+			<td class="badge"><span class="os win">Win</span></td>
+			<td class="badge"><span class="os mac">Mac</span></td>
+			<td>Filezilla</td>
+			<td class="price">free</td>
+			<td class="url"><a class="link" href="https://filezilla-project.org/">filezilla-project.org</a></td>
+		</tr>
+		<tr>
+			<td class="badge"><span class="os win">Win</span></td>
+			<td class="badge"><span class="os mac">Mac</span></td>
+			<td>Cyberduck</td>
+			<td class="price">free</td>
+			<td class="url"><a class="link" href="https://cyberduck.io/">cyberduck.io</a></td>
+		</tr>
+		<tr>
+			<td class="badge"></td>
+			<td class="badge"><span class="os mac">Mac</span></td>
+			<td>Nova</td>
+			<td class="price">$99</td>
+			<td class="url"><a class="link" href="https://nova.app/">nova.app</a></td>
+		</tr>
+		<tr>
+			<td class="badge"><span class="os win">Win</span></td>
+			<td class="badge"></td>
+			<td>CuteFTP</td>
+			<td class="price">$60</td>
+			<td class="url"><a class="link" href="https://www.globalscape.com/cuteftp">globalscape.com/cuteftp</a></td>
+		</tr>
+		<tr>
+			<td class="badge"><span class="os win">Win</span></td>
+			<td class="badge"></td>
+			<td>CoreFTP</td>
+			<td class="price">free</td>
+			<td class="url"><a class="link" href="http://www.coreftp.com/">coreftp.com</a></td>
+		</tr>
+	</table>
+</section>
+<section class="slide">
+	<figure style="text-align: center;">
+		<img src="./transmit-icon.png" width="60%" height="" alt="Panic Transmit icon for macOS Big Sur" />
+		<figcaption>Transmit</figcaption>
+	</figure>
+</section>
+<section class="slide">
+	<figure style="text-align: center;">
+		<img src="./transmit-setup-1.jpg" width="80%" height="" alt="Panic Transmit FTP connection window" />
+		<figcaption>Zugang anlegen</figcaption>
+	</figure>
+</section>
+<section class="slide">
+	<figure style="text-align: center;">
+		<img src="./transmit-setup-2.jpg" width="80%" height="" alt="Panic Transmit FTP connection window" />
+		<figcaption style="display: flex; width: 80%; margin: 0 auto;">
+			<span style="flex: 1; text-align: center;">Local<br /><span class="inactive">Computer</span></span>
+			<span style="flex: 1; text-align: center;">Remote<br /><span class="inactive">Server</span></span>
+		</figcaption>
+	</figure>
+</section>
+<section class="slide">
+	<h1 class="left">Bei Uberspace legt man Dateien, die auf der Website sichtbar sein sollen ins Verzeichnis <span class="highlight">html</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Nach dem Dateitransfer lässt sich die Website über den gewählten Namen aufrufen.</h1>
+</section>
+<section class="slide">
+	<h1 class="highlight">https://<span style="border-bottom: 0.1em solid var(--magenta);">hanswurst</span>.<span style="border-bottom: 0.1em solid var(--blue);">uber.space</span>/</h1>
+	<h2 style="margin-top: 1em; padding-left: 4em; color: var(--base01)">
+		<span class="delayed" style="margin-right: 1.25em;">Benutzername</span>
+		<span class="delayed">Serveradresse</span>
+	</h2>
+</section>
+<section class="slide">
+	<h1 class="left">Oft möchte man auch gerne einen richtigen Domainnamen haben, so wie <a class="link">hanswurst.de</a>, weil das professioneller aussieht.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Manche Provider haben das im Preis mit inbegriffen. Bei Uberspace macht man das über einen anderen Anbieter, wie zB. <a class="link" href="https://inwx.de/">inwx.com</a> oder <a class="link" href="https://one.com/">one.com</a></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Dort registriert man den Domainnamen und setzt dann die DNS-Einstellungen dafür auf die IP von Uberspace.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Die benötigten DNS Records sind <span class="highlight">A</span> für IPv4, <span class="highlight">AAAA</span> für IPv6 und manchmal <span class="highlight">MX</span> für Email.</h1>
+</section>
+<section class="slide">
+	<figure style="text-align: center;">
+		<img src="./uberspace-access-2.jpg" width="60%" height="" alt="Uberspace DNS data" />
+		<figcaption>Unter dem Hostname stehen die IP-Adressen</figcaption>
+	</figure>
+</section>
+<section class="slide">
+	<h1 class="left">Bei Uberspace muss man anschliessend noch kurz konfigurieren, dass man den Domainnamen mit dem eigenen Account benutzen möchte.</h1>
+	<h2 class="left" style="margin-top: 0.25em;"><a class="link" href="https://manual.uberspace.de/web-domains.html">manual.uberspace.de/web-domains.html</a></h2>
+</section>
+<section class="slide">
+	<h1 class="left">Nach der Registrierung kann es <span class="highlight">bis zu 48 Stunden</span> dauern, bis die eigene Domain erreichbar ist, da das DNS die neue Eintragung erst verteilen muss.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Viele Provider bieten über den Webspace hinaus noch Funktionalitäten wie <span class="highlight">PHP</span>, <span class="highlight">MySQL</span>, etc. ohne Aufpreis mit an, so zB. auch Uberspace.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Prominente Provider wie <span class="highlight">1&1</span>, <span class="highlight">Hosteurope</span>, <span class="highlight">Hetzner</span> oder <span class="highlight">Mittwald</span> kosten oft viel Geld.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Mit kleineren lokalen Providern wie <a class="link" href="https://uberspace.de/">Uberspace</a>, <a class="link" href="https://one.com/">one.com</a>, <a class="link" href="https://www.serverprofis.de/">Serverprofis</a> oder <a class="link" href="https://all-inkl.com/">all-inkl.com</a> fährt man in der Regel günstiger.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Übrigens: Wenn dir der Webspace bei Uberspace gefällt, kannst du einfach ein bisschen Geld überweisen und du behältst ihn.</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="highlight">Den Preis legst du selbst fest.</span><br />
+	Der Wert, der geboten wird, liegt sicher zwischen 20 und 40 Euro pro Monat.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Aber solange du dir nur ein paar Euro leisten kannst, gib einfach die und stell den Preis später ein.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Eine weitere Möglichkeit ist das <span class="highlight">kostenlose</span> Hosting über <a class="link" href="https://pages.github.com/">Github&nbsp;Pages.</a></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Es empfiehlt sich, sich vorab etwas mit <span class="highlight">Git</span> und dem <span class="highlight">Terminal</span> vertraut zu machen, es gibt aber gute Tutorials auf der Seite.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Man braucht einen (kostenlosen) Github-Account, legt dort ein <span class="highlight">Repository</span> an und lädt die zur Seite gehörigen Dateien hinein.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Im Anschluss kann man in den <span class="highlight">Einstellungen</span> des Repos den Wert für <span class="highlight">Github Pages</span> aktivieren. Zwei Minuten später ist die Seite <span class="highlight">online!</span></h1>
+</section>
+<section class="slide">
+	<figure style="text-align: center;">
+		<img src="./github-pages-1.jpg" width="60%" height="" alt="Github Pages setup" />
+		<figcaption>Repo Settings - Pages - Source - main branch</figcaption>
+	</figure>
+</section>
+<section class="slide">
+	<h2 class="link">https://<span class="highlight">username</span>.github.io/<span class="highlight">repository-name</span></h2>
+	<div class="delayed">
+		<div style="margin: 0.75em auto 0.5em; display: flex; width: 90%;">
+			<div style="text-align: center; flex: 1; color: var(--base2);"><svg class="icon arrow" width="40" height="40"><use xlink:href="#svg-downarrow"></use></svg></div>
+			<div style="text-align: center; flex: 1; color: var(--base2);"><svg class="icon arrow" width="40" height="40"><use xlink:href="#svg-downarrow"></use></svg></div>
+		</div>
+		<h2 class="link">https://<span class="highlight">hanswurst</span>.github.io/<span class="highlight">meine-int-aufgabe</span></h2>
+	</div>
+</section>
+<section class="slide" data-title="references">
+	<div class="left">
+		<h1 class="left">Referenz</h1>
+		<ul class="simple">
+			<li><a class="link" href="https://developer.mozilla.org/en-US/Learn/Common_questions/How_does_the_Internet_work">MDN: How does the Internet work?</a></li>
+			<li><a class="link" href="https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/How_the_Web_works">MDN: How the Web works</a></li>
+			<li><a class="link" href="https://developer.mozilla.org/en-US/Learn/Common_questions/What_is_a_domain_name">MDN: What is a domain name?</a></li>
+
+			<li class="section"><a class="link" href="https://www.hnm.ch/de/know-how/artikel/so-funktioniert-das-internet">HNM.ch: So funktioniert das Internet</a></li>
+			<li><a class="link" href="https://www.datenschutzbeauftragter-info.de/wie-funktioniert-das-internet/">datenschutzbeauftragter-info.de: wie funktioniert das internet?</a></li>
+			<li class="section"><a class="link" href="https://manual.uberspace.de/">Uberspace Manual</a></li>
+			<li><a class="link" href="https://pages.github.com/">Github Pages</a></li>
+		</ul>
+	</div>
+</section>
+<!--<section class="slide">
+	<div class="grid">
+		<div class="row row-5">
+			<img loading="lazy" src="../stunde1_basics/github-aufgaben.png" width="100%" alt="Github Repo" />
+		</div>
+		<div class="row row-7">
+			<h1 class="left">Beginne mit <span class="highlight">Aufgabe 8.</span></h1>
+			<h2 class="left" style="margin-top: 1em"><a href="https://arnorichter.de/hsma/int/aufgaben" class="link">https://arnorichter.de/<br />hsma/int/aufgaben</a></h2>
+		</div>
+	</div>
+</section>-->
+<footer class="slide" title="The End">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Fin.</text>
+			</svg>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>
