@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<title>INT Stunde 9</title>
+
+	<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+	<link rel="alternate icon" href="../assets/favicon.png" />
+
+	<link href="../inspire.css" rel="stylesheet" />
+	<link href="../assets/css/hsma.css" rel="stylesheet" />
+
+	<style>
+		/* styles for demos */
+		svg.position-demo {
+			margin-top: 0.4em;
+			background-color: var(--base2);
+		}
+
+		svg .detail {
+			opacity: 0;
+			transition: all 0.75s ease;
+		}
+
+		svg:hover .detail {
+			opacity: 1;
+		}
+
+		svg .detail rect {
+			fill: var(--orange);
+		}
+
+		svg .detail text {
+			fill: var(--base02);
+		}
+	</style>
+
+	<script src="../assets/js/bliss.shy.min.js" defer></script>
+	<script src="../inspire.js" defer></script>
+	<script src="../assets/js/hsma.js" defer></script>
+</head>
+<body class="stunde9 language-markup" data-prism-plugins="normalize-whitespace"><!-- data-resolution="1024 768" -->
+
+<!-- SVG iconset -->
+<svg width="0" height="0" class="visually-hidden">
+	<symbol id="svg-rightarrow" class="svg-icon" viewBox="0 0 40 40">
+		<g stroke="none" stroke-width="0" fill="none">
+			<polygon class="arrow" fill="currentColor" points="22.7994228 0 17.7777778 4.27128427 28.975469 16.046176 0 16.046176 0 22.1645022 28.975469 22.1645022 17.7777778 33.9393939 22.7994228 38.2106782 40 19.1053391"></polygon>
+		</g>
+	</symbol>
+
+	<symbol id="svg-leftarrow" class="svg-icon" viewBox="0 0 40 40">
+		<use xlink:href="#svg-rightarrow" transform="rotate(180 20 19.5)" />
+	</symbol>
+
+	<symbol id="svg-uparrow" class="svg-icon" viewBox="0 0 40 40">
+		<use xlink:href="#svg-rightarrow" transform="rotate(270 20 19.5)" />
+	</symbol>
+
+	<symbol id="svg-downarrow" class="svg-icon" viewBox="0 0 40 40">
+		<use xlink:href="#svg-rightarrow" transform="rotate(90 20 19.5)" />
+	</symbol>
+</svg>
+
+<div id="home-button"><a href="../index.html"></a></div>
+<div id="previous-button" class="nav-button"></div>
+<div id="next-button" class="nav-button"></div>
+
+<header class="slide" id="intro">
+	<h1>INT</h1>
+	<h2>Internet-Technik</h2>
+	<h2 class="highlight">Layout</h2>
+</header>
+<section class="slide">
+	<div class="circle-intro circle-2">
+		<div>
+			<svg class="circle dark" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">position</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle dark" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">float</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<div class="circle-intro circle-2">
+		<div>
+			<svg class="circle dark" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">position</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle dark inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">float</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Manchmal ist es für ein Layout erforderlich, <span class="element">Elemente</span> frei im Browserfenster positionieren zu können.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Für diesen Fall ist in <span class="css">CSS</span> die Eigenschaft <span class="attribute">position</span> vorgesehen, die mehrere Werte annehmen kann.</h1>
+</section>
+<section class="slide">
+	<h1><code class="language-css">position: static;</code></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Die Standard-Einstellung. Das <span class="element">Element</span> liegt im normalen Seitenfluss.</h1>
+</section>
+<section class="slide">
+	<h1><code class="language-css">position: absolute;</code></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Das <span class="element">Element</span> wird aus dem Seitenfluss herausgelöst und lässt sich mit den Eigenschaften <code class="language-css">top</code>, <code class="language-css">left</code>, <code class="language-css">bottom</code>, <code class="language-css">right</code> oder <code class="language-css">inset</code> platzieren.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Der Ursprung des Koordinaten&shy;systems liegt dabei in der <span class="highlight">linken oberen Ecke</span> des Dokuments.</h1>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-6">
+			<pre class="language-css mini">
+				<code>
+					.test-element {
+					  position: absolute;
+
+					  top: 200px;
+					  left: 180px;
+
+					  width: 300px;
+					  height: 200px;
+					}
+				</code>
+			</pre>
+		</div>
+		<div class="row row-6">
+			<svg class="position-demo" viewbox="0 0 640 480">
+				<rect x="150" y="200" width="300" height="200" class="test-element" fill="var(--blue)" />
+				<g class="detail">
+					<rect x="0" y="200" width="150" height="200" />
+					<text x="20" y="310">150px</text>
+
+					<rect x="150" y="0" width="300" height="200" />
+					<text x="240" y="120">200px</text>
+				</g>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Alternativ kann man auch alle Abstände <span class="highlight">auf einmal</span> via <code class="language-css">inset</code> definieren.</h1>
+		<h1 class="left delayed">Die Schreibweise ist identisch zu <code class="language-css">margin</code>: Im Uhrzeigersinn.</h1>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-6">
+			<pre class="language-css mini">
+				<code>
+					.test-element {
+					  position: absolute;
+
+					  inset: 200px 190px 80px 180px;
+					  /* top left bottom right */
+					}
+				</code>
+			</pre>
+		</div>
+		<div class="row row-6">
+			<svg class="position-demo" viewbox="0 0 640 480">
+				<rect x="150" y="200" width="300" height="200" class="test-element" fill="var(--blue)" />
+				<g class="detail">
+					<rect x="0" y="200" width="150" height="200" />
+					<text x="20" y="310">150px</text>
+
+					<rect x="150" y="0" width="300" height="200" />
+					<text x="240" y="120">200px</text>
+
+					<rect x="450" y="200" width="190" height="200" />
+					<text x="490" y="310">200px</text>
+
+					<rect x="150" y="400" width="300" height="90" />
+					<text x="240" y="455">200px</text>
+				</g>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1><code class="language-css">position: fixed;</code></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Der wichtige Unterschied zu <code class="language-css">position: absolute</code> ist, dass das <span class="element">Element</span> auch beim Scrollen der Seite <span class="highlight">permanent sichtbar</span> bleibt.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Der Ursprung des Koordinaten&shy;systems liegt in diesem Fall in der linken oberen Ecke des <span class="highlight">Browserfensters.</span></h1>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-6">
+			<pre class="language-css mini">
+				<code>
+					.test-element {
+					  position: fixed;
+
+					  top: 0;
+					  left: 0;
+
+					  width: 100%;
+					  height: 40px;
+					}
+				</code>
+			</pre>
+		</div>
+		<div class="row row-6">
+			<svg class="position-demo" viewbox="0 0 640 480">
+				<rect x="0" y="0" width="640" height="40" class="test-element" fill="var(--blue)" />
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<video src="./position-fixed_h265.mp4" width="640" height="auto" autoplay loop muted playsinline preload="metadata">
+		<a href="./position-fixed_h265.mp4" download>Video speichern (Format H.265)</a>
+	</video>
+</section>
+<section class="slide">
+	<h1><code class="language-css">position: relative;</code></h1>
+</section>
+<section class="slide">
+	<h1 class="left">Das <span class="element">Element</span> lässt sich von seiner ursprünglichen Position aus mit <code class="language-css">top</code>, <code class="language-css">left</code>, <code class="language-css">bottom</code> oder <code class="language-css">right</code> versetzen.</h1>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-6">
+			<pre class="language-css mini">
+				<code>
+					.test-element {
+					  position: relative;
+
+					  top: 60px;
+					  left: 100px;
+					}
+				</code>
+			</pre>
+		</div>
+		<div class="row row-6">
+			<svg class="position-demo" viewbox="0 0 640 480">
+				<rect x="10" y="-60" width="300" height="200" class="test-element" fill="var(--base1)" />
+				<rect x="10" y="360" width="300" height="200" class="test-element" fill="var(--base1)" />
+
+				<rect x="10" y="150" width="300" height="200" class="test-element" fill="transparent" stroke="var(--blue)" stroke-width="3px" stroke-opacity="1" stroke-dasharray="8,8" />
+
+				<rect x="110" y="210" width="300" height="200" class="test-element" fill="var(--blue)" />
+
+				<g class="detail">
+					<rect x="10" y="210" width="100" height="140" />
+					<text x="25" y="295">100</text>
+
+					<rect x="110" y="150" width="200" height="60" />
+					<text x="190" y="195">60</text>
+				</g>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Der Ursprung des Koordinaten&shy;systems ist dabei die linke obere Koordinate der <span class="highlight">ursprünglichen Position</span> des Elements.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Relative Positionierung wird <span class="highlight">eher selten</span> eingesetzt.</h1>
+	<h1 class="left delayed">Es gibt aber zwei pouläre Einsatzzwecke.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">1. Elemente um einige Pixel zu verschieben, um optische Korrekturen umzusetzen.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">2. Um einen neuen Kontext zu schaffen, innerhalb dessen sich absolut positionieren lässt.</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="element">Elemente</span> lassen sich nämlich auch <span class="highlight">innerhalb</span> von bereits positio&shy;nierten <span class="element">Elementen</span> platzieren.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Dann wird die <span class="highlight">linke obere Ecke</span> des <span class="highlight">umgebenden</span> <span class="element">Elements</span> der neue Ursprung für die Positionierung.</h1>
+</section>
+<section class="slide">
+	<style data-slide>
+		svg:hover .no-detail rect {
+			stroke: var(--blue);
+			stroke-width: 3px;
+			stroke-dasharray: 8;
+			fill:  transparent;
+		}
+	</style>
+	<div class="grid">
+		<div class="row row-6">
+			<pre class="language-css mini">
+				<code>
+					.container {
+					  position: relative;
+					}
+
+					.spalte1 {
+						left: 0;
+						width: 50%;
+					}
+
+					.spalte2 {
+						right: 0;
+						width: 50%;
+					}
+				</code>
+			</pre>
+		</div>
+		<div class="row row-6">
+			<svg class="position-demo" viewbox="0 0 640 480">
+				<g class="no-detail">
+					<rect x="10" y="10" width="620" height="350" class="test-element" fill="var(--blue)" />
+				</g>
+
+				<g class="detail">
+					<rect x="20" y="20" width="299" height="330" fill="var(--red)" />
+					<text x="105" y="195">.spalte1</text>
+
+					<rect x="321" y="20" width="299" height="330" fill="var(--red)" />
+					<text x="410" y="195">.spalte2</text>
+				</g>
+
+				<!--<g class="detail">
+					<rect x="10" y="210" width="100" height="140" />
+					<text x="25" y="295">100</text>
+
+					<rect x="110" y="150" width="200" height="60" />
+					<text x="190" y="195">60</text>
+				</g>-->
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left"><code class="language-css">absolute</code>, <code class="language-css">fixed</code> und <code class="language-css">relative</code> erzeugen einen solchen neuen Kontext, <code class="language-css">static</code> hingegen nicht.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Eine Angabe zum Versatz, zB. <code class="language-css">top</code> oder <code class="language-css">left</code>, ist für den Container <span class="highlight">nicht zwingend</span> notwendig.</h1>
+</section>
+<section class="slide">
+	<h1><code class="language-css">position: sticky;</code></h1>
+</section>
+<section class="slide">
+	<h1 class=""><a class="link" href="https://elad.medium.com/css-position-sticky-how-it-really-works-54cd01dc2d46">position sticky:<br />how it really works</a></h1>
+</section>
+<section class="slide" data-title="references">
+	<div class="left">
+		<h1 class="left">Referenz</h1>
+		<ul class="simple">
+			<li><a class="link" href="https://developer.mozilla.org/de/docs/Web/CSS/position">MDN: CSS position</a></li>
+			<li><a class="link" href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/Positionierung/position">SelfHTML: CSS position</a></li>
+
+			<li class="section"><a class="link" href="https://alistapart.com/article/css-positioning-101/">CSS positioning 101</a></li>
+			<li><a class="link" href="http://www.barelyfitz.com/screencast/html-training/css/positioning/">CSS positioning screencast</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-5">
+			<img loading="lazy" src="../stunde1_basics/github-aufgaben.png" width="100%" alt="Github Repo" />
+		</div>
+		<div class="row row-7">
+			<h1 class="left">Beginne mit <span class="highlight">Aufgabe 10.</span></h1>
+			<h2 class="left" style="margin-top: 1em"><a href="https://arnorichter.de/hsma/int/aufgaben" class="link">https://arnorichter.de/<br />hsma/int/aufgaben</a></h2>
+		</div>
+	</div>
+</section>
+<footer class="slide" title="The End">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Fin.</text>
+			</svg>
+		</div>
+	</div>
+</footer>
+<section class="slide">
+	<div class="circle-intro circle-2">
+		<div>
+			<svg class="circle dark inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">position</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle dark" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">float</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1>Leider noch nicht fertig! <span class="highlight">Sorry!!</span></h1>
+</section>
+
+</body>
+</html>
