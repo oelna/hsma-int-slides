@@ -371,6 +371,110 @@
 	</div>
 </section>
 <section class="slide">
+	<div class="circle-intro circle-2">
+		<div>
+			<svg class="circle dark inactive" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">position</text>
+			</svg>
+		</div>
+		<div>
+			<svg class="circle dark" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">float</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Die <span class="css">CSS</span>-Eigenschaften <code class="language-css">float</code> und <code class="language-css">clear</code> ermöglichen, Text um Bilder und andere Elemente fließen zu lassen.</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><code class="language-css">float</code> kann die Werte <span class="highlight">left</span>, <span class="highlight">right</span> und <span class="highlight">none</span> annehmen.</h1>
+	<h1 class="left" style="margin-top: 1em;"><code class="language-css">clear</code> kann die Werte <span class="highlight">left</span>, <span class="highlight">right</span> und <span class="highlight">both</span> annehmen.</h1>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-7">
+			<h1 class="left">Ein Beispiel mit <span class="highlight">normalem Seitenfluss</span>,<br />Bild und Text.</h1>
+		</div>
+		<div class="row row-5" style="padding-left: 3vw;">
+			<div style="border: 0.15em solid var(--base0); width: 20vw; height: 20vh; margin-bottom: 0.2em;"></div>
+			
+			<p style="margin-top: 0; font-size: 1.25rem;">Incididunt aesthetic master cleanse wes anderson, velit +1 id laborum. Organic artisan qui readymade. Post-ironic put a bird on it food truck artisan, master cleanse aliquip high life deserunt banh mi fanny pack kale chips labore vegan godard. Hoodie fixie lomo magna, before they sold out nihil aute eu trust fund cupidatat swag ad minim seitan cliche. Master cleanse labore ad, cray lo-fi et VHS. Wes anderson sartorial retro pinterest consequat vero. Nostrud gastropub ennui, fap pour-over duis organic bicycle rights twee retro.</p>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<pre><code class="language-css">
+		img.beispiel {
+			float: left;
+			width: 140px;
+			height: 100px;
+		}
+	</code></pre>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-7">
+			<h1 class="left">Erhält ein <span class="highlight">Element</span> <code class="language-css">float</code>, wird es auf die Seite gedrückt und nach&shy;folgen&shy;der Text umfliesst es.</h1>
+		</div>
+		<div class="row row-5" style="padding-left: 3vw;">
+			<div style="border: 0.15em solid var(--base0); width: 20vw; height: 20vh; float: left; margin: auto 0.5em 0.2em auto;"></div>
+
+			<p style="margin-top: 0; font-size: 1.25rem;">Incididunt aesthetic master cleanse wes anderson, velit +1 id laborum. Organic artisan qui readymade. Post-ironic put a bird on it food truck artisan, master cleanse aliquip high life deserunt banh mi fanny pack kale chips labore vegan godard. Hoodie fixie lomo magna, before they sold out nihil aute eu trust fund cupidatat swag ad minim seitan cliche. Master cleanse labore ad, cray lo-fi et VHS. Wes anderson sartorial retro pinterest consequat vero. Nostrud gastropub ennui, fap pour-over duis organic bicycle rights twee retro.</p>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<div class="grid">
+		<div class="row row-7">
+			<h1 class="left">Gibt man dem nachfolgenden Textabsatz <code class="language-css">clear</code>, erzeugt er in jedem Fall einen neuen Umbruch.</h1>
+		</div>
+		<div class="row row-5" style="padding-left: 3vw;">
+			<div style="border: 0.15em solid var(--base0); width: 20vw; height: 20vh; margin-bottom: 0.2em;"></div>
+			
+			<p style="margin-top: 0; font-size: 1.25rem;">Incididunt aesthetic master cleanse wes anderson, velit +1 id laborum. Organic artisan qui readymade. Post-ironic put a bird on it food truck artisan, master cleanse aliquip high life deserunt banh mi fanny pack kale chips labore vegan godard. Hoodie fixie lomo magna, before they sold out nihil aute eu trust fund cupidatat swag ad minim seitan cliche. Master cleanse labore ad, cray lo-fi et VHS. Wes anderson sartorial retro pinterest consequat vero. Nostrud gastropub ennui, fap pour-over duis organic bicycle rights twee retro.</p>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<pre><code class="language-css">
+		p {
+			clear: left;
+		}
+	</code></pre>
+</section>
+<section class="slide">
+	<h1 class="left">Mehrere <span class="element">Elemente</span> nacheinander mit <code class="language-css">float</code> erscheinen neben&shy;einander; das erste <span class="element">Element</span> am weitesten auf der Seite.</h1>
+</section>
+<section class="slide">
+	<div>
+		<div style="border: 0.15em solid var(--base0); width: 20vw; height: 20vh; margin: auto 0.5em 0.2em auto; float: left;"></div>
+		<div style="border: 0.15em solid var(--base0); width: 20vw; height: 20vh; margin: auto 0.5em 0.2em auto; float: left;"></div>
+		<div style="border: 0.15em solid var(--base0); width: 20vw; height: 20vh; margin: auto 0.5em 0.2em auto; float: left;"></div>
+		
+		<p style="margin-top: 0; font-size: 1.25rem;">Incididunt aesthetic master cleanse wes anderson, velit +1 id laborum. Organic artisan qui readymade. Post-ironic put a bird on it food truck artisan, master cleanse aliquip high life deserunt banh mi fanny pack kale chips labore vegan godard. Hoodie fixie lomo magna, before they sold out nihil aute eu trust fund cupidatat swag ad minim seitan cliche. Master cleanse labore ad, cray lo-fi et VHS. Wes anderson sartorial retro pinterest consequat vero. Nostrud gastropub ennui, fap pour-over duis organic bicycle rights twee retro.</p>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Diese Tatsache hat man früher benutzt, um <span class="highlight">Gestaltungsraster</span> umzusetzen. <span class="delayed">Das hatte leider auch viele Nachteile und Bugs. Seit <span class="highlight">Flexbox</span> und <span class="highlight">Grid</span> ist das nicht mehr nötig.</span></h1>
+</section>
+<section class="slide" data-title="references">
+	<div class="left">
+		<h1 class="left">Referenz</h1>
+		<ul class="simple">
+			<li><a class="link" href="https://developer.mozilla.org/de/docs/Web/CSS/float">MDN: CSS float</a></li>
+			<li><a class="link" href="https://wiki.selfhtml.org/wiki/CSS/Tutorials/Ausrichtung/float_und_clear">SelfHTML: float und clear</a></li>
+
+			<li class="section"><a class="link" href="http://www.alistapart.com/articles/css-floats-101/">A List Apart: CSS floats 101</a></li>
+			<li><a class="link" href="https://webplatform.github.io/docs/css/properties/float/">Webplatform.org: float</a></li>
+		</ul>
+	</div>
+</section>
+
+
+<section class="slide">
 	<div class="grid">
 		<div class="row row-5">
 			<img loading="lazy" src="../stunde1_basics/github-aufgaben.png" width="100%" alt="Github Repo" />
@@ -391,25 +495,6 @@
 		</div>
 	</div>
 </footer>
-<section class="slide">
-	<div class="circle-intro circle-2">
-		<div>
-			<svg class="circle dark inactive" viewbox="0 0 100 100">
-				<circle cx="50" cy="50" r="50" />
-				<text x="50%" y="52%">position</text>
-			</svg>
-		</div>
-		<div>
-			<svg class="circle dark" viewbox="0 0 100 100">
-				<circle cx="50" cy="50" r="50" />
-				<text x="50%" y="52%">float</text>
-			</svg>
-		</div>
-	</div>
-</section>
-<section class="slide">
-	<h1>Leider noch nicht fertig! <span class="highlight">Sorry!!</span></h1>
-</section>
 
 </body>
 </html>
