@@ -11,6 +11,14 @@ document.addEventListener('keyup', function (e) {
 		if (e.key === 'a' || e.key === 'w') {
 			Inspire.previous();
 		}
+
+		// sound support
+		const all = ['d', 's', 'w', 'a', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
+		if (all.includes(e.key)) {
+			if (Inspire.currentSlide.dataset.introSound) {
+				new Audio(Inspire.currentSlide.dataset.introSound).play();
+			}
+		}
 	}
 });
 
@@ -22,10 +30,20 @@ $$('.nav-button').forEach(function(btn) {
 
 		if (this.id == 'next-button') {
 			Inspire.next();
+
+			// sound support
+			if (Inspire.currentSlide.dataset.introSound) {
+				new Audio(Inspire.currentSlide.dataset.introSound).play();
+			}
 		}
 
 		if (this.id == 'previous-button') {
 			Inspire.previous();
+
+			// sound support
+			if (Inspire.currentSlide.dataset.introSound) {
+				new Audio(Inspire.currentSlide.dataset.introSound).play();
+			}
 		}
 	});
 });

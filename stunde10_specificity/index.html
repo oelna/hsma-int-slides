@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<title>INT Stunde 10</title>
+
+	<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+	<link rel="alternate icon" href="../assets/favicon.png" />
+
+	<link href="../inspire.css" rel="stylesheet" />
+	<link href="../assets/css/hsma.css" rel="stylesheet" />
+
+	<style>
+		.slide .huge {
+			font-size: 20rem;
+			font-weight: 200;
+		}
+
+		ul.specificity {
+			margin-top: 1.25rem;
+			font-size: 1.5rem;
+		}
+
+		ul.specificity li {
+			padding: 0.5em 0;
+		}
+
+		ul.specificity li + li {
+			border-top: 0.1em solid var(--base0);
+		}
+	</style>
+
+	<script src="../assets/js/bliss.shy.min.js" defer></script>
+	<script src="../inspire.js" defer></script>
+	<script src="../assets/js/hsma.js" defer></script>
+</head>
+<body class="stunde10 language-markup" data-prism-plugins="normalize-whitespace"><!-- data-resolution="1024 768" -->
+
+<!-- SVG iconset -->
+<svg width="0" height="0" class="visually-hidden">
+	<symbol id="svg-rightarrow" class="svg-icon" viewBox="0 0 40 40">
+		<g stroke="none" stroke-width="0" fill="none">
+			<polygon class="arrow" fill="currentColor" points="22.7994228 0 17.7777778 4.27128427 28.975469 16.046176 0 16.046176 0 22.1645022 28.975469 22.1645022 17.7777778 33.9393939 22.7994228 38.2106782 40 19.1053391"></polygon>
+		</g>
+	</symbol>
+
+	<symbol id="svg-leftarrow" class="svg-icon" viewBox="0 0 40 40">
+		<use xlink:href="#svg-rightarrow" transform="rotate(180 20 19.5)" />
+	</symbol>
+
+	<symbol id="svg-uparrow" class="svg-icon" viewBox="0 0 40 40">
+		<use xlink:href="#svg-rightarrow" transform="rotate(270 20 19.5)" />
+	</symbol>
+
+	<symbol id="svg-downarrow" class="svg-icon" viewBox="0 0 40 40">
+		<use xlink:href="#svg-rightarrow" transform="rotate(90 20 19.5)" />
+	</symbol>
+</svg>
+
+<div id="home-button"><a href="../index.html"></a></div>
+<div id="previous-button" class="nav-button"></div>
+<div id="next-button" class="nav-button"></div>
+
+<header class="slide" id="intro">
+	<h1>INT</h1>
+	<h2>Internet-Technik</h2>
+	<h2 class="highlight">CSS</h2>
+</header>
+<section class="slide">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Specificity</text>
+			</svg>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left">Für die erfolgreiche Arbeit mit <span class="css">CSS</span> genügen normalerweise einige wenige Grundregeln.</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="highlight">Userangaben</span> überschreiben Browser-Defaults.</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="highlight">Spezifischere Regeln</span> über&shy;schreiben allgemeinere.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">In Wahrheit aber gibt es ein <span class="highlight">komplexes Regelwerk,</span> das festlegt, wann welche Angaben umgesetzt werden.</h1>
+</section>
+<section class="slide" id="ua-stylesheet">
+	<h1 class="left">Zunächst einmal gilt für jede Seite das <span class="highlight">user-agent-stylesheet,</span> der Browser-Default.</h1>
+</section>
+<section class="slide" id="property-definition">
+	<div class="grid">
+		<div class="row row-9">
+			<h1 class="left">Jede von euch definierte <span class="css">CSS</span>-Regel überschreibt diesen Default.</h1>
+		</div>
+		<div class="row row-3">
+			<ul class="simple specificity">
+				<li>UA-Stylesheet</li>
+				<li class="highlight"><a class="simple" href="#property-definition">CSS property definition</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="slide" id="parent-inheritance">
+	<div class="grid">
+		<div class="row row-9">
+			<h1 class="left">Gilt für ein Element keine eigene Regel, greift die des nächsten Parent-Elements, zB. die von <code class="language-markup">&lt;ul&gt;</code> für <code class="language-markup">&lt;li&gt;</code></h1>
+		</div>
+		<div class="row row-3">
+			<ul class="simple specificity">
+				<li><a class="simple" href="#ua-stylesheet">UA-Stylesheet</a></li>
+				<li><a class="simple" href="#property-definition">CSS property definition</a></li>
+				<li class="highlight"><a class="simple" href="#parent-inheritance">Parent inheritance</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="slide" id="rule-order">
+	<div class="grid">
+		<div class="row row-9">
+			<h1 class="left">Spätere Regeln in der <span class="css">CSS</span>-Datei haben eine höhere Priorität, zB.</h1>
+			<pre class="language-css medium">
+				<code>
+					.betont { color: red; }
+					.betont { color: blue; }
+				</code>
+			</pre>
+		</div>
+		<div class="row row-3">
+			<ul class="simple specificity">
+				<li><a class="simple" href="#ua-stylesheet">UA-Stylesheet</a></li>
+				<li><a class="simple" href="#property-definition">CSS property definition</a></li>
+				<li><a class="simple" href="#property-definition">Parent inheritance</a></li>
+				<li class="highlight"><a class="simple" href="#rule-order">Rule order</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="slide" id="selector-specificity">
+	<div class="grid">
+		<div class="row row-9">
+			<h1 class="left">Spezifischere Angaben überschreiben allgemeine, zB.</h1>
+			<pre class="language-css medium">
+				<code>
+					p { color: black; }
+					.header p { color: blue; }
+				</code>
+			</pre>
+		</div>
+		<div class="row row-3">
+			<ul class="simple specificity">
+				<li><a class="simple" href="#ua-stylesheet">UA-Stylesheet</a></li>
+				<li><a class="simple" href="#property-definition">CSS property definition</a></li>
+				<li><a class="simple" href="#property-definition">Parent inheritance</a></li>
+				<li><a class="simple" href="#rule-order">Rule order</a></li>
+				<li class="highlight"><a class="simple" href="#selector-specificity">Selector specificity</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="slide" id="media-type">
+	<div class="grid">
+		<div class="row row-9">
+			<h1 class="left"><span class="css">CSS</span> betrifft alle Medien&shy;typen, ausser anders angegeben.</h1>
+		</div>
+		<div class="row row-3">
+			<ul class="simple specificity">
+				<li><a class="simple" href="#ua-stylesheet">UA-Stylesheet</a></li>
+				<li><a class="simple" href="#property-definition">CSS property definition</a></li>
+				<li><a class="simple" href="#property-definition">Parent inheritance</a></li>
+				<li><a class="simple" href="#rule-order">Rule order</a></li>
+				<li><a class="simple" href="#selector-specificity">Selector specificity</a></li>
+				<li class="highlight"><a class="simple" href="#media-type">Media Type</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left highlight">Media Type</h1>
+	<pre class="language-markup small left">
+		<code>
+			&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;stil.css&#x22; /&#x3E;
+
+			&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;stil.css&#x22; media=&#x22;screen&#x22; /&#x3E;
+
+			&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;stil.css&#x22; media=&#x22;print&#x22; /&#x3E;
+		</code>
+	</pre>
+</section>
+<section class="slide" id="inline-styles">
+	<div class="grid">
+		<div class="row row-9">
+			<h1 class="left">Direkt als <span class="element">HTML</span>-Attribut angegebene Regeln haben ebenfalls Vorrang.</h1>
+		</div>
+		<div class="row row-3">
+			<ul class="simple specificity">
+				<li><a class="simple" href="#ua-stylesheet">UA-Stylesheet</a></li>
+				<li><a class="simple" href="#property-definition">CSS property definition</a></li>
+				<li><a class="simple" href="#property-definition">Parent inheritance</a></li>
+				<li><a class="simple" href="#rule-order">Rule order</a></li>
+				<li><a class="simple" href="#selector-specificity">Selector specificity</a></li>
+				<li><a class="simple" href="#media-type">Media Type</a></li>
+				<li class="highlight"><a class="simple" href="#inline-styles">Inline Styles</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left highlight">Inline Styles</h1>
+	<pre class="language-markup small left">
+		<code>
+			&#x3C;p&#x3E;Bla bla.&#x3C;/p&#x3E;
+
+			&#x3C;p style=&#x22;color: blue;&#x22;&#x3E;Bla bla.&#x3C;/p&#x3E;
+		</code>
+	</pre>
+</section>
+<section class="slide" id="record-scratch" data-intro-sound="./record-scratch.mp3">
+	<h1 style="margin-bottom: 1em;">*Record Scratch*<br />*Freeze Frame*</h1>
+	<h1>Halt! <span class="highlight">Selektor-Specificity?</span></h1>
+</section>
+<section class="slide" id="selector-specificity-2">
+	<div class="grid">
+		<div class="row row-9">
+			<h1 class="left">Was bedeutet das? Wie spezifisch sind meine Selektoren überhaupt?</h1>
+			<pre class="language-css medium">
+				<code>
+					img { … }
+					div.nav li a img { … }
+					#content p img { … }
+				</code>
+			</pre>
+		</div>
+		<div class="row row-3">
+			<ul class="simple specificity">
+				<li><a class="simple" href="#ua-stylesheet">UA-Stylesheet</a></li>
+				<li><a class="simple" href="#property-definition">CSS property definition</a></li>
+				<li><a class="simple" href="#property-definition">Parent inheritance</a></li>
+				<li><a class="simple" href="#rule-order">Rule order</a></li>
+				<li class="highlight"><a class="simple" href="#selector-specificity">Selector specificity</a></li>
+				<li><a class="simple" href="#media-type">Media Type</a></li>
+				<li><a class="simple" href="#inline-styles">Inline Styles</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="highlight huge">1000</h1>
+	<h2>Für Angaben im style-Attribut</h2>
+	<h2><code class="language-markup">&#x3C;p style=&#x22;color: red;&#x22;&#x3E;Bla bla.&#x3C;/p&#x3E;</code></h2>
+</section>
+<section class="slide">
+	<h1 class="highlight huge">100</h1>
+	<h2>Für jede ID im Selektor</h2>
+	<h2><code class="language-css">#content</code></h2>
+</section>
+<section class="slide">
+	<h1 class="highlight huge">10</h1>
+	<h2>Für jede Class, Pseudo-Class<br />oder Attribute-Selektor</h2>
+	<h2><code class="language-css">.heading</code>&emsp;<code class="language-css">:hover</code>&emsp;<code class="language-css">input[type="text"]</code></h2>
+</section>
+<section class="slide">
+	<h1 class="highlight huge">1</h1>
+	<h2>Für Elemente</h2>
+	<h2><code class="language-css">p</code>&emsp;<code class="language-css">div</code>&emsp;<code class="language-css">li</code></h2>
+</section>
+<section class="slide">
+	<h1 class="left">Die Summe ergibt die Spezifischkeit (?) des Selektors.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Zum Beispiel<br />
+	<code class="language-css">ul#nav li.active a { … }</code></h1>
+	<h1 class="left delayed attribute"><br />0113</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Zum Beispiel<br />
+	<code class="language-css">body.ie7 .col_3 h2 + p { … }</code></h1>
+	<h1 class="left delayed attribute"><br />0023</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Zum Beispiel<br />
+	<code class="language-css">#header #nav a { … }</code></h1>
+	<h1 class="left delayed attribute"><br />0201</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Teste dein Wissen im <a class="link" href="https://flukeout.github.io/">CSS Diner!</a></h1>
+</section>
+<section class="slide" data-title="references">
+	<div class="left">
+		<h1 class="left">Referenz</h1>
+		<ul class="simple">
+			<li><a class="link" href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">Wikipedia: Cascading Style Sheets</a></li>
+			<li><a class="link" href="http://css-tricks.com/specifics-on-css-specificity/">CSS-Tricks: Specifics on CSS specificity</a></li>
+			<li><a class="link" href="http://coding.smashingmagazine.com/2007/07/27/css-specificity-things- you-should-know/">Smashing Magazine: CSS specificity</a></li>
+
+			<li class="section"><a class="link" href="https://flukeout.github.io/">cssdiner.com</a></li>
+		</ul>
+	</div>
+</section>
+<footer class="slide" title="The End">
+	<div class="circle-intro circle-3">
+		<div>
+			<svg class="circle" viewbox="0 0 100 100">
+				<circle cx="50" cy="50" r="50" />
+				<text x="50%" y="52%">Fin.</text>
+			</svg>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>
