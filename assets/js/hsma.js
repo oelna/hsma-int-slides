@@ -1,3 +1,5 @@
+import { $$ } from "../../node_modules/inspirejs.org/src/util.js";
+
 document.addEventListener('keyup', function (e) {
 	// WASD keyboard nav support
 	if (!Inspire) return;
