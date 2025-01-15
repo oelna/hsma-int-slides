@@ -1,21 +1,26 @@
 import { $$ } from "../../node_modules/inspirejs.org/src/util.js";
 
+let ignoreKeypPressElements = ["form", "input", "textarea", "select"];
 document.addEventListener('keyup', function (e) {
+	let activeEle = document.activeElement?.tagName?.toLowerCase();
+	let ignoreKey = ignoreKeypPressElements.includes(activeEle);
+	if (ignoreKey) return;
+
 	// WASD keyboard nav support
 	if (!Inspire) return;
 	if (e.key) {
 		// next
-		if (e.key === 'd' || e.key === 's') {
+		if (e.key === "d" || e.key === "s") {
 			Inspire.next();
 		}
 
 		// previous
-		if (e.key === 'a' || e.key === 'w') {
+		if (e.key === "a" || e.key === "w") {
 			Inspire.previous();
 		}
 
 		// sound support
-		const all = ['d', 's', 'w', 'a', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
+		const all = ["d", "s", "w", "a", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
 		if (all.includes(e.key)) {
 			if (Inspire.currentSlide.dataset.introSound) {
 				new Audio(Inspire.currentSlide.dataset.introSound).play();
@@ -25,12 +30,12 @@ document.addEventListener('keyup', function (e) {
 });
 
 // previous + next UI elements
-$$('.nav-button').forEach(function(btn) {
-	btn.addEventListener('click', function (e) {
+$$(".nav-button").forEach(function (btn) {
+	btn.addEventListener("click", function (e) {
 		e.preventDefault();
 		if (!Inspire) return;
 
-		if (this.id == 'next-button') {
+		if (this.id == "next-button") {
 			Inspire.next();
 
 			// sound support
@@ -39,7 +44,7 @@ $$('.nav-button').forEach(function(btn) {
 			}
 		}
 
-		if (this.id == 'previous-button') {
+		if (this.id == "previous-button") {
 			Inspire.previous();
 
 			// sound support
