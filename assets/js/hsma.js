@@ -23,7 +23,7 @@ document.addEventListener('keyup', function (e) {
 });
 
 // previous + next UI elements
-$$('.nav-button').forEach(function(btn) {
+document.querySelectorAll('.nav-button').forEach(function(btn) {
 	btn.addEventListener('click', function (e) {
 		e.preventDefault();
 		if (!Inspire) return;

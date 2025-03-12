@@ -87,6 +87,7 @@ else
 :root {
 	--font-mono: 'Operator Mono', Consolas, Monaco, 'Andale Mono', monospace;
 	--font-body: 'Kievit', -system-ui, Helvetica, sans-serif;
+	--slide-base-font-size: calc(1.5rem + 1vw + 1vh); /* override inspire default */
 	--font-heading: var(--font-body);
 	--color-yellow: hsl(50, 100%, 50%);
 	--color-green: hsl(100, 60%, 50%);
@@ -351,16 +352,19 @@ pre + pre {
 
 .demo .editor-container {
 	font-size: 1.6rem;
+	padding-block-start: 1.5rem;
 }
 
 .demo .demo-target {
 	font-family: 'Times New Roman', Times, serif;
+	background: var(--base3);
 	font-weight: normal;
 	text-align: left;
 	color: #000;
 	font-size: 1.8rem;
-	display: block;
-	margin-top: -2em;
+	display: block !important; /* align code preview output to top of window */
+	margin-top: 0;
+	padding: 0.5rem;
 }
 
 .demo .demo-target h1 {
@@ -421,6 +425,10 @@ img {
 .slide h2 {
 	font-size: 1.2em;
 	margin: 0;
+}
+
+.slide p + p {
+	margin-top: 0;
 }
 
 /* mini-grid system */
@@ -551,6 +559,8 @@ img {
 .slide ul li::marker {
 	content: '— ';
 }
+
+
 
 .slide ul li.section {
 	margin-top: 1em;

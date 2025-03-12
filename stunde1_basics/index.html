@@ -17,20 +17,21 @@
 		
 	</style>
 
-	<script src="../assets/js/bliss.shy.min.js" defer></script>
-	<script src="../inspire.js" defer></script>
-	<script src="../assets/js/hsma.js" defer></script>
+	<script src="../assets/js/bliss.shy.min.js"></script>
+	<!--<script src="../inspire.js" defer></script>-->
+	<script src="https://inspirejs.org/inspire.mjs" type="module"></script>
+	<script src="../assets/js/hsma.js" type="module"></script>
 </head>
-<body class="stunde1 language-markup" data-prism-plugins="normalize-whitespace">
+<body class="stunde1 language-markup" data-prism-plugins="normalize-whitespace show-invisibles">
 
 <div id="home-button"><a href="../index.html"></a></div>
 <div id="previous-button" class="nav-button"></div>
 <div id="next-button" class="nav-button"></div>
 
 <header class="slide" id="intro">
-	<h1>INT</h1>
-	<h2>Internet-Technik</h2>
-	<h2 class="highlight">Corona Edition</h2>
+	<h1 class="highlight">GCT2</h1>
+	<h2>Grundlagen Computer-Technik</h2>
+	<!--<h2 class="highlight">Corona Edition</h2>-->
 </header>
 <section class="slide">
 	<h1>Arno Richter</h1>
@@ -47,7 +48,7 @@
 		</tr>
 	</table>
 </section>
-<section class="slide">
+<!--<section class="slide">
 	<p class="center"><img loading="lazy" src="./logo-chrome.svg" alt="" width="40%" /></p>
 	<h1>Verwendeter Browser: Chrome</h1>
 	<h2 class="lowlight">https://www.google.com/chrome</h2>
@@ -56,26 +57,89 @@
 	<p class="center"><img loading="lazy" src="./logo-dropbox.svg" alt="" width="30%" /></p>
 	<h1>Dropbox</h1>
 	<h2 class="lowlight">https://arnorichter.de/hsma/dropbox</h2>
-</section>
+</section>-->
 <section class="slide">
 	<h2>d.sign@mailman.hs-mannheim.de</h2>
 	<h2 class="lowlight">mail@arnorichter.de</h2>
+	<h2 class="lowlight">richter@lba.hs-mannheim.de</h2>
 </section>
 <section class="slide">
-	<h1>Dateinamen</h1>
-	<ul class="delayed-children">
-		<li>keine Leerzeichen</li>
-		<li>keine Sonderzeichen</li>
-		<li>keine Ümläute</li>
-		<li>keine Großbuchstaben</li>
+	<h1>Ein kurzer Exkurs über das Dateisystem</h1>
+</section>
+<section class="slide">
+	<ul>
+		<li class=""><span class="highlight">Dateien</span> (Files) sind digitale Dokumente – zB. Fotos, Texte, Videos, PDFs.</li>
+		<li class="delayed">Ein <span class="highlight">Verzeichnis</span> (Ordner, "Directory") ist eine Sammlung von Dateien, eine Möglichkeit, mehrere Dateien zu gruppieren.</li>
+		<li class="delayed">Das <span class="highlight">Dateisystem</span> ist das Organisationssystem auf deinem Computer, das bestimmt, wie Dateien und Ordner strukturiert, benannt und gefunden werden können.</li>
+	</ul>
+</section>
+<section class="slide">
+	<h1>Dateien <span class="disabled">/ Files</span></h1>
+	<ul>
+		<li class="">Eine Datei speichert <span class="highlight">Informationen</span>, wie z.B. ein Foto, Musik, Text oder ein Video.</li>
+		<li class="delayed">Jede Datei hat einen <span class="highlight">Namen</span> und meist auch eine <span class="highlight">Dateiendung</span> (z.B. .jpg, .txt, .pdf, .mp3), die angibt, um welchen Typ es sich handelt.</li>
+		<li class="delayed">Eine Datei besteht aus einer Reihe von Bytes und einer Bezeichnung (<span class="highlight">Name + Speicherort</span>, Pfad, Path)<br />zB. /Users/Arno/Desktop/cat.jpg</li>
+	</ul>
+</section>
+<section class="slide">
+	<h1>Dateien <span class="disabled">/ Files</span></h1>
+	<ul>
+		<li class="">Erstellt man eine neue Datei mit den gleichen Bytes wie einer anderen, aber einem anderen Speicherort, spricht man von einer <span class="highlight">Kopie</span> (copy)</li>
+		<li class="delayed">Ändert man nur den Speicherort einer Datei, sagt man die Datei wurde bewegt oder <span class="highlight">verschoben</span> (moved)</li>
+		<li class="delayed">Ändert man die Bytes, aber der Speicherort bleibt gleich, sagt man die Datei wurde bearbeitet oder <span class="highlight">geändert</span> (changed, edited)</li>
+	</ul>
+</section>
+<section class="slide">
+	<h1>Verzeichnisse <span class="disabled">/ Directories</span></h1>
+	<ul>
+		<li class="">Ein Verzeichnis ist ein <span class="highlight">Container</span>, in dem du mehrere Dateien zusammenfassen kannst.</li>
+		<li class="delayed">Es ist vergleichbar mit einem digitalen Aktenschrank oder Fotoalbum, in dem du Dinge thematisch <span class="highlight">gruppierst.</span></li>
+		<li class="delayed">Du kannst Ordner <span class="highlight">verschachteln,</span> also Ordner in anderen Ordnern ablegen, um eine klare Struktur zu schaffen.</li>
+	</ul>
+</section>
+<section class="slide">
+	<h1>Verzeichnisse <span class="disabled">/ Directories</span></h1>
+	<ul>
+		<li class="">Gute Verzeichnis- und Dateinamen helfen dir, deine gespeicherten Inhalte später wieder zu finden</li>
+		<li class="delayed">Die Ordner und Unterordner, die uns zum Inhalt einer bestimmten Datei bringen, bezeichnet man als <span class="highlight">Pfad</span> (path)</li>
+		<li class="delayed">Pfade können unter verschiedenen <span class="highlight">Betriebssystemen</span> unterschiedlich aussehen:
+			<div>
+				<code>/Users/Arno/Desktop/cat.jpg</code> <span class="lowlight">macOS</span><br />
+				<code>C:\Users\Arno\Desktop\cat.jpg</code> <span class="lowlight">Windows</span><br />
+				<code>https://arnorichter.de/hsma/index.html</code> <span class="lowlight">Browser, URL</span>
+			</div>
+		</li>
+	</ul>
+</section>
+<section class="slide">
+	<h1>Dateisystem <span class="disabled">/ File System</span></h1>
+	<ul>
+		<li class="">Das Dateisystem verwaltet alle <span class="highlight">Dateien und Verzeichnisse</span> auf deinem Gerät.</li>
+		<li class="delayed">Es legt fest, wo jede Datei gespeichert wird und wie sie gefunden werden kann – ähnlich wie ein <span class="highlight">Inhaltsverzeichnis</span> in einem Buch.</li>
+		<li class="delayed">Verbreitete Dateisysteme sind zB. APFS, NTFS, exFAT, EXT4</li>
+	</ul>
+</section>
+<section class="slide">
+	<h1>Dateisystem <span class="disabled">/ File System</span></h1>
+	<ul>
+		<li class="">Manche Geräte, zB. Smartphones, Router, etc., erlauben <span class="highlight">keinen direkten Zugriff</span> ihre Dateien und abstrahieren das Dateisystem.</li>
+		<li class="delayed">Trotzdem funktionieren sie alle auf die <span class="highlight">gleiche Weise</span> wie ein normaler Computer</li>
+		<li class="delayed">Eine <span class="highlight">Suchfunktion</span> ist ein <span class="highlight">schlechter Ersatz</span> für ein gut geordnetes System von Dateinamen und Ordnern.</li>
 	</ul>
 </section>
 <section class="slide">
 	<h1>Dateinamen</h1>
 
-	<p>Immer die Zuordnung ermöglichen, zB.<br /><br />
-		<span class="lowlight">name_matrikel_projekt.zip</span><br />
-		<span class="link">richter_arno-220577-uebung1.zip</span></p>
+	<p>Achte darauf, dass du in deinem Betriebssystem einstellst, dass es dir vollständige <span class="highlight">Dateinamen inkl. Dateiendung</span> (Erweiterung, extension) anzeigt!</p>
+	<p><a class="highlight" href="https://support.apple.com/de-de/guide/mac-help/mchlp2304/mac">Anleitung Mac</a> / <a class="highlight" href="https://support.microsoft.com/de-de/windows/allgemeine-dateierweiterungen-in-windows-da4a4430-8e76-89c5-59f7-1cdbbc75cb01">Anleitung Windows</a></p>
+</section>
+<section class="slide">
+	<h1>Dateinamen</h1>
+
+	<p>Wenn du Dateien abgibst, ermögliche bitte die Zuordnung, indem du <span class="highlight">Name</span> oder <span class="highlight">Matrikelnr.</span> im Dateinamen vermerkst.</p>
+	<p>Trennungen sind zB. mit <span class="highlight">-</span> oder <span class="highlight">_</span> möglich.<br/ >Im Web am besten keine Leerzeichen.</p>
+		<p><span class="lowlight">name_matrikel_projekt.zip</span><br />
+		<span class="link">richter-arno-220577-uebung1.zip</span></p>
 </section>
 <section class="slide">
 	<h1>Ablauf des Kurses</h1>
@@ -149,16 +213,10 @@
 	</div>
 </section>
 <section class="slide">
-	<h1><span class="highlight">Struktur</span></h1>
-	<ul>
-		<li>Text</li>
-		<li>Listen</li>
-		<li>Links</li>
-		<li>Bilder</li>
-		<li>Tabellen</li>
-		<li>Formulare</li>
-		<li>Video/Audio</li>
-	</ul>
+	<h1>Organisation von Inhalten zur Anzeige in einem Webbrowser</h1>
+</section>
+<section class="slide">
+	<h1><span class="highlight">Strukturierung von Texten</span> in Links, Listen und Tabellen. <span class="delayed"><span class="highlight">Verknüpfung von Medien</span> wie Bilder und Videos. Nutzereingaben über Formulare.</span></h1>
 </section>
 <section class="slide">
 	<div class="circle-intro">
@@ -174,11 +232,7 @@
 	</div>
 </section>
 <section class="slide">
-	<h1><span class="highlight">Gestaltung</span></h1>
-	<ul>
-		<li>Präsentation</li>
-		<li>Layout</li>
-	</ul>
+	<h1><span class="highlight">Gestaltung</span> der in HTML definierten Inhalte in ein funktionales Layout. <span class="delayed">Erleichtern der Seitenbedienung durch <span class="highlight">nutzerfreundliches User-Interface-Design.</span></span></h1>
 </section>
 <section class="slide">
 	<h1 class="left">Der Unterricht vermittelt <span class="delayed">eine Reihe von <span class="html">HTML</span>-Elementen</span> <span class="delayed">und wie diese eingesetzt werden.</span></h1>
@@ -230,12 +284,13 @@
 	</pre>
 </section>
 <section class="slide">
-	<h1><span class="highlight">Tags</span> können ineinander verschachtelt werden.<br />Zur Übersicht rückt man dann oft zeilenweise ein.</h1>
+	<h1><span class="highlight">Tags</span> können ineinander verschachtelt werden. <span class="delayed">Dadurch erreicht man eine <span class="highlight">Baumstruktur</span> ähnlich dem Dateisystem auf deinem Rechner.</span></h1>
 </section>
 <section class="slide">
-	<h1>Das kann man wahlweise mit Leerzeichen oder Tabulator-Zeichen tun. Man sollte nur konsistent bleiben.</h1>
+	<h1>Zur Übersicht rückt man dann oft zeilenweise ein.<br />
+	<h1>Das kann man wahlweise mit <span class="highlight">Leerzeichen oder Tabulator-Zeichen</span> tun. Man sollte nur konsistent bleiben.</h1>
 </section>
-<section class="slide demo" data-prism-plugins="line-numbers">
+<section class="slide demo nowrap" data-prism-plugins="line-numbers">
 	<textarea class="language-html small">
 		<html>
 			<head>
@@ -341,13 +396,6 @@
 			<td class="url"><a class="link" href="https://macromates.com/">macromates.com</a></td>
 		</tr>
 		<tr>
-			<td class="badge"><span class="os win">Win</span></td>
-			<td class="badge"><span class="os mac">Mac</span></td>
-			<td>Atom</td>
-			<td class="price">free</td>
-			<td class="url"><a class="link" href="https://atom.io/">atom.io</a></td>
-		</tr>
-		<tr>
 			<td class="badge"></td>
 			<td class="badge"><span class="os mac">Mac</span></td>
 			<td>BBEdit</td>
@@ -400,7 +448,10 @@
 	<h1>Dateien bitte nach dem Öffnen im Editor nicht mehr von Hand verschieben, sondern <span class="highlight">zuerst schließen!</span></h1>
 </section>
 <section class="slide">
-	<h1>Informationen zu einzelnen Elementen lassen sich gut online, zB. unter <a href="http://wiki.selfhtml.org" class="link">http://wiki.selfhtml.org</a> nachschlagen. W3Schools ist in der Szene nicht hoch angesehen.</h1>
+	<h1>Dein Editor merkt idR. nichts davon und speichert sonst weiterhin an den bisherigen Speicherort.</h1>
+</section>
+<section class="slide">
+	<h1>Informationen zu einzelnen Elementen lassen sich gut online, zB. unter <a href="https://developer.mozilla.org/de/docs/Learn_web_development" class="link">MDN</a> und <a href="https://wiki.selfhtml.org" class="link">wiki.selfhtml.org</a> nachschlagen. W3Schools ist in der Szene nicht hoch angesehen.</h1>
 </section>
 <section class="slide">
 	<h1>Aufgaben werden auf Github bereitgestellt:</h1>
