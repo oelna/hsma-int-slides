@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-	<title>INT Stunde 8</title>
+	<title>GCT2 Stunde 8</title>
 
 	<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
 	<link rel="alternate icon" href="../assets/favicon.png" />
@@ -17,9 +17,19 @@
 		
 	</style>
 
-	<script src="../assets/js/bliss.shy.min.js" defer></script>
-	<script src="../inspire.js" defer></script>
-	<script src="../assets/js/hsma.js" defer></script>
+	<script type="importmap">
+		{
+			"imports": {
+				"@inspirejs/core": "https://cdn.jsdelivr.net/npm/@inspirejs/core@3.0.0/src/inspire.js",
+				"@inspirejs/core/util": "https://cdn.jsdelivr.net/npm/@inspirejs/core@3.0.0/src/util.js",
+				"@inspirejs/core/src/plugins.js": "https://cdn.jsdelivr.net/npm/@inspirejs/core@3.0.0/src/plugins.js",
+				"@inspirejs/plugins/plugin-autoload.js": "https://cdn.jsdelivr.net/npm/@inspirejs/plugins@3.0.0/plugin-autoload.js",
+				"@inspirejs/plugins/": "https://cdn.jsdelivr.net/npm/@inspirejs/plugins@3.0.0/",
+				"blissful-hooks": "https://esm.sh/blissful-hooks"
+			}
+		}
+	</script>
+	<script src="../assets/js/hsma.js" type="module"></script>
 </head>
 <body class="stunde8 language-markup" data-prism-plugins="normalize-whitespace"><!-- data-resolution="1024 768" -->
 
@@ -49,8 +59,8 @@
 <div id="next-button" class="nav-button"></div>
 
 <header class="slide" id="intro">
-	<h1>INT</h1>
-	<h2>Internet-Technik</h2>
+	<h1>GCT2</h1>
+	<h2>Grundlagen Computer-Technik</h2>
 	<h2 class="highlight">Hosting</h2>
 </header>
 <section class="slide">

@@ -1,3 +1,22 @@
+import Inspire from "@inspirejs/core";
+import { registry } from "@inspirejs/core/src/plugins.js";
+import selectors from "@inspirejs/plugins/plugin-autoload.js";
+
+const pluginBase = new URL("https://cdn.jsdelivr.net/npm/@inspirejs/plugins@3.0.0/");
+
+for (const [id, test] of Object.entries(selectors)) {
+	registry[id] = {
+		test,
+		base: pluginBase
+	};
+}
+
+globalThis.Inspire = Inspire;
+
+await Inspire.setup();
+
+// start editing here. code above by ChatGPT, sadly
+
 document.addEventListener('keyup', function (e) {
 	// WASD keyboard nav support
 	if (!Inspire) return;

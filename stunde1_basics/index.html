@@ -17,9 +17,18 @@
 		
 	</style>
 
-	<script src="../assets/js/bliss.shy.min.js"></script>
-	<!--<script src="../inspire.js" defer></script>-->
-	<script src="https://inspirejs.org/inspire.mjs" type="module"></script>
+	<script type="importmap">
+		{
+			"imports": {
+				"@inspirejs/core": "https://cdn.jsdelivr.net/npm/@inspirejs/core@3.0.0/src/inspire.js",
+				"@inspirejs/core/util": "https://cdn.jsdelivr.net/npm/@inspirejs/core@3.0.0/src/util.js",
+				"@inspirejs/core/src/plugins.js": "https://cdn.jsdelivr.net/npm/@inspirejs/core@3.0.0/src/plugins.js",
+				"@inspirejs/plugins/plugin-autoload.js": "https://cdn.jsdelivr.net/npm/@inspirejs/plugins@3.0.0/plugin-autoload.js",
+				"@inspirejs/plugins/": "https://cdn.jsdelivr.net/npm/@inspirejs/plugins@3.0.0/",
+				"blissful-hooks": "https://esm.sh/blissful-hooks"
+			}
+		}
+	</script>
 	<script src="../assets/js/hsma.js" type="module"></script>
 </head>
 <body class="stunde1 language-markup" data-prism-plugins="normalize-whitespace show-invisibles">
@@ -286,11 +295,9 @@
 	<h1>Der <span class="highlight">Opening Tag</span> markiert den Beginn eines Inhaltsbereichs, der <span class="highlight">Closing Tag</span> das Ende.</h1>
 </section>
 <section class="slide">
-	<pre class="language-markup large">
-		<code>
-			&lt;p&gt;Hello World!&lt;/p&gt;
-		</code>
-	</pre>
+	<pre class="line-numbers large"><code class="language-markup">
+&lt;p&gt;Hello World!&lt;/p&gt;
+	</code></pre>
 </section>
 <section class="slide">
 	<h1><span class="highlight">Tags</span> können ineinander verschachtelt werden. <span class="delayed">Dadurch erreicht man eine <span class="highlight">Baumstruktur</span> ähnlich dem Dateisystem auf deinem Rechner.</span></h1>
@@ -315,8 +322,8 @@
 </section>
 <section class="slide">
 	<h2>Opening Tags können Attribute tragen.<br /><br /></h2>
-	<pre class="language-markup large">
-		<code>
+	<pre class="large">
+		<code class="language-markup">
 			&lt;html&gt;
 		</code>
 	</pre>
@@ -324,8 +331,8 @@
 </section>
 <section class="slide">
 	<h2>Opening Tags können Attribute tragen.<br /><br /></h2>
-	<pre class="language-markup large">
-		<code>
+	<pre class="large">
+		<code class="language-markup">
 			&lt;html lang="de"&gt;
 		</code>
 	</pre>
@@ -341,8 +348,8 @@
 </section>
 <section class="slide">
 	<h2><span class="element">Elemente</span> können beliebig viele Attribute tragen:</h2>
-	<pre class="language-markup medium">
-		<code>
+	<pre class="medium">
+		<code class="language-markup">
 			&lt;img src="bild1.jpg" width="600"&gt;
 		</code>
 	</pre>

@@ -12,8 +12,19 @@
 	<link href="./inspire.css" rel="stylesheet" />
 	<link href="./assets/css/hsma.css" rel="stylesheet" />
 
-	<script src="./assets/js/bliss.shy.min.js" defer></script>
-	<script src="./inspire.js" defer></script>
+	<script type="importmap">
+		{
+			"imports": {
+				"@inspirejs/core": "https://cdn.jsdelivr.net/npm/@inspirejs/core@3.0.0/src/inspire.js",
+				"@inspirejs/core/util": "https://cdn.jsdelivr.net/npm/@inspirejs/core@3.0.0/src/util.js",
+				"@inspirejs/core/src/plugins.js": "https://cdn.jsdelivr.net/npm/@inspirejs/core@3.0.0/src/plugins.js",
+				"@inspirejs/plugins/plugin-autoload.js": "https://cdn.jsdelivr.net/npm/@inspirejs/plugins@3.0.0/plugin-autoload.js",
+				"@inspirejs/plugins/": "https://cdn.jsdelivr.net/npm/@inspirejs/plugins@3.0.0/",
+				"blissful-hooks": "https://esm.sh/blissful-hooks"
+			}
+		}
+	</script>
+	<script src="./assets/js/hsma.js" type="module"></script>
 </head>
 <body class="language-markup" data-prism-plugins="normalize-whitespace">
 
@@ -25,8 +36,8 @@
 		li { list-style: none; }
 	</style>
 
-	<h1>INT</h1>
-	<h2>Internet-Technik</h2>
+	<h1>GCT2</h1>
+	<h2>Grundlagen Computertechnik</h2>
 	<p class="lowlight">Arno Richter</p>
 	
 	<ul>
