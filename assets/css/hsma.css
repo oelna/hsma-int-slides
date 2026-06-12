@@ -491,9 +491,11 @@ img {
 		color: var(--base02);
 		border-radius: 100%;
 		aspect-ratio: 1 / 1;
+		text-align: center;
 		text-decoration: none;
 		font-size: clamp(0.85rem, -0.875rem + 8vw, 3.2rem);
 		font-weight: 700;
+		line-height: 1.0;
 
 		display: flex;
 		justify-content: center;
