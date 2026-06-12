@@ -474,23 +474,45 @@ img {
 	.grid .row-full { grid-column-end: span 12; }
 }
 
-/*
-.slide .circle-header {
-	background: var(--base2);
-	width: 60vmin;
-	height: 60vmin;
-	border-radius: 100%;
+/* .circle-chapters is the new html based .circle-intro */
+.circle-chapters {
+	width: 90%;
+	height: 90vh;
+	margin-inline: auto;
 	display: flex;
+	justify-content: space-evenly;
 	align-items: center;
-	justify-content: center;
-	padding: 0.75em;
+	gap: 3vw;
+
+	& > :is(a, h1) {
+		flex: 1;
+		max-width: 30vw;
+		background: var(--base2);
+		color: var(--base02);
+		border-radius: 100%;
+		aspect-ratio: 1 / 1;
+		text-decoration: none;
+		font-size: clamp(0.85rem, -0.875rem + 8vw, 3.2rem);
+		font-weight: 700;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		/* transition: background-color 0.25s, color 0.25s, opacity 0.25s; */
+
+		&.inactive {
+			/* has decreased opacity anyway! */
+		}
+
+		&:is(:hover, :focus) {
+			opacity: 1;
+			background: var(--base3);
+		}
+	}
 }
 
-.slide .circle-header > h1,
-.slide .circle-header > h2 {
-	margin-top: 0.25em;
-}
-*/
+/* this is the old intro screen */
 .slide .circle-intro {
 	width: 100%;
 	display: flex;

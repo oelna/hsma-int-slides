@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<title>GCT2 Stunde 11</title>
+
+	<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+	<link rel="alternate icon" href="../assets/favicon.png" />
+
+	<link href="../inspire.css" rel="stylesheet" />
+	<link href="../assets/css/hsma.css" rel="stylesheet" />
+
+	<style>
+
+		/* additional styles for this lesson */
+		.compact-list li {
+			margin-bottom: 0.35em;
+		}
+	</style>
+
+	<script type="importmap">
+		{
+			"imports": {
+				"@inspirejs/core": "https://cdn.jsdelivr.net/npm/@inspirejs/core@3.0.0/src/inspire.js",
+				"@inspirejs/core/util": "https://cdn.jsdelivr.net/npm/@inspirejs/core@3.0.0/src/util.js",
+				"@inspirejs/core/src/plugins.js": "https://cdn.jsdelivr.net/npm/@inspirejs/core@3.0.0/src/plugins.js",
+				"@inspirejs/plugins/plugin-autoload.js": "https://cdn.jsdelivr.net/npm/@inspirejs/plugins@3.0.0/plugin-autoload.js",
+				"@inspirejs/plugins/": "https://cdn.jsdelivr.net/npm/@inspirejs/plugins@3.0.0/",
+				"blissful-hooks": "https://esm.sh/blissful-hooks"
+			}
+		}
+	</script>
+	<script src="../assets/js/hsma.js" type="module"></script>
+</head>
+<body class="stunde11 language-markup" data-prism-plugins="normalize-whitespace">
+
+<div id="home-button"><a href="../index.html"></a></div>
+<div id="previous-button" class="nav-button"></div>
+<div id="next-button" class="nav-button"></div>
+
+<header class="slide" id="intro">
+	<h1>GCT2</h1>
+	<h2>Grundlagen Computer-Technik</h2>
+	<h2 class="highlight">Modernes HTML</h2>
+</header>
+<section class="slide">
+	<h1 class="left">Bisher kennen wir viele Grundlagen: Überschriften, Absätze, Listen, Links, Bilder, Tabellen und generische Container.</h1>
+</section>
+<section class="slide">
+	<h1 class="left">Zum Ende des Semesters geht es um HTML, das <span class="highlight">mehr Bedeutung</span> ausdrückt und kleine Interaktionen ohne großes Framework ermöglicht.</h1>
+</section>
+<section class="slide">
+	<h1>3 Themen</h1>
+</section>
+<section class="slide">
+	<div class="circle-chapters">
+		<a href="#chapter-struktur">Struktur</a>
+		<a href="#chapter-inhalt">Inhalt</a>
+		<a href="#chapter-interaktion">Interaktion</a>
+	</div>
+</section>
+<section class="slide" id="chapter-struktur">
+	<div class="circle-chapters">
+		<a href="#chapter-struktur">Struktur</a>
+		<a href="#chapter-inhalt" class="inactive">Inhalt</a>
+		<a href="#chapter-interaktion" class="inactive">Interaktion</a>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left highlight">Semantische Seitenbereiche</h1>
+	<h1 class="left element">&lt;header&gt; &lt;nav&gt; &lt;main&gt;<br />&lt;section&gt; &lt;article&gt; &lt;aside&gt;<br />&lt;footer&gt;</h1>
+</section>
+<section class="slide demo" data-prism-plugins="line-numbers">
+<textarea class="language-html small">
+		<body>
+			<header>...</header>
+			<nav>...</nav>
+			<main>...</main>
+			<footer>...</footer>
+		</body>
+	</textarea>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;header&gt;</h1>
+	<h1 class="left">Ein einleitender Bereich: Logo, Titel, Claim, Suche oder Navigation.</h1>
+<pre class="language-markup large">
+		<code>
+&lt;header&gt;
+	&lt;a href=&quot;/&quot;&gt;Studio Müller&lt;/a&gt;
+	&lt;p&gt;Interface Design und Webentwicklung&lt;/p&gt;
+&lt;/header&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;nav&gt;</h1>
+	<h1 class="left">Ein Bereich für wichtige Navigationen: Hauptmenü, Breadcrumbs, Inhaltsverzeichnis oder Pagination.</h1>
+<pre class="language-markup large">
+		<code>
+&lt;nav aria-label=&quot;Hauptnavigation&quot;&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href=&quot;/&quot;&gt;Start&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;/arbeiten&quot;&gt;Arbeiten&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;/kontakt&quot;&gt;Kontakt&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;main&gt;</h1>
+	<h1 class="left">Der zentrale Inhalt der Seite. Pro Seite sollte es normalerweise nur ein sichtbares <span class="element">&lt;main&gt;</span> geben.</h1>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;section&gt;</h1>
+	<h1 class="left">Ein thematischer Abschnitt. Meistens hat eine Section eine eigene Überschrift.</h1>
+<pre class="language-markup large">
+		<code>
+&lt;section&gt;
+	&lt;h2&gt;Leistungen&lt;/h2&gt;
+	&lt;p&gt;Wir gestalten responsive Websites.&lt;/p&gt;
+&lt;/section&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;article&gt;</h1>
+	<h1 class="left">Ein eigenständiger Inhalt, der auch außerhalb der Seite verständlich wäre.</h1>
+<pre class="language-markup large">
+		<code>
+&lt;article&gt;
+	&lt;h2&gt;Neue Ausstellung eröffnet&lt;/h2&gt;
+	&lt;p&gt;Am Freitag startet die Werkschau.&lt;/p&gt;
+&lt;/article&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;aside&gt;</h1>
+	<h1 class="left">Ergänzende Inhalte: Infobox, Teaser, Werbung, Linkliste oder Randnotiz.</h1>
+<pre class="language-markup large">
+		<code>
+&lt;aside&gt;
+	&lt;h2&gt;Auch interessant&lt;/h2&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href=&quot;/typografie&quot;&gt;Typografie im Web&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;/farben&quot;&gt;Farbsysteme&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/aside&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;footer&gt;</h1>
+	<h1 class="left">Ein abschließender Bereich: Autor, Datum, Copyright, Kontakt, Quellen oder verwandte Links.</h1>
+<pre class="language-markup large">
+		<code>
+&lt;footer&gt;
+	&lt;p&gt;© 2026 Studio Müller&lt;/p&gt;
+	&lt;a href=&quot;/impressum&quot;&gt;Impressum&lt;/a&gt;
+&lt;/footer&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide demo" data-prism-plugins="line-numbers">
+<textarea class="language-html small">
+		<body>
+			<header>
+				<h1>Portfolio</h1>
+				<nav aria-label="Hauptnavigation">...</nav>
+			</header>
+
+			<main>
+				<section>
+					<h2>Ausgewählte Arbeiten</h2>
+					<article>...</article>
+					<article>...</article>
+					<article>...</article>
+				</section>
+			</main>
+
+			<footer>© 2026 Studio Müller</footer>
+		</body>
+	</textarea>
+</section>
+<section class="slide">
+	<h1 class="left">Faustregel: <span class="element">&lt;div&gt;</span> bleibt erlaubt. Es ist sinnvoll, wenn ein Container nur für Layout oder Styling gebraucht wird.</h1>
+</section>
+<section class="slide" id="chapter-inhalt">
+	<div class="circle-chapters">
+		<a href="#chapter-struktur" class="inactive">Struktur</a>
+		<a href="#chapter-inhalt">Inhalt</a>
+		<a href="#chapter-interaktion" class="inactive">Interaktion</a>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left highlight">Inhalte genauer beschreiben</h1>
+	<h1 class="left element">&lt;figure&gt; &lt;figcaption&gt;<br />&lt;mark&gt; &lt;address&gt; &lt;data&gt;<br />&lt;meter&gt; &lt;progress&gt;</h1>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;figure&gt; &lt;figcaption&gt;</h1>
+	<h1 class="left">Für Inhalte mit eigener Beschriftung: Bild, Grafik, Codebeispiel, Diagramm oder Zitat.</h1>
+<pre class="language-markup large">
+		<code>
+&lt;figure&gt;
+	&lt;img src=&quot;plakat.jpg&quot; alt=&quot;Plakatentwurf&quot; /&gt;
+	&lt;figcaption&gt;Entwurf für die Jahresausstellung&lt;/figcaption&gt;
+&lt;/figure&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;mark&gt;</h1>
+	<h1 class="left">Markiert Text, der im aktuellen Zusammenhang hervorgehoben werden soll, zB. ein Suchtreffer.</h1>
+<pre class="language-markup large">
+		<code>
+&lt;p&gt;Ihre Suche nach &lt;mark&gt;Grid&lt;/mark&gt; ergab 12 Treffer.&lt;/p&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;address&gt;</h1>
+	<h1 class="left">Kontaktinformationen zum nächstliegenden Artikel oder zur gesamten Seite.</h1>
+<pre class="language-markup large">
+		<code>
+&lt;footer&gt;
+	&lt;address&gt;
+		Kontakt: 
+		&lt;a href=&quot;mailto:info@example.org&quot;&gt;info@example.org&lt;/a&gt;
+	&lt;/address&gt;
+&lt;/footer&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;data&gt;</h1>
+	<h1 class="left">Verbindet einen sichtbaren Text mit einem maschinenlesbaren Wert.</h1>
+<pre class="language-markup large">
+		<code>
+&lt;p&gt;&lt;data value=&quot;sku-4815&quot;&gt;Poster A2&lt;/data&gt;&lt;/p&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;meter&gt; &lt;progress&gt;</h1>
+	<h1 class="left"><span class="element">&lt;meter&gt;</span> zeigt einen bekannten Messwert. <span class="element">&lt;progress&gt;</span> zeigt den Fortschritt einer laufenden Aufgabe.</h1>
+<pre class="language-markup large">
+		<code>
+&lt;p&gt;Kontrast: &lt;meter min=&quot;0&quot; max=&quot;21&quot; value=&quot;7.2&quot;&gt;7.2&lt;/meter&gt;&lt;/p&gt;
+&lt;p&gt;Upload: &lt;progress max=&quot;100&quot; value=&quot;60&quot;&gt;60%&lt;/progress&gt;&lt;/p&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide demo" data-prism-plugins="line-numbers">
+	<textarea class="language-html small">
+		<section>
+			<meter min="0" max="21" value="7.2">7.2</meter>
+			<br>
+			<progress max="100" value="60">60%</progress>
+		</section>
+	</textarea>
+</section>
+<section class="slide" id="chapter-interaktion">
+	<div class="circle-chapters">
+		<a href="#chapter-struktur" class="inactive">Struktur</a>
+		<a href="#chapter-inhalt" class="inactive">Inhalt</a>
+		<a href="#chapter-interaktion">Interaktion</a>
+	</div>
+</section>
+<section class="slide">
+	<h1 class="left highlight">Interaktion mit HTML</h1>
+	<h1 class="left element">&lt;details&gt; &lt;summary&gt;<br />&lt;dialog&gt;<br /><span class="attribute">popover hidden inert</span></h1>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;details&gt;</h1>
+	<h1 class="left">Ein Widget, dass sich öffnen und schliessen lässt.</h1>
+</section>
+<section class="slide demo" data-prism-plugins="line-numbers">
+	<textarea class="language-html small">
+		<details>
+			<summary>Was bedeutet semantisch?</summary>
+			<p>HTML beschreibt nicht nur Aussehen, sondern Bedeutung.</p>
+		</details>
+	</textarea>
+</section>
+<section class="slide">
+	<h1 class="left">Mit dem Attribut <span class="attribute">open</span> ist ein <span class="element">&lt;details&gt;</span>-Element beim Laden bereits geöffnet.</h1>
+<pre class="language-markup large">
+		<code>
+&lt;details open&gt;
+	&lt;summary&gt;Hinweis&lt;/summary&gt;
+	&lt;p&gt;Diese Information ist am Anfang sichtbar.&lt;/p&gt;
+&lt;/details&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left element">&lt;dialog&gt;</h1>
+	<h1 class="left">Ein modaler Dialog legt sich über die Seite. Der Rest der Seite ist dann nicht mehr direkt bedienbar.</h1>
+</section>
+<section class="slide demo" data-prism-plugins="line-numbers">
+	<textarea class="language-html small">
+		<button commandFor="hinweis" command="show-modal" type="button">
+			Hinweis öffnen
+		</button>
+
+		<dialog id="hinweis">
+			<h2>Speichern?</h2>
+			<p>Die Änderungen werden übernommen.</p>
+
+			<button commandFor="hinweis" command="close" type="button">
+				OK
+			</button>
+		</dialog>
+	</textarea>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="attribute">popover</span>-Attribut</h1>
+	<h1 class="left">Mit dem Attribut für <span class="element">&lt;button&gt;</span> lassen sich andere Elemente auf Klick anzeigen.</h1>
+</section>
+<section class="slide demo" data-prism-plugins="line-numbers">
+	<textarea class="language-html small">
+		<button popovertarget="info">Info anzeigen</button>
+
+		<div id="info" popover>
+			<p>Diese Box wird vom Browser ein- und ausgeblendet.</p>
+		</div>
+	</textarea>
+</section>
+<section class="slide">
+	<table class="simple">
+		<tr>
+			<td class="element">&lt;details&gt;</td>
+			<td>Ein- und ausklappbare Zusatzinformation</td>
+		</tr>
+		<tr>
+			<td class="element">&lt;dialog&gt;</td>
+			<td>Fenster für eine Aufgabe oder Entscheidung</td>
+		</tr>
+		<tr>
+			<td class="attribute">popover</td>
+			<td>Kleines Overlay, das nicht zwingend modal ist</td>
+		</tr>
+	</table>
+</section>
+<section class="slide">
+	<h1 class="left highlight">Nützliche globale Attribute</h1>
+	<h1 class="left attribute">hidden inert<br />contenteditable spellcheck<br />translate popover</h1>
+</section>
+<section class="slide">
+	<h1 class="left"><span class="attribute">hidden</span> versteckt aktuell irrelevante Inhalte.<br /><span class="attribute">inert</span> macht einen Bereich vorübergehend nicht interaktiv.</h1>
+<pre class="language-markup large">
+		<code>
+&lt;p hidden&gt;Diese Meldung wird erst später angezeigt.&lt;/p&gt;
+
+&lt;main inert&gt;
+	&lt;button&gt;Kann gerade nicht genutzt werden&lt;/button&gt;
+&lt;/main&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left attribute">contenteditable spellcheck</h1>
+	<h1 class="left">Elemente können direkt im Browser bearbeitbar werden. Rechtschreibprüfung kann gezielt aktiviert oder deaktiviert werden.</h1>
+<pre class="language-markup large">
+		<code>
+&lt;p contenteditable=&quot;true&quot; spellcheck=&quot;true&quot;&gt;
+	Dieser Text kann im Browser bearbeitet werden.
+&lt;/p&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left attribute">translate</h1>
+	<h1 class="left">Hilft Übersetzungstools: Bestimmte Inhalte sollen übersetzt werden oder unverändert bleiben.</h1>
+<pre class="language-markup large">
+		<code>
+&lt;p&gt;
+Unsere App heißt &lt;span translate=&quot;no&quot;&gt;PixelPilot&lt;/span&gt;.
+&lt;/p&gt;
+		</code>
+	</pre>
+</section>
+<section class="slide">
+	<h1 class="left">Nicht alles davon muss man sofort verwenden. Wichtig ist die Frage: <span class="highlight">Welche Rolle hat dieser Inhalt?</span></h1>
+</section>
+<section class="slide">
+	<div class="left">
+		<h1 class="left">Referenz</h1>
+		<ul class="simple compact-list">
+			<li><a class="link" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements">https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements</a></li>
+			<li><a class="link" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories">https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories</a></li>
+			<li><a class="link" href="https://html.spec.whatwg.org/multipage/sections.html">https://html.spec.whatwg.org/multipage/sections.html</a></li>
+			<li><a class="link" href="https://html.spec.whatwg.org/multipage/popover.html">https://html.spec.whatwg.org/multipage/popover.html</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<p class="center"><img loading="lazy" src="../stunde1_basics/github-aufgaben.png" width="40%" alt="Github Repo" /></p>
+	<h1>Erweitere eine bestehende Aufgabe um <span class="highlight">semantisches HTML.</span></h1>
+	<h2><a href="https://arnorichter.de/hsma/int/aufgaben" class="link">https://arnorichter.de/hsma/int/aufgaben</a></h2>
+</section>
+<footer class="slide" title="The End">
+	<div class="circle-chapters">
+		<h1 href="#chapter-struktur" inert>Fin.</h1>
+	</div>
+</footer>
+
+</body>
+</html>
