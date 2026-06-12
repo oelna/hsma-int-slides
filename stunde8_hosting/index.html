@@ -129,6 +129,10 @@
 <section class="slide">
 	<h1 class="left">Ursprünglich gab es 13 Root Name Server, die aber in der Zwischenzeit mittels Anycast Routing auf mehr als 600 ergänzt wurden.</h1>
 </section>
+<section class="slide" id="slide-anycast-map">
+	<div class="map-container"></div>
+	<!--<img src="./root-server-worldmap-2006.svg" width="960" height="" alt="Anycast-Instanzen 13 originalen Root Name Server des DNS" loading="lazy" style="width: 100%; height: auto;" />-->
+</section>
 <section class="slide">
 	<h1 class="left">Weitere kleine <span class="highlight">Nameserver</span> sind über alle Kontinente verteilt und verwalten "Adressbücher" von <span class="highlight">Domainnamen zu IP-Adressen</span> und machen diese zugänglich.</h1>
 </section>
@@ -532,6 +536,24 @@
 		<h1 href="#chapter-struktur" inert>Fin.</h1>
 	</div>
 </footer>
+
+<script>
+	// progressively reveal anycast servers
+	document.addEventListener("slidechange", evt => {
+		if (Inspire.currentSlide.id === "slide-anycast-map" && evt.firstTime) {
+			const mapContainer = Inspire.currentSlide.querySelector('.map-container');
+			const anycastMap = new Image(510,350);
+			anycastMap.src = './root-server-worldmap-2006.svg';
+			anycastMap.setAttribute('width', '960');
+			anycastMap.setAttribute('height', 'auto');
+			anycastMap.style.display = 'block';
+			anycastMap.style.marginInline = 'auto';
+			mapContainer.style.width = '100%';
+			mapContainer.style.height = 'auto';
+			mapContainer.appendChild(anycastMap);
+		}
+	});
+</script>
 
 </body>
 </html>
